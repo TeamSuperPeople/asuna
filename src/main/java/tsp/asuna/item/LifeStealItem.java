@@ -1,9 +1,7 @@
 package tsp.asuna.item;
 
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.thrown.SnowballEntity;
 import net.minecraft.item.Item;
-import net.minecraft.item.Item.Settings;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -13,9 +11,8 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import tsp.asuna.entities.MiasmaEntity;
 
-public class MiasmaItem extends Item {
-
-    public MiasmaItem(Settings settings) {
+public class LifeStealItem extends Item {
+    public LifeStealItem(Settings settings) {
         super(settings);
     }
 
@@ -32,8 +29,9 @@ public class MiasmaItem extends Item {
         user.incrementStat(Stats.USED.getOrCreateStat(this));
         if (!user.abilities.creativeMode) {
 
-    }
+        }
 
         return TypedActionResult.success(itemStack);
     }
 }
+
