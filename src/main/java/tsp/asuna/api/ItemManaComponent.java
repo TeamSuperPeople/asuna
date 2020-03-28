@@ -1,11 +1,20 @@
 package tsp.asuna.api;
 
+import nerdhub.cardinal.components.api.ComponentType;
+import nerdhub.cardinal.components.api.component.Component;
+import nerdhub.cardinal.components.api.component.extension.CopyableComponent;
 import net.minecraft.nbt.CompoundTag;
+import tsp.asuna.registry.Components;
 
-public class ItemManaComponent implements ManaComponent {
+public class ItemManaComponent implements ManaComponent, CopyableComponent<ManaComponent> {
 
     private int mana;
     private int maxMana;
+
+    public ItemManaComponent(int maxMana) {
+        this.maxMana = maxMana;
+        this.mana = maxMana;
+    }
 
     @Override
     public int getMana() {
@@ -15,6 +24,25 @@ public class ItemManaComponent implements ManaComponent {
     @Override
     public int getMaxMana() {
         return maxMana;
+    }
+
+    @Override
+    public void decrement() {
+        this.mana = Math.max(0, mana - 1);
+    }
+
+    @Override
+    public void decrement(int amount) {
+        this.mana = Math.max(0, mana - amount);
+    }
+
+    @Override
+    public void increment() {
+        this.mana = Math.min(maxMana, mana + 1);
+    }
+
+    public boolean isDamaged() {
+        return mana < maxMana;
     }
 
     @Override
@@ -29,5 +57,20 @@ public class ItemManaComponent implements ManaComponent {
         tag.putInt("MaxMana", maxMana);
 
         return tag;
+    }
+
+    @Override
+    public ComponentType<ManaComponent> getComponentType() {
+        return Components.MANA;
+    }
+
+    @Override
+    public boolean isComponentEqual(Component other) {
+        if (other instanceof ItemManaComponent) {
+            ItemManaComponent otherManaComponent = (ItemManaComponent) other;
+            return otherManaComponent.getMaxMana() == this.getMaxMana() && otherManaComponent.getMana() == this.getMana();
+        }
+
+        return false;
     }
 }

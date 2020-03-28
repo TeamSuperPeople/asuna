@@ -3,6 +3,7 @@
   "package": "tsp.asuna.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "ItemRendererMixin"
   ],
   "client": [
   ],
