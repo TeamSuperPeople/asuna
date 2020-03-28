@@ -25,7 +25,7 @@ public class MiasmaItem extends Item {
         if (!world.isClient) {
             MiasmaEntity miasmaEntity = new MiasmaEntity(world, user);
             miasmaEntity.setItem(itemStack);
-            miasmaEntity.setProperties(user, user.pitch, user.yaw, 5F, 2F, 3F);
+            miasmaEntity.setProperties(user, user.pitch, user.yaw, 0F, 2F, 0F);
             world.spawnEntity(miasmaEntity);
         }
 

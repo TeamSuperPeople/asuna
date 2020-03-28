@@ -33,11 +33,11 @@ public class MiasmaEntity extends ThrownItemEntity {
 
 
     public MiasmaEntity(World world, LivingEntity owner) {
-        super(EntityType.SNOWBALL, owner, world);
+        super(Entities.MIASMA_ENTITY, owner, world);
     }
 
     public MiasmaEntity(World world, double x, double y, double z) {
-        super(EntityType.SNOWBALL, x, y, z, world);
+        super(Entities.MIASMA_ENTITY, x, y, z, world);
     }
 
 
