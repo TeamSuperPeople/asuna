@@ -2,8 +2,8 @@ package tsp.asuna.item;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.HoeItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -12,12 +12,12 @@ import tsp.asuna.api.ItemManaComponent;
 import tsp.asuna.api.ManaCharged;
 import tsp.asuna.registry.Components;
 
-public class ManaPickaxeItem extends PickaxeItem implements ManaCharged {
+public class ManaHoeItem extends HoeItem implements ManaCharged {
 
     private final int maxMana;
 
-    public ManaPickaxeItem(ToolMaterial material, int attackDamage, int maxMana) {
-        super(material, attackDamage, -2.8F, new Settings().maxDamage(-1).group(Asuna.ASUNA_SPELLS));
+    public ManaHoeItem(ToolMaterial material, float attackSpeed, int maxMana) {
+        super(material, attackSpeed, new Settings().maxDamage(-1).group(Asuna.ASUNA_SPELLS));
         this.maxMana = maxMana;
     }
 
