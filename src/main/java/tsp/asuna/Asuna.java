@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
+import tsp.asuna.registry.Components;
 import tsp.asuna.registry.Items;
 
 public class Asuna implements ModInitializer {
@@ -14,7 +15,7 @@ public class Asuna implements ModInitializer {
 
     @Override
     public void onInitialize() {
-
+        Components.init();
     }
 
     public static Identifier id(String path) {
