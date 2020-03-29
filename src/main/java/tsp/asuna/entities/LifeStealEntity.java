@@ -130,7 +130,7 @@ public class LifeStealEntity extends ThrownItemEntity  {
                 for (int b = 0; b < slope; b++) {
 
                     Vec3d particlePos = playerPos.add(divdedx,divdedy,divdedz);
-                    world.addParticle(effect,particlePos.x,particlePos.y,particlePos.z,0,0,0);
+                    this.world.addParticle(effect,particlePos.x,particlePos.y,particlePos.z,0,0,0);
                 }
             }
         }
