@@ -18,6 +18,7 @@ public class HealItem extends Item {
     }
 
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+        user.getItemCooldownManager().set(this, 100);
         ItemStack itemStack = user.getStackInHand(hand);
 
         if (!world.isClient) {

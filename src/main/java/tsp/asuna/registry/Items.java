@@ -12,9 +12,9 @@ import static tsp.asuna.Asuna.ASUNA_SPELLS;
 public class Items {
 
     // Spells
-    public static final Item MIASMA = register("miasma", new MiasmaItem(new Item.Settings().group(Asuna.ASUNA_SPELLS)));
-    public static final Item TOME_OF_LIFESTEAL = register("tome_of_lifesteal", new LifeStealItem(new Item.Settings().group(Asuna.ASUNA_SPELLS)));
-    public static final Item HEAL = register("heal", new HealItem(new Item.Settings().group(ASUNA_SPELLS)));
+    public static final Item MIASMA = register("miasma", new MiasmaItem(new Item.Settings().group(Asuna.ASUNA_SPELLS).maxCount(1)));
+    public static final Item NOSFERATU = register("nosferatu", new LifeStealItem(new Item.Settings().group(Asuna.ASUNA_SPELLS).maxCount(1)));
+    public static final Item HEAL = register("heal", new HealItem(new Item.Settings().group(ASUNA_SPELLS).maxCount(1)));
 
     // tools
     public static final Item MANAIRON_PICKAXE = register("manairon_pickaxe", new ManaPickaxeItem(new ManaIronToolMaterial(), 1, 256));

@@ -6,6 +6,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.screen.ScreenProviderRegistry;
 import net.minecraft.text.LiteralText;
+import tsp.asuna.cilent.renderer.LifeStealEntityRenderer;
 import tsp.asuna.cilent.renderer.MiasmaEntityRenderer;
 import tsp.asuna.registry.Entities;
 import tsp.asuna.registry.Items;
@@ -22,6 +23,7 @@ public class AsunaClient implements ClientModInitializer {
 
 
         EntityRendererRegistry.INSTANCE.register(Entities.MIASMA_ENTITY, (dispatcher, context) -> new MiasmaEntityRenderer(dispatcher));
+        EntityRendererRegistry.INSTANCE.register(Entities.LIFESTEAL_ENTITY, (dispatcher, context) -> new LifeStealEntityRenderer(dispatcher));
 
 
     }

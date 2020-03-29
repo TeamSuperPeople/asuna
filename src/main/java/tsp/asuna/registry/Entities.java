@@ -7,6 +7,7 @@ import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.registry.Registry;
 import tsp.asuna.Asuna;
+import tsp.asuna.entities.LifeStealEntity;
 import tsp.asuna.entities.MiasmaEntity;
 
 public class Entities {
@@ -14,6 +15,11 @@ public class Entities {
     public static final EntityType<MiasmaEntity> MIASMA_ENTITY = register(
             "miasma_entity",
             FabricEntityTypeBuilder.<MiasmaEntity>create(EntityCategory.MONSTER, (entityType, world) -> new MiasmaEntity(world)).size(EntityDimensions.fixed(1, 1)).build());
+
+    public static final EntityType<LifeStealEntity> LIFESTEAL_ENTITY = register(
+            "lifesteal_entity",
+            FabricEntityTypeBuilder.<LifeStealEntity>create(EntityCategory.MONSTER, (entityType, world) -> new LifeStealEntity(world)).size(EntityDimensions.fixed(1, 1)).build());
+
 
 
     private static <T extends Entity> EntityType<T> register(String name, EntityType<T> instance) {

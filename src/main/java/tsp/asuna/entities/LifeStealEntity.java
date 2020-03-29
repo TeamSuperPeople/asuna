@@ -7,6 +7,7 @@ package tsp.asuna.entities;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.particle.Particle;
 import net.minecraft.entity.*;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
@@ -29,24 +30,26 @@ import net.minecraft.potion.Potions;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.hit.HitResult.Type;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import tsp.asuna.registry.Entities;
 
 import java.util.Iterator;
 
-public class MiasmaEntity extends ThrownItemEntity  {
-    public MiasmaEntity(World world) {
-        super(EntityType.SNOWBALL, world);
+public class LifeStealEntity extends ThrownItemEntity  {
+    public LifeStealEntity(World world) {
+        super(Entities.LIFESTEAL_ENTITY, world);
     }
 
 
 
-    public MiasmaEntity(World world, LivingEntity owner) {
-        super(EntityType.SNOWBALL, owner, world);
+    public LifeStealEntity(World world, LivingEntity owner) {
+        super(Entities.LIFESTEAL_ENTITY, owner, world);
     }
 
-    public MiasmaEntity(World world, double x, double y, double z) {
-        super(EntityType.SNOWBALL, x, y, z, world);
+    public LifeStealEntity(World world, double x, double y, double z) {
+        super(Entities.LIFESTEAL_ENTITY, x, y, z, world);
     }
 
 
@@ -96,21 +99,42 @@ public class MiasmaEntity extends ThrownItemEntity  {
             Entity entity = ((EntityHitResult)hitResult).getEntity();
             int i = entity instanceof BlazeEntity ? 3 : 0;
             entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), (float)5);
+            // get positions of people
+            double z = getZ();
+            double x = getX();
+            double y = getY();
 
+            if (entity instanceof LivingEntity) {
+                ((LivingEntity) entity).heal(2.5F);
+                double z2 = entity.getZ();
+                double x2 = entity.getX();
+                double y2 = entity.getY();
 
+                // paritlces
+
+                ParticleEffect effect = ParticleTypes.SMOKE;
+                world.addParticle(effect, x, y, z,0,0,0);
+
+                double distancex = x - x2;
+                double distancey = y - y2;
+                double distancez = z - z2;
+
+                double slope = Math.sqrt(Math.pow(distancex,2) + Math.pow(distancey,2) + Math.pow(distancez,2));
+
+                Vec3d playerPos = entity.getPos();
+
+                double divdedx =  distancex/slope;
+                double divdedy =  distancey/slope;
+                double divdedz =  distancez/slope;
+
+                for (int b = 0; b < slope; b++) {
+
+                    Vec3d particlePos = playerPos.add(divdedx,divdedy,divdedz);
+                    world.addParticle(effect,particlePos.x,particlePos.y,particlePos.z,0,0,0);
+                }
+            }
         }
-        else if (hitResult.getType() == Type.BLOCK) {
-            AreaEffectCloudEntity areaEffectCloudEntity = new AreaEffectCloudEntity(this.world, this.getX(), this.getY(), this.getZ());
-            areaEffectCloudEntity.setOwner(this.getOwner());
-            areaEffectCloudEntity.setRadius(3.0F);
-            areaEffectCloudEntity.setRadiusOnUse(-0.5F);
-            areaEffectCloudEntity.setWaitTime(3);
-            areaEffectCloudEntity.setRadiusGrowth(-areaEffectCloudEntity.getRadius() / (float)areaEffectCloudEntity.getDuration());
-            areaEffectCloudEntity.setPotion(potion);
-            this.world.spawnEntity(areaEffectCloudEntity);
 
-
-        }
 
         if (!this.world.isClient) {
             this.world.sendEntityStatus(this, (byte)3);
