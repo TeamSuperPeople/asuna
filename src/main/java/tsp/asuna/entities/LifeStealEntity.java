@@ -24,7 +24,6 @@ public class LifeStealEntity extends ThrownItemEntity {
 
     public static final Identifier ENTITY_ID = Asuna.id("life_steal");
     private double gravity = 0.03;
-    private LivingEntity owner;
 
     public LifeStealEntity(World world, double x, double y, double z, Entity owner) {
         super(Entities.LIFESTEAL_ENTITY, world);
