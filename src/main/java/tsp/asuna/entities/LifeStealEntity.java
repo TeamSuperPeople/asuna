@@ -48,8 +48,9 @@ public class LifeStealEntity extends ThrownItemEntity  {
     @Override
     public Item getDefaultItem() {
         return Items.SNOWBALL;
-    }
 
+    }
+    
     @Override
     public void tick() {
         super.tick();

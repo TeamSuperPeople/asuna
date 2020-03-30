@@ -6,6 +6,7 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
 import net.minecraft.entity.AreaEffectCloudEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.FlyingItemEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.BlazeEntity;
@@ -24,11 +25,17 @@ import net.minecraft.util.PacketByteBuf;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.hit.HitResult.Type;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import tsp.asuna.Asuna;
 import tsp.asuna.registry.Entities;
 
-public class MiasmaEntity extends ThrownItemEntity  {
+
+import java.util.Iterator;
+
+public class MiasmaEntity extends ThrownItemEntity implements FlyingItemEntity {
+
+
 
     public static final Identifier ENTITY_ID = Asuna.id("miasma");
     private double gravity = 0.03;
@@ -45,6 +52,7 @@ public class MiasmaEntity extends ThrownItemEntity  {
 
     public MiasmaEntity(World world) {
         super(Entities.MIASMA_ENTITY, world);
+
     }
 
     @Override
@@ -52,13 +60,21 @@ public class MiasmaEntity extends ThrownItemEntity  {
         return Items.SNOWBALL;
     }
 
+
+
+
     @Override
     public void tick() {
         super.tick();
-        if (!(gravity <=0)) {
-            gravity = gravity - 0.001;
+        ParticleEffect particle = ParticleTypes.DRAGON_BREATH;
+
+        double x = this.getX();
+        double y = this.getY();
+        double z = this.getZ();
+
+        this.world.addParticle(particle,x,y,z,0,0,0);
         }
-    }
+
 
     @Override
     public Packet<?> createSpawnPacket() {
@@ -97,6 +113,8 @@ public class MiasmaEntity extends ThrownItemEntity  {
 
     }
 
+
+
     Potion potion = Potions.POISON;
     @Override
     protected void onCollision(HitResult hitResult) {
@@ -104,6 +122,16 @@ public class MiasmaEntity extends ThrownItemEntity  {
             Entity entity = ((EntityHitResult)hitResult).getEntity();
             int i = entity instanceof BlazeEntity ? 3 : 0;
             entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), (float)5);
+            AreaEffectCloudEntity areaEffectCloudEntity = new AreaEffectCloudEntity(this.world, this.getX(), this.getY(), this.getZ());
+            areaEffectCloudEntity.setOwner(this.getOwner());
+            areaEffectCloudEntity.setRadius(1.0F);
+            areaEffectCloudEntity.setRadiusOnUse(-0.5F);
+            areaEffectCloudEntity.setWaitTime(1);
+            areaEffectCloudEntity.setDuration(20);
+            areaEffectCloudEntity.setRadiusGrowth(-areaEffectCloudEntity.getRadius() / (float)areaEffectCloudEntity.getDuration());
+            areaEffectCloudEntity.setPotion(potion);
+            this.world.spawnEntity(areaEffectCloudEntity);
+
 
 
         }
@@ -112,6 +140,7 @@ public class MiasmaEntity extends ThrownItemEntity  {
             areaEffectCloudEntity.setOwner(this.getOwner());
             areaEffectCloudEntity.setRadius(3.0F);
             areaEffectCloudEntity.setRadiusOnUse(-0.5F);
+            areaEffectCloudEntity.setDuration(70);
             areaEffectCloudEntity.setWaitTime(3);
             areaEffectCloudEntity.setRadiusGrowth(-areaEffectCloudEntity.getRadius() / (float)areaEffectCloudEntity.getDuration());
             areaEffectCloudEntity.setPotion(potion);
@@ -126,4 +155,6 @@ public class MiasmaEntity extends ThrownItemEntity  {
         }
 
     }
+
+
 }

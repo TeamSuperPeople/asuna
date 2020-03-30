@@ -25,6 +25,7 @@ public class LifeStealItem extends Item {
             LifeStealEntity Entity = new LifeStealEntity(world, user);
             Entity.setProperties(user, user.pitch, user.yaw, 5F, 2F, 3F);
             world.spawnEntity(Entity);
+
         }
 
         user.incrementStat(Stats.USED.getOrCreateStat(this));
