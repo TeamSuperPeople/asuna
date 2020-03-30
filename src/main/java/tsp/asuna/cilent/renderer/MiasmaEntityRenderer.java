@@ -15,7 +15,7 @@ import tsp.asuna.entities.MiasmaEntity;
 import tsp.asuna.registry.Items;
 
 public class MiasmaEntityRenderer extends EntityRenderer<MiasmaEntity> {
-
+    float angle = 180;
     private static final ItemStack MIASMA_STACK = new ItemStack(Items.MIASMA_EFFECT);
 
     public MiasmaEntityRenderer(EntityRenderDispatcher dispatcher) {
@@ -24,10 +24,20 @@ public class MiasmaEntityRenderer extends EntityRenderer<MiasmaEntity> {
 
     @Override
     public void render(MiasmaEntity entity, float yaw, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light) {
+
+        if (angle < 360) {
+            angle = angle + 2;
+        }
+        else if (angle >= 360) {
+            angle = 0;
+        }
+
+
+
         matrices.push();
         matrices.scale(1, 1, 1);
         matrices.multiply(this.renderManager.getRotation());
-        matrices.multiply(Vector3f.POSITIVE_Y.getDegreesQuaternion(180.0F));
+        matrices.multiply(Vector3f.POSITIVE_Z.getDegreesQuaternion(angle));
         MinecraftClient.getInstance().getItemRenderer().renderItem(MIASMA_STACK, ModelTransformation.Mode.GROUND, light, OverlayTexture.DEFAULT_UV, matrices, vertexConsumers);
         matrices.pop();
         super.render(entity, yaw, tickDelta, matrices, vertexConsumers, light);

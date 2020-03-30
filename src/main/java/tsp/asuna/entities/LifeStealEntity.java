@@ -82,6 +82,7 @@ public class LifeStealEntity extends ThrownItemEntity {
         return (float) 0.03;
     }
 
+
     @Override
     protected void onCollision(HitResult hitResult) {
         if (hitResult.getType() == Type.ENTITY) {
@@ -93,15 +94,15 @@ public class LifeStealEntity extends ThrownItemEntity {
             double x = entity.getX();
             double y = entity.getY();
 
-            //get positions of entity
+            //get positions of player
             double z2 = owner.getZ();
             double x2 = owner.getX();
-            double y2 = owner.getY();
+            double y2 = owner.getY() + 1;
 
 
             // paritlces
 
-            ParticleEffect effect = ParticleTypes.WITCH;
+            ParticleEffect effect = ParticleTypes.HAPPY_VILLAGER;
             world.addParticle(effect, x, y, z, 0, 0, 0);
 
             double distancex = x2 - x;
@@ -118,14 +119,15 @@ public class LifeStealEntity extends ThrownItemEntity {
 
             for (int b = 0; b < slope; b++) {
 
-                Vec3d particlePos = playerPos.add(divdedx, divdedy, divdedz);
-                this.world.addParticle(effect, particlePos.x, particlePos.y, particlePos.z, 0, 0, 0);
+                playerPos = playerPos.add(divdedx, divdedy, divdedz);
+
+                this.world.addParticle(effect, playerPos.x, playerPos.y, playerPos.z, 0, 0, 0);
 
             }
-            if (entity instanceof LivingEntity) {
-                ((LivingEntity) entity).heal(2.5F);
 
-            }
+             owner.heal(2.5F);
+
+
 
 
             if (!this.world.isClient) {
