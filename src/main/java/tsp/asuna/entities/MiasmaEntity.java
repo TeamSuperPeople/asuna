@@ -115,8 +115,6 @@ public class MiasmaEntity extends ThrownItemEntity implements FlyingItemEntity {
             areaEffectCloudEntity.setColor(9699539);
             this.world.spawnEntity(areaEffectCloudEntity);
 
-
-
         }
         else if (hitResult.getType() == Type.BLOCK) {
             AreaEffectCloudEntity areaEffectCloudEntity = new AreaEffectCloudEntity(this.world, this.getX(), this.getY(), this.getZ());

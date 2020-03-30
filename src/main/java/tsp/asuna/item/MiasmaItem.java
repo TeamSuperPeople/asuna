@@ -16,6 +16,7 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
+import tsp.asuna.Asuna;
 import tsp.asuna.entities.MiasmaEntity;
 
 import java.util.List;

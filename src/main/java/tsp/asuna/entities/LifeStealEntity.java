@@ -50,11 +50,18 @@ public class LifeStealEntity extends ThrownItemEntity {
     @Override
     public void tick() {
         super.tick();
+        ParticleEffect particle = ParticleTypes.CLOUD;
 
-        if (!(gravity <= 0)) {
-            gravity = gravity - 0.001;
+        double x = this.getX();
+        double y = this.getY();
+        double z = this.getZ();
+
+        this.world.addParticle(particle,x,y,z,0,0,0);
+        this.world.addParticle(particle,x,-y,z,0,0,0);
+
+
         }
-    }
+
 
     @Override
     public Packet<?> createSpawnPacket() {
@@ -117,7 +124,7 @@ public class LifeStealEntity extends ThrownItemEntity {
             }
             if (entity instanceof LivingEntity) {
                 ((LivingEntity) entity).heal(2.5F);
-                
+
             }
 
 
