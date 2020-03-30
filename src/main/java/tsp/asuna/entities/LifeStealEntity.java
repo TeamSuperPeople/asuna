@@ -4,6 +4,7 @@ import io.netty.buffer.Unpooled;
 import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
@@ -85,6 +86,7 @@ public class LifeStealEntity extends ThrownItemEntity {
     protected void onCollision(HitResult hitResult) {
         if (hitResult.getType() == Type.ENTITY) {
             Entity entity = ((EntityHitResult) hitResult).getEntity();
+            entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), (float)5);
 
             // get positions of target
             double z = entity.getZ();
