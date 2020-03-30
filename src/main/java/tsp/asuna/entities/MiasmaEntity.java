@@ -1,68 +1,76 @@
 package tsp.asuna.entities;
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
 
+import io.netty.buffer.Unpooled;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.entity.*;
+import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
+import net.minecraft.entity.AreaEffectCloudEntity;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.mob.BlazeEntity;
-import net.minecraft.entity.mob.SkeletonEntity;
 import net.minecraft.entity.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.item.PotionItem;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.Packet;
 import net.minecraft.particle.ItemStackParticleEffect;
 import net.minecraft.particle.ParticleEffect;
-import net.minecraft.particle.ParticleType;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionUtil;
 import net.minecraft.potion.Potions;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.PacketByteBuf;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.hit.HitResult.Type;
 import net.minecraft.world.World;
+import tsp.asuna.Asuna;
 import tsp.asuna.registry.Entities;
 
-import java.util.Iterator;
-
 public class MiasmaEntity extends ThrownItemEntity  {
-    public MiasmaEntity(World world) {
-        super(EntityType.SNOWBALL, world);
-    }
 
-
-
-    public MiasmaEntity(World world, LivingEntity owner) {
-        super(EntityType.SNOWBALL, owner, world);
-    }
+    public static final Identifier ENTITY_ID = Asuna.id("miasma");
+    private double gravity = 0.03;
 
     public MiasmaEntity(World world, double x, double y, double z) {
-        super(EntityType.SNOWBALL, x, y, z, world);
+        super(Entities.MIASMA_ENTITY, world);
+        this.updatePosition(x, y, z);
+        this.updateTrackedPosition(x, y, z);
     }
 
+    public MiasmaEntity(World world, LivingEntity owner) {
+        super(Entities.MIASMA_ENTITY, owner, world);
+    }
 
+    public MiasmaEntity(World world) {
+        super(Entities.MIASMA_ENTITY, world);
+    }
 
-
+    @Override
     protected Item getDefaultItem() {
         return Items.SNOWBALL;
     }
 
-    double gravity = 0.03;
     @Override
     public void tick() {
         super.tick();
         if (!(gravity <=0)) {
             gravity = gravity - 0.001;
         }
+    }
+
+    @Override
+    public Packet<?> createSpawnPacket() {
+        PacketByteBuf packet = new PacketByteBuf(Unpooled.buffer());
+
+        packet.writeDouble(this.getX());
+        packet.writeDouble(this.getY());
+        packet.writeDouble(this.getZ());
+
+        packet.writeInt(this.getEntityId());
+
+        return ServerSidePacketRegistry.INSTANCE.toPacket(ENTITY_ID, packet);
     }
 
 
