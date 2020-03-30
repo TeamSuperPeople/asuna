@@ -95,24 +95,6 @@ public class MiasmaEntity extends ThrownItemEntity implements FlyingItemEntity {
         return (float) 0.03;
     }
 
-    @Environment(EnvType.CLIENT)
-    private ParticleEffect getParticleParameters() {
-        ItemStack itemStack = this.getItem();
-        return (ParticleEffect)(itemStack.isEmpty() ? ParticleTypes.CLOUD : new ItemStackParticleEffect(ParticleTypes.ITEM, itemStack));
-    }
-
-    @Environment(EnvType.CLIENT)
-    public void handleStatus(byte status) {
-        if (status == 3) {
-            ParticleEffect particleEffect = this.getParticleParameters();
-
-            for(int i = 0; i < 8; ++i) {
-                this.world.addParticle(particleEffect, this.getX(), this.getY(), this.getZ(), 0.0D, 0.0D, 0.0D);
-            }
-        }
-
-    }
-
 
 
     Potion potion = Potions.POISON;
@@ -130,6 +112,7 @@ public class MiasmaEntity extends ThrownItemEntity implements FlyingItemEntity {
             areaEffectCloudEntity.setDuration(20);
             areaEffectCloudEntity.setRadiusGrowth(-areaEffectCloudEntity.getRadius() / (float)areaEffectCloudEntity.getDuration());
             areaEffectCloudEntity.setPotion(potion);
+            areaEffectCloudEntity.setColor(9699539);
             this.world.spawnEntity(areaEffectCloudEntity);
 
 
@@ -144,6 +127,7 @@ public class MiasmaEntity extends ThrownItemEntity implements FlyingItemEntity {
             areaEffectCloudEntity.setWaitTime(3);
             areaEffectCloudEntity.setRadiusGrowth(-areaEffectCloudEntity.getRadius() / (float)areaEffectCloudEntity.getDuration());
             areaEffectCloudEntity.setPotion(potion);
+            areaEffectCloudEntity.setColor(9699539);
             this.world.spawnEntity(areaEffectCloudEntity);
 
 

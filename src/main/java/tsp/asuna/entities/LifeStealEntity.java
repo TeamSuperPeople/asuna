@@ -26,10 +26,11 @@ import net.minecraft.world.World;
 import tsp.asuna.Asuna;
 import tsp.asuna.registry.Entities;
 
-public class LifeStealEntity extends ThrownItemEntity  {
+public class LifeStealEntity extends ThrownItemEntity {
 
     public static final Identifier ENTITY_ID = Asuna.id("life_steal");
     private double gravity = 0.03;
+    private LivingEntity owner;
 
     public LifeStealEntity(World world, double x, double y, double z) {
         super(Entities.LIFESTEAL_ENTITY, world);
@@ -39,6 +40,7 @@ public class LifeStealEntity extends ThrownItemEntity  {
 
     public LifeStealEntity(World world, LivingEntity owner) {
         super(Entities.LIFESTEAL_ENTITY, owner, world);
+        this.owner = owner;
     }
 
     public LifeStealEntity(World world) {
@@ -50,7 +52,7 @@ public class LifeStealEntity extends ThrownItemEntity  {
         return Items.SNOWBALL;
 
     }
-    
+
     @Override
     public void tick() {
         super.tick();
@@ -78,70 +80,57 @@ public class LifeStealEntity extends ThrownItemEntity  {
         return (float) 0.03;
     }
 
-    @Environment(EnvType.CLIENT)
-    private ParticleEffect getParticleParameters() {
-        ItemStack itemStack = this.getItem();
-        return itemStack.isEmpty() ? ParticleTypes.CLOUD : new ItemStackParticleEffect(ParticleTypes.ITEM, itemStack);
-    }
-
-    @Environment(EnvType.CLIENT)
-    public void handleStatus(byte status) {
-        if (status == 3) {
-            ParticleEffect particleEffect = this.getParticleParameters();
-
-            for(int i = 0; i < 8; ++i) {
-                this.world.addParticle(particleEffect, this.getX(), this.getY(), this.getZ(), 0.0D, 0.0D, 0.0D);
-            }
-        }
-    }
 
     @Override
     protected void onCollision(HitResult hitResult) {
         if (hitResult.getType() == Type.ENTITY) {
-            Entity entity = ((EntityHitResult)hitResult).getEntity();
-            int i = entity instanceof BlazeEntity ? 3 : 0;
-            entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), (float)5);
-            // get positions of people
-            double z = getZ();
-            double x = getX();
-            double y = getY();
+            Entity entity = ((EntityHitResult) hitResult).getEntity();
 
+            // get positions of target
+            double z = entity.getZ();
+            double x = entity.getX();
+            double y = entity.getY();
+
+            //get positions of entity
+            double z2 = owner.getZ();
+            double x2 = owner.getX();
+            double y2 = owner.getY();
+
+
+            // paritlces
+
+            ParticleEffect effect = ParticleTypes.WITCH;
+            world.addParticle(effect, x, y, z, 0, 0, 0);
+
+            double distancex = x2 - x;
+            double distancey = y2 - y;
+            double distancez = z2 - z;
+
+            double slope = Math.sqrt(Math.pow(distancex, 2) + Math.pow(distancey, 2) + Math.pow(distancez, 2));
+
+            Vec3d playerPos = entity.getPos();
+
+            double divdedx = distancex / slope;
+            double divdedy = distancey / slope;
+            double divdedz = distancez / slope;
+
+            for (int b = 0; b < slope; b++) {
+
+                Vec3d particlePos = playerPos.add(divdedx, divdedy, divdedz);
+                this.world.addParticle(effect, particlePos.x, particlePos.y, particlePos.z, 0, 0, 0);
+
+            }
             if (entity instanceof LivingEntity) {
                 ((LivingEntity) entity).heal(2.5F);
-                double z2 = entity.getZ();
-                double x2 = entity.getX();
-                double y2 = entity.getY();
-
-                // paritlces
-
-                ParticleEffect effect = ParticleTypes.SMOKE;
-                world.addParticle(effect, x, y, z,0,0,0);
-
-                double distancex = x - x2;
-                double distancey = y - y2;
-                double distancez = z - z2;
-
-                double slope = Math.sqrt(Math.pow(distancex,2) + Math.pow(distancey,2) + Math.pow(distancez,2));
-
-                Vec3d playerPos = entity.getPos();
-
-                double divdedx =  distancex/slope;
-                double divdedy =  distancey/slope;
-                double divdedz =  distancez/slope;
-
-                for (int b = 0; b < slope; b++) {
-
-                    Vec3d particlePos = playerPos.add(divdedx,divdedy,divdedz);
-                    this.world.addParticle(effect,particlePos.x,particlePos.y,particlePos.z,0,0,0);
-                }
+                
             }
+
+
+            if (!this.world.isClient) {
+                this.world.sendEntityStatus(this, (byte) 3);
+                this.remove();
+            }
+
         }
-
-
-        if (!this.world.isClient) {
-            this.world.sendEntityStatus(this, (byte)3);
-            this.remove();
-        }
-
     }
 }
