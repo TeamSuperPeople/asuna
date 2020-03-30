@@ -10,7 +10,6 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import tsp.asuna.entities.LifeStealEntity;
-import tsp.asuna.entities.MiasmaEntity;
 
 public class LifeStealItem extends Item {
     public LifeStealItem(Settings settings) {
@@ -20,7 +19,7 @@ public class LifeStealItem extends Item {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         user.getItemCooldownManager().set(this, 20);
         ItemStack itemStack = user.getStackInHand(hand);
-        world.playSound((PlayerEntity)null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5F, 0.4F / (RANDOM.nextFloat() * 0.4F + 0.8F));
+        world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5F, 0.4F / (RANDOM.nextFloat() * 0.4F + 0.8F));
         if (!world.isClient) {
             LifeStealEntity Entity = new LifeStealEntity(world, user);
             Entity.setProperties(user, user.pitch, user.yaw, 5F, 2F, 3F);

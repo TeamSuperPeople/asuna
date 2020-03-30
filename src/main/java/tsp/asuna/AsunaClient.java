@@ -32,9 +32,10 @@ public class AsunaClient implements ClientModInitializer {
             double z = packet.readDouble();
 
             int entityId = packet.readInt();
+            int ownerId = packet.readInt();
 
             context.getTaskQueue().execute(() -> {
-                LifeStealEntity lifeStealEntity = new LifeStealEntity(MinecraftClient.getInstance().world, x, y, z);
+                LifeStealEntity lifeStealEntity = new LifeStealEntity(MinecraftClient.getInstance().world, x, y, z, MinecraftClient.getInstance().world.getEntityById(ownerId));
                 lifeStealEntity.setEntityId(entityId);
                 MinecraftClient.getInstance().world.addEntity(entityId, lifeStealEntity);
             });

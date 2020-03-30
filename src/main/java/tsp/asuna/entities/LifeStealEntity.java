@@ -1,19 +1,13 @@
 package tsp.asuna.entities;
 
 import io.netty.buffer.Unpooled;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.mob.BlazeEntity;
 import net.minecraft.entity.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.network.Packet;
-import net.minecraft.particle.ItemStackParticleEffect;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.Identifier;
@@ -32,19 +26,20 @@ public class LifeStealEntity extends ThrownItemEntity {
     private double gravity = 0.03;
     private LivingEntity owner;
 
-    public LifeStealEntity(World world, double x, double y, double z) {
+    public LifeStealEntity(World world, double x, double y, double z, Entity owner) {
         super(Entities.LIFESTEAL_ENTITY, world);
         this.updatePosition(x, y, z);
+        this.owner = (LivingEntity) owner;
         this.updateTrackedPosition(x, y, z);
-    }
-
-    public LifeStealEntity(World world, LivingEntity owner) {
-        super(Entities.LIFESTEAL_ENTITY, owner, world);
-        this.owner = owner;
     }
 
     public LifeStealEntity(World world) {
         super(Entities.LIFESTEAL_ENTITY, world);
+    }
+
+    public LifeStealEntity(World world, LivingEntity owner) {
+        super(Entities.LIFESTEAL_ENTITY, world);
+        this.owner = owner;
     }
 
     @Override
@@ -71,6 +66,7 @@ public class LifeStealEntity extends ThrownItemEntity {
         packet.writeDouble(this.getZ());
 
         packet.writeInt(this.getEntityId());
+        packet.writeInt(this.getOwner().getEntityId());
 
         return ServerSidePacketRegistry.INSTANCE.toPacket(ENTITY_ID, packet);
     }
