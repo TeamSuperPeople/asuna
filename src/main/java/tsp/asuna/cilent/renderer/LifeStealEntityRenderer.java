@@ -13,6 +13,6 @@ public class LifeStealEntityRenderer extends EntityRenderer<LifeStealEntity> {
 
     @Override
     public Identifier getTexture(LifeStealEntity entity) {
-        return Asuna.id("textures/entity/miasmaeffect.png");
+        return Asuna.id("textures/entity/miasma_effect.png");
     }
 }
