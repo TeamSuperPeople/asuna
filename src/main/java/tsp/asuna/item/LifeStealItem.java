@@ -26,7 +26,7 @@ public class LifeStealItem extends Item {
         if (!world.isClient) {
             LifeStealEntity entity = new LifeStealEntity(world, user);
             entity.setProperties(user, user.pitch, user.yaw, 5F, 2F, 3F);
-            entity.setPos(user.getZ(), user.getY(), user.getZ());
+            entity.setPos(user.getX(), user.getY(), user.getZ());
             world.spawnEntity(entity);
         }
 

@@ -44,7 +44,6 @@ public class LifeStealEntity extends ThrownItemEntity {
     @Override
     public Item getDefaultItem() {
         return Items.SNOWBALL;
-
     }
 
     @Override
@@ -81,7 +80,6 @@ public class LifeStealEntity extends ThrownItemEntity {
     protected float getGravity() {
         return (float) 0.03;
     }
-
 
     @Override
     protected void onCollision(HitResult hitResult) {
