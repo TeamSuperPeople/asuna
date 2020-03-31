@@ -1,11 +1,13 @@
 package tsp.asuna.registry;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.util.registry.Registry;
 import tsp.asuna.Asuna;
 import tsp.asuna.item.*;
 import tsp.asuna.materials.ManaDiamondToolMaterial;
 import tsp.asuna.materials.ManaIronToolMaterial;
+import tsp.asuna.materials.RubyToolMaterial;
 
 import static tsp.asuna.Asuna.ASUNA_SPELLS;
 
@@ -34,10 +36,17 @@ public class Items {
     public static final Item MANADIAMOND_SHOVEL = register("manadiamond_shovel", new ManaShovelItem(new ManaDiamondToolMaterial(), 1.5F, 2048));
     public static final Item MANADIAMOND_HOE = register("manadiamond_hoe", new ManaHoeItem(new ManaDiamondToolMaterial(), 1, 2048));
 
+    public static final Item RUBY_PICKAXE = register("ruby_pickaxe", new RubyPickaxeItem(ToolMaterials.RUBY, 3,0.5F,new Item.Settings().group(ASUNA_SPELLS)));
+    public static final Item RUBY_AXE = register("ruby_axe", new RubyAxeItem(ToolMaterials.RUBY, 5,1F,new Item.Settings().group(ASUNA_SPELLS)));
+    public static final Item RUBY_SHOVEL = register("ruby_shovel", new RubyShovelItem(ToolMaterials.RUBY, 2,1F,new Item.Settings().group(ASUNA_SPELLS)));
+    public static final Item RUBY_SWORD = register("ruby_sword", new RubySwordItem(ToolMaterials.RUBY, 3,1.5F,new Item.Settings().group(ASUNA_SPELLS)));
+
+
 
     // materials
     public static final Item MANA_IRON = register("manairon", new Item(new Item.Settings().group(ASUNA_SPELLS)));
     public static final Item AURORA_INGOT = register("aurora_ingot", new Item(new Item.Settings().group(ASUNA_SPELLS)));
+    public static final Item RUBY = register("ruby", new Item(new Item.Settings().group(ASUNA_SPELLS)));
 ;
     public static final Item MANA_DIAMOND = register("manadiamond", new Item(new Item.Settings().group(ASUNA_SPELLS)));
 

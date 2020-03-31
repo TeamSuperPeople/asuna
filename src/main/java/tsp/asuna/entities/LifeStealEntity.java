@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
+
 import net.minecraft.entity.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
@@ -16,10 +17,14 @@ import net.minecraft.util.PacketByteBuf;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.hit.HitResult.Type;
+
 import net.minecraft.util.math.Vec3d;
+
 import net.minecraft.world.World;
 import tsp.asuna.Asuna;
 import tsp.asuna.registry.Entities;
+
+import java.util.ArrayList;
 
 public class LifeStealEntity extends ThrownItemEntity {
 
@@ -83,6 +88,7 @@ public class LifeStealEntity extends ThrownItemEntity {
     }
 
 
+
     @Override
     protected void onCollision(HitResult hitResult) {
         if (hitResult.getType() == Type.ENTITY) {
@@ -126,6 +132,13 @@ public class LifeStealEntity extends ThrownItemEntity {
             }
 
              owner.heal(2.5F);
+            ParticleEffect yeet = ParticleTypes.CLOUD;
+            for (int i = 0; i < 15; i++) {
+
+                this.world.addParticle(yeet, x+world.getRandom().nextDouble(), y+world.getRandom().nextDouble(), z+world.getRandom().nextDouble(), 0, 0, 0);
+
+            }
+
 
 
 

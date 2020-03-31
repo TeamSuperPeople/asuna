@@ -102,7 +102,6 @@ public class MiasmaEntity extends ThrownItemEntity implements FlyingItemEntity {
     protected void onCollision(HitResult hitResult) {
         if (hitResult.getType() == Type.ENTITY) {
             Entity entity = ((EntityHitResult)hitResult).getEntity();
-            int i = entity instanceof BlazeEntity ? 3 : 0;
             entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), (float)5);
             AreaEffectCloudEntity areaEffectCloudEntity = new AreaEffectCloudEntity(this.world, entity.getX(), entity.getY(), entity.getZ());
             areaEffectCloudEntity.setOwner(this.getOwner());
