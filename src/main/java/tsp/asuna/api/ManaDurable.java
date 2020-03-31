@@ -1,5 +1,5 @@
 package tsp.asuna.api;
 
-public interface ManaCharged {
+public interface ManaDurable {
     int getMaxMana();
 }

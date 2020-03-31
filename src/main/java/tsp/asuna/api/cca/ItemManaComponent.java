@@ -1,4 +1,4 @@
-package tsp.asuna.api;
+package tsp.asuna.api.cca;
 
 import nerdhub.cardinal.components.api.ComponentType;
 import nerdhub.cardinal.components.api.component.Component;

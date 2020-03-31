@@ -8,11 +8,11 @@ import net.minecraft.item.ToolMaterial;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import tsp.asuna.Asuna;
-import tsp.asuna.api.ItemManaComponent;
-import tsp.asuna.api.ManaCharged;
+import tsp.asuna.api.cca.ItemManaComponent;
+import tsp.asuna.api.ManaDurable;
 import tsp.asuna.registry.Components;
 
-public class ManaHoeItem extends HoeItem implements ManaCharged {
+public class ManaHoeItem extends HoeItem implements ManaDurable {
 
     private final int maxMana;
 

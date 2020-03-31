@@ -8,7 +8,6 @@ import javax.tools.Tool;
 
 public class ManaDiamondToolMaterial implements ToolMaterial {
 
-
     @Override
     public int getDurability() {
         return 1;
@@ -38,7 +37,4 @@ public class ManaDiamondToolMaterial implements ToolMaterial {
     public Ingredient getRepairIngredient() {
         return Ingredient.ofItems(Items.MANA_DIAMOND);
     }
-
-
-
 }

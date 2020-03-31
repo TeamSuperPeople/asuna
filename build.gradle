@@ -17,6 +17,11 @@ minecraft {
 repositories {
     maven { url 'https://jitpack.io' }
     mavenCentral()
+
+    maven {
+        name = "Spinnery"
+        url "https://dl.bintray.com/spinnery/Spinnery"
+    }
 }
 
 dependencies {
@@ -25,10 +30,17 @@ dependencies {
     modCompile "net.fabricmc:fabric-loader:${project.loader_version}"
     modCompile "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
+    // spginery
+    modCompile "com.github.vini2003:spinnery:${project.spinnery_version}"
+    include "com.github.vini2003:spinnery:${project.spinnery_version}"
+
+    // cardinal components
     modCompile "com.github.NerdHubMC.Cardinal-Components-API:cardinal-components-base:${project.cardinal_version}"
     include "com.github.NerdHubMC.Cardinal-Components-API:cardinal-components-base:${project.cardinal_version}"
     modCompile "com.github.NerdHubMC.Cardinal-Components-API:cardinal-components-item:${project.cardinal_version}"
     include "com.github.NerdHubMC.Cardinal-Components-API:cardinal-components-item:${project.cardinal_version}"
+
+    // literally who added this
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 

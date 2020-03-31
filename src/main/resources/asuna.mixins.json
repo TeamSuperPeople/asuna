@@ -6,6 +6,7 @@
     "ItemRendererMixin"
   ],
   "client": [
+
   ],
   "injectors": {
     "defaultRequire": 1

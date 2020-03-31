@@ -4,7 +4,7 @@ import nerdhub.cardinal.components.api.ComponentRegistry;
 import nerdhub.cardinal.components.api.ComponentType;
 import net.minecraft.util.Identifier;
 import tsp.asuna.Asuna;
-import tsp.asuna.api.ManaComponent;
+import tsp.asuna.api.cca.ManaComponent;
 
 public class Components {
 

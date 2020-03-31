@@ -61,12 +61,11 @@ public class LifeStealEntity extends ThrownItemEntity {
         double y = this.getY();
         double z = this.getZ();
 
-        this.world.addParticle(particle,x,y,z,0,0,0);
-        this.world.addParticle(particle,x,-y,z,0,0,0);
+        this.world.addParticle(particle, x, y, z, 0, 0, 0);
+        this.world.addParticle(particle, x, -y, z, 0, 0, 0);
 
 
-        }
-
+    }
 
     @Override
     public Packet<?> createSpawnPacket() {
@@ -87,13 +86,11 @@ public class LifeStealEntity extends ThrownItemEntity {
         return (float) 0.03;
     }
 
-
-
     @Override
     protected void onCollision(HitResult hitResult) {
         if (hitResult.getType() == Type.ENTITY) {
             Entity entity = ((EntityHitResult) hitResult).getEntity();
-            entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), (float)5);
+            entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), (float) 5);
 
             // get positions of target
             double z = entity.getZ();
@@ -104,7 +101,6 @@ public class LifeStealEntity extends ThrownItemEntity {
             double z2 = owner.getZ();
             double x2 = owner.getX();
             double y2 = owner.getY() + 1;
-
 
             // paritlces
 
@@ -124,30 +120,22 @@ public class LifeStealEntity extends ThrownItemEntity {
             double divdedz = distancez / slope;
 
             for (int b = 0; b < slope; b++) {
-
                 playerPos = playerPos.add(divdedx, divdedy, divdedz);
-
                 this.world.addParticle(effect, playerPos.x, playerPos.y, playerPos.z, 0, 0, 0);
-
             }
 
-             owner.heal(2.5F);
+            owner.heal(2.5F);
             ParticleEffect yeet = ParticleTypes.CLOUD;
+
             for (int i = 0; i < 15; i++) {
-
-                this.world.addParticle(yeet, x+world.getRandom().nextDouble(), y+world.getRandom().nextDouble(), z+world.getRandom().nextDouble(), 0, 0, 0);
-
+                this.world.addParticle(yeet, x + world.getRandom().nextDouble(), y + world.getRandom().nextDouble(), z + world.getRandom().nextDouble(), 0, 0, 0);
             }
-
-
-
 
 
             if (!this.world.isClient) {
                 this.world.sendEntityStatus(this, (byte) 3);
                 this.remove();
             }
-
         }
     }
 }

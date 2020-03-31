@@ -7,7 +7,6 @@ import tsp.asuna.registry.Items;
 
 public class RubyToolMaterial implements ToolMaterial {
 
-
     @Override
     public int getDurability() {
         return 750;

@@ -14,15 +14,13 @@ import net.minecraft.world.World;
 
 public class RubyPickaxeItem extends PickaxeItem {
 
-
-
-
     @Override
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
+        assert miner != null;
+
         StatusEffectInstance fireproof = new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 600);
         miner.addStatusEffect(fireproof);
         return super.postMine(stack, world, state, pos, miner);
-
     }
 
     public RubyPickaxeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {

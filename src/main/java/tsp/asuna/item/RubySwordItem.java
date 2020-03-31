@@ -14,6 +14,8 @@ public class RubySwordItem extends SwordItem {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        assert attacker != null;
+
         StatusEffectInstance fireproof = new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 600);
         attacker.addStatusEffect(fireproof);
         return super.postHit(stack, target, attacker);

@@ -8,8 +8,9 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import tsp.asuna.api.ItemManaComponent;
-import tsp.asuna.api.ManaCharged;
+import tsp.asuna.api.cca.ItemManaComponent;
+import tsp.asuna.api.ManaDurable;
+import tsp.asuna.registry.Blocks;
 import tsp.asuna.registry.Components;
 import tsp.asuna.registry.Items;
 
@@ -21,13 +22,14 @@ public class Asuna implements ModInitializer {
     @Override
     public void onInitialize() {
         RegistryEntryAddedCallback.event(Registry.ITEM).register((i, identifier, item) -> {
-            if(item instanceof ManaCharged) {
-                ItemComponentCallback.event(item).register((stack, components) -> components.put(Components.MANA, new ItemManaComponent(((ManaCharged) item).getMaxMana())));
+            if(item instanceof ManaDurable) {
+                ItemComponentCallback.event(item).register((stack, components) -> components.put(Components.MANA, new ItemManaComponent(((ManaDurable) item).getMaxMana())));
             }
         });
 
         Components.init();
         Items.init();
+        Blocks.init();
     }
 
     public static Identifier id(String path) {

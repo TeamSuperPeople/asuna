@@ -9,7 +9,6 @@ import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.render.BufferBuilder;
 import net.minecraft.client.render.Tessellator;
 import net.minecraft.client.render.item.ItemRenderer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 import org.spongepowered.asm.mixin.Mixin;
@@ -18,9 +17,8 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import tsp.asuna.api.ItemManaComponent;
-import tsp.asuna.api.ManaCharged;
-import tsp.asuna.api.ManaComponent;
+import tsp.asuna.api.cca.ItemManaComponent;
+import tsp.asuna.api.ManaDurable;
 import tsp.asuna.registry.Components;
 
 @Environment(EnvType.CLIENT)
@@ -36,7 +34,7 @@ public abstract class ItemRendererMixin {
                     target = "Lnet/minecraft/item/ItemStack;isDamaged()Z"),
             cancellable = true)
     private void go(TextRenderer fontRenderer, ItemStack stack, int x, int y, String amountText, CallbackInfo ci) {
-        if(stack.getItem() instanceof ManaCharged) {
+        if(stack.getItem() instanceof ManaDurable) {
             renderCustomDurability(stack, x, y);
             finishMethod(stack, x, y);
             ci.cancel();

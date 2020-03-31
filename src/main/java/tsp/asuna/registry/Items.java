@@ -1,6 +1,7 @@
 package tsp.asuna.registry;
 
 import net.minecraft.item.Item;
+import net.minecraft.util.Rarity;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.util.registry.Registry;
 import tsp.asuna.Asuna;
@@ -23,12 +24,13 @@ public class Items {
     public static final Item MIASMA_EFFECT = register("miasma_effect", new Item(new Item.Settings()));
 
     // tools
+    public static final Item CRYSTAL_LINKER = register("crystal_linker", new CrystalLinkerItem(new Item.Settings().group(ASUNA_SPELLS).maxCount(1).rarity(Rarity.UNCOMMON)));
+
     public static final Item MANAIRON_PICKAXE = register("manairon_pickaxe", new ManaPickaxeItem(new ManaIronToolMaterial(), 1, 256));
     public static final Item MANAIRON_SWORD = register("manairon_sword", new ManaSwordItem(new ManaIronToolMaterial(), 3, 256));
     public static final Item MANAIRON_AXE = register("manairon_axe", new ManaAxeItem(new ManaIronToolMaterial(), 6.0F, 256));
     public static final Item MANAIRON_SHOVEL = register("manairon_shovel", new ManaShovelItem(new ManaIronToolMaterial(), 1.5F, 256));
     public static final Item MANAIRON_HOE = register("manairon_hoe", new ManaHoeItem(new ManaIronToolMaterial(), 1, 256));
-
 
     public static final Item MANADIAMOND_PICKAXE = register("manadiamond_pickaxe", new ManaPickaxeItem(new ManaDiamondToolMaterial(), 1, 2048));
     public static final Item MANADIAMOND_SWORD = register("manadiamond_sword", new ManaSwordItem(new ManaDiamondToolMaterial(), 5, 2048));
@@ -41,14 +43,12 @@ public class Items {
     public static final Item RUBY_SHOVEL = register("ruby_shovel", new RubyShovelItem(ToolMaterials.RUBY, 2,1F,new Item.Settings().group(ASUNA_SPELLS)));
     public static final Item RUBY_SWORD = register("ruby_sword", new RubySwordItem(ToolMaterials.RUBY, 3,1.5F,new Item.Settings().group(ASUNA_SPELLS)));
 
-
-
     // materials
     public static final Item MANA_IRON = register("manairon", new Item(new Item.Settings().group(ASUNA_SPELLS)));
     public static final Item AURORA_INGOT = register("aurora_ingot", new Item(new Item.Settings().group(ASUNA_SPELLS)));
     public static final Item RUBY = register("ruby", new Item(new Item.Settings().group(ASUNA_SPELLS)));
-;
     public static final Item MANA_DIAMOND = register("manadiamond", new Item(new Item.Settings().group(ASUNA_SPELLS)));
+
 
     public static Item register(String name, Item instance) {
         return Registry.register(Registry.ITEM, Asuna.id(name), instance);

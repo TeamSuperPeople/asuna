@@ -35,8 +35,6 @@ import java.util.Iterator;
 
 public class MiasmaEntity extends ThrownItemEntity implements FlyingItemEntity {
 
-
-
     public static final Identifier ENTITY_ID = Asuna.id("miasma");
     private double gravity = 0.03;
 
@@ -60,9 +58,6 @@ public class MiasmaEntity extends ThrownItemEntity implements FlyingItemEntity {
         return Items.SNOWBALL;
     }
 
-
-
-
     @Override
     public void tick() {
         super.tick();
@@ -72,9 +67,8 @@ public class MiasmaEntity extends ThrownItemEntity implements FlyingItemEntity {
         double y = this.getY();
         double z = this.getZ();
 
-        this.world.addParticle(particle,x,y,z,0,0,0);
-        }
-
+        this.world.addParticle(particle, x, y, z, 0, 0, 0);
+    }
 
     @Override
     public Packet<?> createSpawnPacket() {
@@ -89,53 +83,42 @@ public class MiasmaEntity extends ThrownItemEntity implements FlyingItemEntity {
         return ServerSidePacketRegistry.INSTANCE.toPacket(ENTITY_ID, packet);
     }
 
-
     @Override
     protected float getGravity() {
         return (float) 0.03;
     }
 
-
-
-    Potion potion = Potions.POISON;
     @Override
     protected void onCollision(HitResult hitResult) {
         if (hitResult.getType() == Type.ENTITY) {
-            Entity entity = ((EntityHitResult)hitResult).getEntity();
-            entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), (float)5);
+            Entity entity = ((EntityHitResult) hitResult).getEntity();
+            entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), (float) 5);
             AreaEffectCloudEntity areaEffectCloudEntity = new AreaEffectCloudEntity(this.world, entity.getX(), entity.getY(), entity.getZ());
             areaEffectCloudEntity.setOwner(this.getOwner());
             areaEffectCloudEntity.setRadius(3.0F);
             areaEffectCloudEntity.setRadiusOnUse(-0.5F);
             areaEffectCloudEntity.setWaitTime(0);
             areaEffectCloudEntity.setDuration(70);
-            areaEffectCloudEntity.setRadiusGrowth(-areaEffectCloudEntity.getRadius() / (float)areaEffectCloudEntity.getDuration());
-            areaEffectCloudEntity.setPotion(potion);
+            areaEffectCloudEntity.setRadiusGrowth(-areaEffectCloudEntity.getRadius() / (float) areaEffectCloudEntity.getDuration());
+            areaEffectCloudEntity.setPotion(Potions.POISON);
             areaEffectCloudEntity.setColor(9699539);
             this.world.spawnEntity(areaEffectCloudEntity);
-
-        }
-        else if (hitResult.getType() == Type.BLOCK) {
+        } else if (hitResult.getType() == Type.BLOCK) {
             AreaEffectCloudEntity areaEffectCloudEntity = new AreaEffectCloudEntity(this.world, this.getX(), this.getY(), this.getZ());
             areaEffectCloudEntity.setOwner(this.getOwner());
             areaEffectCloudEntity.setRadius(3.0F);
             areaEffectCloudEntity.setRadiusOnUse(-0.5F);
             areaEffectCloudEntity.setDuration(70);
             areaEffectCloudEntity.setWaitTime(3);
-            areaEffectCloudEntity.setRadiusGrowth(-areaEffectCloudEntity.getRadius() / (float)areaEffectCloudEntity.getDuration());
-            areaEffectCloudEntity.setPotion(potion);
+            areaEffectCloudEntity.setRadiusGrowth(-areaEffectCloudEntity.getRadius() / (float) areaEffectCloudEntity.getDuration());
+            areaEffectCloudEntity.setPotion(Potions.POISON);
             areaEffectCloudEntity.setColor(9699539);
             this.world.spawnEntity(areaEffectCloudEntity);
-
-
         }
 
         if (!this.world.isClient) {
-            this.world.sendEntityStatus(this, (byte)3);
+            this.world.sendEntityStatus(this, (byte) 3);
             this.remove();
         }
-
     }
-
-
 }
