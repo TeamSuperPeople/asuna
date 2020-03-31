@@ -104,12 +104,12 @@ public class MiasmaEntity extends ThrownItemEntity implements FlyingItemEntity {
             Entity entity = ((EntityHitResult)hitResult).getEntity();
             int i = entity instanceof BlazeEntity ? 3 : 0;
             entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), (float)5);
-            AreaEffectCloudEntity areaEffectCloudEntity = new AreaEffectCloudEntity(this.world, this.getX(), this.getY(), this.getZ());
+            AreaEffectCloudEntity areaEffectCloudEntity = new AreaEffectCloudEntity(this.world, entity.getX(), entity.getY(), entity.getZ());
             areaEffectCloudEntity.setOwner(this.getOwner());
-            areaEffectCloudEntity.setRadius(1.0F);
+            areaEffectCloudEntity.setRadius(3.0F);
             areaEffectCloudEntity.setRadiusOnUse(-0.5F);
-            areaEffectCloudEntity.setWaitTime(1);
-            areaEffectCloudEntity.setDuration(20);
+            areaEffectCloudEntity.setWaitTime(0);
+            areaEffectCloudEntity.setDuration(70);
             areaEffectCloudEntity.setRadiusGrowth(-areaEffectCloudEntity.getRadius() / (float)areaEffectCloudEntity.getDuration());
             areaEffectCloudEntity.setPotion(potion);
             areaEffectCloudEntity.setColor(9699539);
