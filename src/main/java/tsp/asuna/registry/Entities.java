@@ -22,6 +22,10 @@ public class Entities {
             "lifesteal_entity",
             FabricEntityTypeBuilder.<LifeStealEntity>create(EntityCategory.MONSTER, (entityType, world) -> new LifeStealEntity(world)).size(EntityDimensions.fixed(1, 1)).build());
 
+    public static final EntityType<MiasmaEntity> THORON_ENTITY = register(
+            "thoron_entity",
+            FabricEntityTypeBuilder.<MiasmaEntity>create(EntityCategory.MONSTER, (entityType, world) -> new MiasmaEntity(world)).size(EntityDimensions.fixed(1, 1)).build());
+
     public static final BlockEntityType<ManaPylonBlockEntity> MANA_PYLON = register(
             "mana_pylon",
             BlockEntityType.Builder.create(ManaPylonBlockEntity::new, Blocks.MANA_PYLON).build(null)

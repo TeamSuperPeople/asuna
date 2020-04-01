@@ -19,9 +19,13 @@ public class Items {
     public static final Item MIASMA = register("miasma", new MiasmaItem(new Item.Settings().group(Asuna.ASUNA_SPELLS).maxCount(1)));
     public static final Item NOSFERATU = register("nosferatu", new LifeStealItem(new Item.Settings().group(Asuna.ASUNA_SPELLS).maxCount(1)));
     public static final Item HEAL = register("heal", new HealItem(new Item.Settings().group(ASUNA_SPELLS).maxCount(1)));
+    public static final Item THORON = register("thoron", new ThoronItem(new Item.Settings().group(ASUNA_SPELLS).maxCount(1)));
+    public static final Item REGROWTH = register("regrowth", new RegrowthItem(new Item.Settings().group(ASUNA_SPELLS).maxCount(1)));
 
     // cheating
     public static final Item MIASMA_EFFECT = register("miasma_effect", new Item(new Item.Settings()));
+    public static final Item THORON_EFFECT = register("thoron_effect", new Item(new Item.Settings()));
+
 
     // tools
     public static final Item CRYSTAL_LINKER = register("crystal_linker", new CrystalLinkerItem(new Item.Settings().group(ASUNA_SPELLS).maxCount(1).rarity(Rarity.UNCOMMON)));
@@ -38,10 +42,10 @@ public class Items {
     public static final Item MANADIAMOND_SHOVEL = register("manadiamond_shovel", new ManaShovelItem(new ManaDiamondToolMaterial(), 1.5F, 2048));
     public static final Item MANADIAMOND_HOE = register("manadiamond_hoe", new ManaHoeItem(new ManaDiamondToolMaterial(), 1, 2048));
 
-    public static final Item RUBY_PICKAXE = register("ruby_pickaxe", new RubyPickaxeItem(ToolMaterials.RUBY, 3,0.5F,new Item.Settings().group(ASUNA_SPELLS)));
-    public static final Item RUBY_AXE = register("ruby_axe", new RubyAxeItem(ToolMaterials.RUBY, 5,1F,new Item.Settings().group(ASUNA_SPELLS)));
-    public static final Item RUBY_SHOVEL = register("ruby_shovel", new RubyShovelItem(ToolMaterials.RUBY, 2,1F,new Item.Settings().group(ASUNA_SPELLS)));
-    public static final Item RUBY_SWORD = register("ruby_sword", new RubySwordItem(ToolMaterials.RUBY, 3,1.5F,new Item.Settings().group(ASUNA_SPELLS)));
+    public static final Item RUBY_PICKAXE = register("ruby_pickaxe", new RubyPickaxeItem(ToolMaterials.RUBY, -2,-2F,new Item.Settings().group(ASUNA_SPELLS)));
+    public static final Item RUBY_AXE = register("ruby_axe", new RubyAxeItem(ToolMaterials.RUBY, 5,-3F,new Item.Settings().group(ASUNA_SPELLS)));
+    public static final Item RUBY_SHOVEL = register("ruby_shovel", new RubyShovelItem(ToolMaterials.RUBY, -2,-2F,new Item.Settings().group(ASUNA_SPELLS)));
+    public static final Item RUBY_SWORD = register("ruby_sword", new RubySwordItem(ToolMaterials.RUBY, 3,-2.4F,new Item.Settings().group(ASUNA_SPELLS)));
 
     // materials
     public static final Item MANA_IRON = register("manairon", new Item(new Item.Settings().group(ASUNA_SPELLS)));

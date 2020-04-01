@@ -15,6 +15,7 @@ import tsp.asuna.cilent.renderer.*;
 import tsp.asuna.entities.InfernalYeeterBlockEntity;
 import tsp.asuna.entities.LifeStealEntity;
 import tsp.asuna.entities.MiasmaEntity;
+import tsp.asuna.entities.ThoronEntity;
 import tsp.asuna.item.CrystalLinkerItem;
 import tsp.asuna.registry.Blocks;
 import tsp.asuna.registry.Entities;
@@ -30,6 +31,8 @@ public class AsunaClient implements ClientModInitializer {
 
         EntityRendererRegistry.INSTANCE.register(Entities.MIASMA_ENTITY, (dispatcher, context) -> new MiasmaEntityRenderer(dispatcher));
         EntityRendererRegistry.INSTANCE.register(Entities.LIFESTEAL_ENTITY, (dispatcher, context) -> new LifeStealEntityRenderer(dispatcher));
+        EntityRendererRegistry.INSTANCE.register(Entities.THORON_ENTITY, (dispatcher, context) -> new ThoronEntityRenderer(dispatcher));
+
 
         BlockRenderLayerMap.INSTANCE.putBlock(Blocks.MANA_RELAY, RenderLayer.getCutout());
 
@@ -64,6 +67,20 @@ public class AsunaClient implements ClientModInitializer {
                 MiasmaEntity miasmaEntity = new MiasmaEntity(MinecraftClient.getInstance().world, x, y, z);
                 miasmaEntity.setEntityId(entityId);
                 MinecraftClient.getInstance().world.addEntity(entityId, miasmaEntity);
+            });
+        });
+
+        ClientSidePacketRegistry.INSTANCE.register(ThoronEntity.ENTITY_ID, (context, packet) -> {
+            double x = packet.readDouble();
+            double y = packet.readDouble();
+            double z = packet.readDouble();
+
+            int entityId = packet.readInt();
+
+            context.getTaskQueue().execute(() -> {
+                ThoronEntity thoronEntity = new ThoronEntity(MinecraftClient.getInstance().world, x, y, z);
+                thoronEntity.setEntityId(entityId);
+                MinecraftClient.getInstance().world.addEntity(entityId, thoronEntity);
             });
         });
 

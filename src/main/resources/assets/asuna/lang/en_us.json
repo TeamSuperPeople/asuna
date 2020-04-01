@@ -3,7 +3,7 @@
   "item.asuna.nosferatu": "Nosferatu",
   "item.asuna.heal": "Heal",
 
-  "item.asuna.managold": "Managold",
+  "item.asuna.ruby": "Ruby",
   "item.asuna.manadiamond": "Manadiamond",
   "item.asuna.manairon": "Manairon",
 
@@ -13,15 +13,20 @@
   "item.asuna.manairon_sword": "Manairon Sword",
   "item.asuna.manairon_hoe": "Manairon Hoe",
 
-  "item.asuna.managold_pickaxe": "Managold Pickaxe",
-  "item.asuna.managold_axe": "Managold Axe",
-  "item.asuna.managold_shovel": "Managold Shovel",
-  "item.asuna.managold_sword": "Managold Sword",
-  "item.asuna.managold_hoe": "Managold Hoe",
+  "item.asuna.ruby_pickaxe": "Ruby Pickaxe",
+  "item.asuna.ruby_axe": "Ruby Axe",
+  "item.asuna.ruby_shovel": "Ruby Shovel",
+  "item.asuna.ruby_sword": "Ruby Sword",
+  "item.asuna.ruby_hoe": "Ruby Hoe",
 
   "item.asuna.manadiamond_pickaxe": "Manadiamond Pickaxe",
   "item.asuna.manadiamond_axe": "Manadiamond Axe",
   "item.asuna.manadiamond_shovel": "Manadiamond Shovel",
   "item.asuna.manadiamond_sword": "Manadiamond Sword",
-  "item.asuna.manadiamond_hoe": "Manadiamond Hoe"
+  "item.asuna.manadiamond_hoe": "Manadiamond Hoe",
+
+
+
+
+
 }

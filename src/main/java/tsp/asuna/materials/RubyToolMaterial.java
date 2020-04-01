@@ -19,7 +19,7 @@ public class RubyToolMaterial implements ToolMaterial {
 
     @Override
     public float getAttackDamage() {
-        return 2;
+        return 4;
     }
 
     @Override
