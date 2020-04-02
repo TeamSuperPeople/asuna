@@ -21,6 +21,9 @@ public class Items {
     public static final Item HEAL = register("heal", new HealItem(new Item.Settings().group(ASUNA_SPELLS).maxCount(1)));
     public static final Item THORON = register("thoron", new ThoronItem(new Item.Settings().group(ASUNA_SPELLS).maxCount(1)));
     public static final Item REGROWTH = register("regrowth", new RegrowthItem(new Item.Settings().group(ASUNA_SPELLS).maxCount(1)));
+    public static final Item THUNDER = register("thunder", new ThunderItem(new Item.Settings().group(ASUNA_SPELLS).maxCount(1)));
+
+
 
     // cheating
     public static final Item MIASMA_EFFECT = register("miasma_effect", new Item(new Item.Settings()));
