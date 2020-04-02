@@ -1,11 +1,15 @@
 {
-  "name": "Test Entry",
-  "icon": "asuna:miasma",
+  "name": "Thoron",
+  "icon": "asuna:thoron",
   "category": "thaumaturgy",
   "pages": [
     {
       "type": "text",
-      "text": "This is a test entry, but it should show up!"
+      "text": "Thoron shoots a bolt of lightning 16 blocks in the direction you're looking at."
+    },
+    {
+      "type": "crafting",
+      "recipe": "minecraft:diamond_sword"
     }
   ]
 }
