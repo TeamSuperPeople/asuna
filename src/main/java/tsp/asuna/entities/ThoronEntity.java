@@ -2,6 +2,9 @@ package tsp.asuna.entities;
 
 import io.netty.buffer.Unpooled;
 import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.AreaEffectCloudEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -18,6 +21,7 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.potion.Potions;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.PacketByteBuf;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
@@ -55,6 +59,9 @@ public class ThoronEntity extends ThrownItemEntity {
     @Override
     public void tick() {
         super.tick();
+        if (this.isTouchingWater()) {
+            this.remove();
+        }
     }
 
     @Override
@@ -81,7 +88,6 @@ public class ThoronEntity extends ThrownItemEntity {
             Entity entity = ((EntityHitResult) hitResult).getEntity();
             entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), (float) 5);
 
-        } else if (hitResult.getType() == HitResult.Type.BLOCK) {
         }
 
         if (!this.world.isClient) {

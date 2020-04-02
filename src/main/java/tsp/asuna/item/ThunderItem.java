@@ -18,6 +18,7 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import tsp.asuna.entities.BetterLightningEntity;
 
 import java.util.List;
 
@@ -41,14 +42,14 @@ public class ThunderItem extends Item {
 
         ItemStack itemStack = user.getStackInHand(hand);
 
-        HitResult hitResult = user.rayTrace(20D,100F,true);
+        HitResult hitResult = user.rayTrace(50D,100F,true);
         if (hitResult.getType() == HitResult.Type.BLOCK) {
             BlockHitResult blockHitResult = ((BlockHitResult) hitResult);
             user.getItemCooldownManager().set(this, 20);
 
             if(!world.isClient) {
                 BlockPos pos = blockHitResult.getBlockPos();
-                ((ServerWorld) world).addLightning(new LightningEntity(world, pos.getX(), pos.getY(), pos.getZ(), false));
+                ((ServerWorld) world).addLightning(new BetterLightningEntity(world, pos.getX(), pos.getY(), pos.getZ(), false));
             }
         }
 

@@ -57,6 +57,10 @@ public class Items {
     public static final Item MANA_DIAMOND = register("manadiamond", new Item(new Item.Settings().group(ASUNA_SPELLS)));
 
 
+    // blocks
+
+
+
     public static Item register(String name, Item instance) {
         return Registry.register(Registry.ITEM, Asuna.id(name), instance);
     }

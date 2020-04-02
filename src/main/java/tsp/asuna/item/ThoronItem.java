@@ -46,7 +46,7 @@ public class ThoronItem extends Item {
         if (!world.isClient) {
             // DO NOT KEEP THIS AT 500
             // STOPSHIP: 4/1/2020 DOO NOT KEEP THIS
-            for (int i = 0; i < 500; i++) {
+            for (int i = 0; i < 5; i++) {
                 ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
                 scheduledExecutorService.schedule(() -> {
                     world.getServer().execute(() -> {
@@ -55,7 +55,7 @@ public class ThoronItem extends Item {
                         thoronEntity.setPos(user.getX(),user.getY()+2,user.getZ());
                         world.spawnEntity(thoronEntity);
                     });
-                }, i * 10, TimeUnit.MILLISECONDS);
+                }, i * 100, TimeUnit.MILLISECONDS);
                 // i * 10 = 1 per 10 ms, 500 entities = 500 * 10 ms total = 5 seconds
             }
         }
