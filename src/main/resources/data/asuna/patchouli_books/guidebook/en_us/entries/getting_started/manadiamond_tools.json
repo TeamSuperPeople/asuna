@@ -2,6 +2,7 @@
   "name": "Manadiamond Tools",
   "icon": "asuna:manadiamond_pickaxe",
   "category": "getting_started",
+  "sortnum": 1,
   "pages": [
     {
       "type": "text",

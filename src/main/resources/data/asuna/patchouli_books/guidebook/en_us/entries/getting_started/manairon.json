@@ -1,0 +1,11 @@
+{
+  "name": "Manairon",
+  "icon": "asuna:manairon",
+  "category": "getting_started",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Manairon is an enhanced form of Iron that pulls durability and strength from mana.$(br2)It can be created by infusing Iron Ingots with a large amount of mana at once."
+    }
+  ]
+}

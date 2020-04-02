@@ -1,0 +1,15 @@
+{
+  "name": "Miasma",
+  "icon": "asuna:miasma",
+  "category": "thaumaturgy",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Conjure a ball of venomous gas from poisonous particles from the atmosphere to launch at your foes."
+    },
+    {
+      "type": "crafting",
+      "recipe": "minecraft:diamond_sword"
+    }
+  ]
+}

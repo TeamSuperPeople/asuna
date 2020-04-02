@@ -111,6 +111,19 @@
 			}
 		}
 	],
+	"display": {
+		"ground": {
+			"translation": [0, 2, 0],
+			"scale": [0.68359, 0.68359, 0.68359]
+		},
+		"gui": {
+			"rotation": [19, 28, 0],
+			"translation": [0, 2.25, 0]
+		},
+		"head": {
+			"translation": [0, 14, 0]
+		}
+	},
 	"groups": [
 		{
 			"name": "relay",
