@@ -1,0 +1,15 @@
+{
+  "name": "Thunder",
+  "icon": "asuna:thunder",
+  "category": "thaumaturgy",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Sent a bolt of lightning onto your enemies with a maximum range of 50 blocks."
+    },
+    {
+      "type": "crafting",
+      "recipe": "minecraft:diamond_sword"
+    }
+  ]
+}

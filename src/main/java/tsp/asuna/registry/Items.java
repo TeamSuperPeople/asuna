@@ -22,7 +22,7 @@ public class Items {
     public static final Item THORON = register("thoron", new ThoronItem(new Item.Settings().group(ASUNA_SPELLS).maxCount(1)));
     public static final Item REGROWTH = register("regrowth", new RegrowthItem(new Item.Settings().group(ASUNA_SPELLS).maxCount(1)));
     public static final Item THUNDER = register("thunder", new ThunderItem(new Item.Settings().group(ASUNA_SPELLS).maxCount(1)));
-
+    public static final Item BOLGANONE = register("bolganone", new BolganoneItem(new Item.Settings().group(ASUNA_SPELLS).maxCount(1)));
 
 
     // cheating
