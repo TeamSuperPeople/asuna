@@ -1,0 +1,15 @@
+{
+  "name": "Regrowth",
+  "icon": "asuna:regrowth",
+  "category": "thaumaturgy",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Regrowth applies a bonemeal effect to the target block when used."
+    },
+    {
+      "type": "crafting",
+      "recipe": "minecraft:diamond_sword"
+    }
+  ]
+}

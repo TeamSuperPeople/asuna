@@ -1,0 +1,15 @@
+{
+  "name": "Nosferatu",
+  "icon": "asuna:nosferatu",
+  "category": "thaumaturgy",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Nosferatu deals damage on hit and gives the caster a portion of the damage dealt back as health."
+    },
+    {
+      "type": "crafting",
+      "recipe": "minecraft:diamond_sword"
+    }
+  ]
+}

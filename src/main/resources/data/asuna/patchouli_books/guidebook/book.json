@@ -2,5 +2,8 @@
   "name": "Asuna Guidebook",
   "creative_tab": "asuna.spells",
   "landing_text": "Welcome to the official Asuna guidebook!",
-  "version": 1
+  "version": 1,
+  "advancement_namespaces": [
+    "asuna"
+  ]
 }

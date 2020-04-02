@@ -1,0 +1,12 @@
+{
+  "name": "Manadiamond",
+  "icon": "asuna:manadiamond",
+  "category": "getting_started",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Manadiamond is an enhanced form of Diamond that pulls durability and strength from mana.$(br2)It can be created by infusing Diamonds with a large amount of mana at once."
+    }
+  ]
+}

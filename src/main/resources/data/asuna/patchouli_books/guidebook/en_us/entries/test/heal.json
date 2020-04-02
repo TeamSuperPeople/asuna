@@ -1,0 +1,15 @@
+{
+  "name": "Heal",
+  "icon": "asuna:heal",
+  "category": "thaumaturgy",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Heals the user on use."
+    },
+    {
+      "type": "crafting",
+      "recipe": "minecraft:diamond_sword"
+    }
+  ]
+}
