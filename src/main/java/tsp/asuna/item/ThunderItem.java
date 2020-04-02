@@ -2,18 +2,12 @@ package tsp.asuna.item;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.block.Block;
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.LightningEntity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
@@ -21,10 +15,9 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import tsp.asuna.entities.MiasmaEntity;
 
 import java.util.List;
 
@@ -50,11 +43,15 @@ public class ThunderItem extends Item {
 
         HitResult hitResult = user.rayTrace(20D,100F,true);
         if (hitResult.getType() == HitResult.Type.BLOCK) {
-            BlockHitResult entity = ((BlockHitResult) hitResult);
-            LightningEntity lightningEntity = new LightningEntity(world, entity.getBlockPos().getX(),entity.getBlockPos().getY(),entity.getBlockPos().getZ(),true);
-            world.spawnEntity(lightningEntity);
+            BlockHitResult blockHitResult = ((BlockHitResult) hitResult);
             user.getItemCooldownManager().set(this, 20);
+
+            if(!world.isClient) {
+                BlockPos pos = blockHitResult.getBlockPos();
+                ((ServerWorld) world).addLightning(new LightningEntity(world, pos.getX(), pos.getY(), pos.getZ(), false));
+            }
         }
+
         user.incrementStat(Stats.USED.getOrCreateStat(this));
         return TypedActionResult.success(itemStack);
     }
