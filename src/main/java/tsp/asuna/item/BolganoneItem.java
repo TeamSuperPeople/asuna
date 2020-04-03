@@ -5,6 +5,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.client.render.debug.DebugRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -45,6 +46,7 @@ public class BolganoneItem extends Item {
 
             if (optionalEntioty.isPresent() && optionalEntioty.get() instanceof LivingEntity) {
                 LivingEntity entity = (LivingEntity) optionalEntioty.get();
+                entity.damage(DamageSource.player(user),5);
 
                 Vec3d pos = entity.getPos();
                 for (AtomicInteger animationProgress = new AtomicInteger(); animationProgress.get() < 50; animationProgress.incrementAndGet()) {
