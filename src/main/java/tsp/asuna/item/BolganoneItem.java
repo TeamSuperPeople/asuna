@@ -15,6 +15,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 import java.util.Optional;
@@ -40,24 +41,27 @@ public class BolganoneItem extends Item {
         user.getItemCooldownManager().set(this, 20);
 
         if (!world.isClient) {
-            Optional<Entity> optionalEntioty = DebugRenderer.getTargetedEntity(user, 20);
+            Optional<Entity> optionalEntioty = DebugRenderer.getTargetedEntity(user, 100);
 
             if (optionalEntioty.isPresent() && optionalEntioty.get() instanceof LivingEntity) {
                 LivingEntity entity = (LivingEntity) optionalEntioty.get();
-                entity.setOnFireFor(5);
 
+                Vec3d pos = entity.getPos();
+                for (AtomicInteger animationProgress = new AtomicInteger(); animationProgress.get() < 50; animationProgress.incrementAndGet()) {
+                    int height = animationProgress.get();
 
-                user.getItemCooldownManager().set(this, 20);
-
-                for (AtomicInteger animationProgress = new AtomicInteger(); animationProgress.get() < 5; animationProgress.incrementAndGet()) {
                     ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
                     scheduledExecutorService.schedule(() -> {
                         world.getServer().execute(() -> {
-                            ((ServerWorld) world).spawnParticles(ParticleTypes.FLAME, entity.getX() + Math.cos(animationProgress.get() / 5f + 16), entity.getY() + animationProgress.get() % 50 / 25f, entity.getZ() + Math.sin(animationProgress.get() / 5f + 16), 5, 0f, 0f, 0f, 0);
+                            ((ServerWorld) world).spawnParticles(ParticleTypes.FLAME, pos.getX() + Math.sin(height), entity.getY() + height / 10f, pos.getZ() + Math.cos(height), 5, 0f, 0f, 0f, .01);
                         });
-                    }, animationProgress.get() * 100, TimeUnit.MILLISECONDS);
+                    }, 0, TimeUnit.MILLISECONDS);
                     // i * 10 = 1 per 10 ms, 500 entities = 500 * 10 ms total = 5 seconds
                 }
+
+
+                entity.setOnFireFor(5);
+                user.getItemCooldownManager().set(this, 20);
             }
         }
 
