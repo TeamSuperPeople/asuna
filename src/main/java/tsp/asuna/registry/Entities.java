@@ -9,7 +9,6 @@ import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.registry.Registry;
 import tsp.asuna.Asuna;
-import tsp.asuna.block.InfernalYeeterBlock;
 import tsp.asuna.entities.*;
 
 public class Entities {
@@ -44,6 +43,16 @@ public class Entities {
     public static final BlockEntityType<InfernalYeeterBlockEntity> INFERNAL_YEETER = register(
             "infernal_yeeter",
             BlockEntityType.Builder.create(InfernalYeeterBlockEntity::new, Blocks.INFERNAL_YEETER).build(null)
+    );
+
+    public static final BlockEntityType<InfusionAltarCoreBlockEntity> INFUSION_ALTAR_CORE = register(
+            "infusion_altar_core",
+            BlockEntityType.Builder.create(InfusionAltarCoreBlockEntity::new, Blocks.INFUSION_ALTAR_CORE).build(null)
+    );
+
+    public static final BlockEntityType<InfusionAltarPedestalBlockEntity> INFUSION_PEDESTAL = register(
+            "infusion_altar_pedstal",
+            BlockEntityType.Builder.create(InfusionAltarPedestalBlockEntity::new, Blocks.INFUSION_ALTAR_PEDESTAL).build(null)
     );
 
 

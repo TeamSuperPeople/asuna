@@ -1,11 +1,8 @@
 package tsp.asuna.entities;
 
-import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.Vec3d;
 import tsp.asuna.block.InfernalYeeterBlock;
 import tsp.asuna.registry.Entities;
 
@@ -13,11 +10,6 @@ public class InfernalYeeterBlockEntity extends ManaBlockEntity {
 
     public InfernalYeeterBlockEntity() {
         super(Entities.INFERNAL_YEETER, 500, 0, 10);
-    }
-
-    @Override
-    public void tick() {
-
     }
 
     public void pulse(int receivedRedstonePower) {

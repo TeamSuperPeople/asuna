@@ -11,11 +11,9 @@ import net.fabricmc.fabric.api.network.ClientSidePacketRegistry;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.ItemStack;
+import tsp.asuna.block.InfusionAltarPedestalBlock;
 import tsp.asuna.cilent.renderer.*;
-import tsp.asuna.entities.InfernalYeeterBlockEntity;
-import tsp.asuna.entities.LifeStealEntity;
-import tsp.asuna.entities.MiasmaEntity;
-import tsp.asuna.entities.ThoronEntity;
+import tsp.asuna.entities.*;
 import tsp.asuna.item.CrystalLinkerItem;
 import tsp.asuna.registry.Blocks;
 import tsp.asuna.registry.Entities;
@@ -35,11 +33,15 @@ public class AsunaClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putBlock(Blocks.MANA_PYLON, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(Blocks.MANA_RELAY, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(Blocks.INFUSION_ALTAR_CORE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(Blocks.INFUSION_ALTAR_PEDESTAL, RenderLayer.getCutout());
 
         BlockEntityRendererRegistry.INSTANCE.register(Entities.MANA_RELAY, ManaRelayBlockEntityRenderer::new);
         BlockEntityRendererRegistry.INSTANCE.register(Entities.MANA_PYLON, ManaPylonBlockEntityRenderer::new);
         BlockEntityRendererRegistry.INSTANCE.register(Entities.INFERNAL_ABSORBER, InfernalAbsorberBlockEntityRenderer::new);
         BlockEntityRendererRegistry.INSTANCE.register(Entities.INFERNAL_YEETER, InfernalYeeterBlockEntityRenderer::new);
+        BlockEntityRendererRegistry.INSTANCE.register(Entities.INFUSION_ALTAR_CORE, InfusionAltarCoreBlockEntityRenderer::new);
+        BlockEntityRendererRegistry.INSTANCE.register(Entities.INFUSION_PEDESTAL, InfusionAltarPedestalBlockEntityRenderer::new);
 
         ClientSidePacketRegistry.INSTANCE.register(LifeStealEntity.ENTITY_ID, (context, packet) -> {
             double x = packet.readDouble();

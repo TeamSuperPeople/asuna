@@ -7,7 +7,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.Tickable;
 import tsp.asuna.api.ManaStorage;
 
-public abstract class ManaBlockEntity extends BlockEntity implements BlockEntityClientSerializable, Tickable, ManaStorage {
+public abstract class ManaBlockEntity extends BlockEntity implements BlockEntityClientSerializable, ManaStorage {
 
     private final int maxMana;
     private final int maxOutput;
