@@ -11,13 +11,14 @@ import net.fabricmc.fabric.api.network.ClientSidePacketRegistry;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.ItemStack;
-import tsp.asuna.block.InfusionAltarPedestalBlock;
 import tsp.asuna.cilent.renderer.*;
 import tsp.asuna.entities.*;
 import tsp.asuna.item.CrystalLinkerItem;
+import tsp.asuna.patchouli.PageAltarRecipe;
 import tsp.asuna.registry.Blocks;
 import tsp.asuna.registry.Entities;
 import tsp.asuna.registry.Items;
+import vazkii.patchouli.client.book.ClientBookRegistry;
 
 
 @Environment(EnvType.CLIENT)
@@ -26,6 +27,8 @@ public class AsunaClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         Items.init();
+
+        ClientBookRegistry.INSTANCE.pageTypes.put("altar_recipe", PageAltarRecipe.class);
 
         EntityRendererRegistry.INSTANCE.register(Entities.MIASMA_ENTITY, (dispatcher, context) -> new MiasmaEntityRenderer(dispatcher));
         EntityRendererRegistry.INSTANCE.register(Entities.LIFESTEAL_ENTITY, (dispatcher, context) -> new LifeStealEntityRenderer(dispatcher));
