@@ -58,9 +58,13 @@ public class Items {
     public static final Item RUBY = register("ruby", new Item(new Item.Settings().group(ASUNA_SPELLS)));
     public static final Item MANA_DIAMOND = register("manadiamond", new Item(new Item.Settings().group(ASUNA_SPELLS)));
 
+    // elemental materials
+    public static final Item BLAZING_CORE = register("blazing_core", new Item(new Item.Settings().group(ASUNA_SPELLS)));
+    public static final Item THUNDERING_SPIRIT = register("thundering_spirit", new Item(new Item.Settings().group(ASUNA_SPELLS)));
+    public static final Item OCEANIC_PEARL = register("oceanic_pearl", new Item(new Item.Settings().group(ASUNA_SPELLS)));
+    public static final Item TERRA_ORB = register("terra_orb", new Item(new Item.Settings().group(ASUNA_SPELLS)));
 
     // blocks
-
 
 
     public static Item register(String name, Item instance) {

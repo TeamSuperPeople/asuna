@@ -6,6 +6,30 @@
     {
       "type": "text",
       "text": "Manairon is an enhanced form of Iron that pulls durability and strength from mana.$(br2)It can be created by infusing Iron Ingots with a large amount of mana at once."
+    },
+    {
+      "type": "altar_recipe",
+      "item_groups": {
+        "Center": [
+          "minecraft:diamond"
+        ],
+        "First Ring": [
+          "minecraft:apple"
+        ],
+        "Second Ring": [
+          "minecraft:apple"
+        ],
+        "Third Ring": [
+          "minecraft:blaze_rod",
+          "minecraft:blaze_rod",
+          "minecraft:magma_block",
+          "minecraft:magma_block",
+          "minecraft:red_wool",
+          "minecraft:red_wool",
+          "minecraft:lava_bucket",
+          "minecraft:lava_bucket"
+        ]
+      }
     }
   ]
 }
