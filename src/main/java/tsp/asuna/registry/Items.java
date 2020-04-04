@@ -24,6 +24,8 @@ public class Items {
     public static final Item THUNDER = register("thunder", new ThunderItem(new Item.Settings().group(ASUNA_SPELLS).maxCount(1)));
     public static final Item BOLGANONE = register("bolganone", new BolganoneItem(new Item.Settings().group(ASUNA_SPELLS).maxCount(1)));
 
+    // swoards
+    public static final Item THUNDERBAND =  register("thunderband", new ThunderbandItem(ToolMaterials.THUNDERGEM,2,2F,new Item.Settings().group(ASUNA_SPELLS)));
 
     // cheating
     public static final Item MIASMA_EFFECT = register("miasma_effect", new Item(new Item.Settings()));

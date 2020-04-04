@@ -8,7 +8,8 @@ import tsp.asuna.entities.InfusionAltarPedestalBlockEntity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InfusionAltarRecipe {
+public class
+InfusionAltarRecipe {
 
     private final Identifier id;
     private final RecipeTier tier;
