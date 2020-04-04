@@ -1,5 +1,7 @@
 package tsp.asuna.entities;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.block.entity.BlockEntityClientSerializable;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.nbt.CompoundTag;
@@ -17,6 +19,9 @@ public class ManaPylonBlockEntity extends BlockEntity implements BlockEntityClie
     private final static int MAX_OUTPUT = 100;
     private final static int MAX_INPUT = 100;
 
+    @Environment(EnvType.CLIENT)
+    private int animationProgress = 0;
+
     private int heldMana = 0;
     private final List<ManaConnectable> manaTargets = new ArrayList<>();
 
@@ -29,6 +34,16 @@ public class ManaPylonBlockEntity extends BlockEntity implements BlockEntityClie
         manaTargets.forEach(relay -> {
 
         });
+    }
+
+    @Environment(EnvType.CLIENT)
+    public int getAnimationProgress() {
+        return animationProgress;
+    }
+
+    @Environment(EnvType.CLIENT)
+    public void incrementAnimationProgress() {
+        this.animationProgress++;
     }
 
     @Override

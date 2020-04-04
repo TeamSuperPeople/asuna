@@ -6,7 +6,7 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.world.BlockView;
 import tsp.asuna.entities.ManaPylonBlockEntity;
 
-public class ManaPylonBlock extends Block implements BlockEntityProvider {
+public class ManaPylonBlock extends AbstractGlassBlock implements BlockEntityProvider {
 
     public ManaPylonBlock() {
         super(FabricBlockSettings.of(Material.STONE).nonOpaque().build());
