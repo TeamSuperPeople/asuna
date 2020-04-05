@@ -12,7 +12,7 @@
     {
       "type": "altar_recipe",
       "required_mana": 16,
-      "center": "minecraft:iron_ingot ",
+      "center": "minecraft:iron_ingot",
       "item_groups": {
         "First Ring": [
           "asuna:mana_shard"
