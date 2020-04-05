@@ -108,6 +108,8 @@ InfusionAltarRecipe {
             if(!currentItems.contains(ingredient)) {
                 return false;
             }
+
+            currentItems.remove(ingredient);
         }
 
         return true;
