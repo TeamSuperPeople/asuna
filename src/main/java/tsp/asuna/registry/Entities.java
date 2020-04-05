@@ -15,15 +15,19 @@ public class Entities {
 
     public static final EntityType<MiasmaEntity> MIASMA_ENTITY = register(
             "miasma_entity",
-            FabricEntityTypeBuilder.<MiasmaEntity>create(EntityCategory.MONSTER, (entityType, world) -> new MiasmaEntity(world)).size(EntityDimensions.fixed(1, 1)).build());
+            FabricEntityTypeBuilder.<MiasmaEntity>create(EntityCategory.MISC, (entityType, world) -> new MiasmaEntity(world)).size(EntityDimensions.fixed(1, 1)).build());
 
     public static final EntityType<LifeStealEntity> LIFESTEAL_ENTITY = register(
             "lifesteal_entity",
-            FabricEntityTypeBuilder.<LifeStealEntity>create(EntityCategory.MONSTER, (entityType, world) -> new LifeStealEntity(world)).size(EntityDimensions.fixed(1, 1)).build());
+            FabricEntityTypeBuilder.<LifeStealEntity>create(EntityCategory.MISC, (entityType, world) -> new LifeStealEntity(world)).size(EntityDimensions.fixed(1, 1)).build());
 
     public static final EntityType<MiasmaEntity> THORON_ENTITY = register(
             "thoron_entity",
-            FabricEntityTypeBuilder.<MiasmaEntity>create(EntityCategory.MONSTER, (entityType, world) -> new MiasmaEntity(world)).size(EntityDimensions.fixed(1, 1)).build());
+            FabricEntityTypeBuilder.<MiasmaEntity>create(EntityCategory.MISC, (entityType, world) -> new MiasmaEntity(world)).size(EntityDimensions.fixed(1, 1)).build());
+
+    public static final EntityType<ManaBombEntity> MANA_BOMB = register(
+            "mana_bomb",
+            FabricEntityTypeBuilder.<ManaBombEntity>create(EntityCategory.MISC, (entityType, world) -> new ManaBombEntity(world)).size(EntityDimensions.fixed(.3f, .3f)).build());
 
     public static final BlockEntityType<ManaPylonBlockEntity> MANA_PYLON = register(
             "mana_pylon",

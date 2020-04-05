@@ -30,6 +30,7 @@ public class AsunaClient implements ClientModInitializer {
 
         ClientBookRegistry.INSTANCE.pageTypes.put("altar_recipe", PageAltarRecipe.class);
 
+        EntityRendererRegistry.INSTANCE.register(Entities.MANA_BOMB, (dispatcher, context) -> new ManaBombEntityRenderer(dispatcher));
         EntityRendererRegistry.INSTANCE.register(Entities.MIASMA_ENTITY, (dispatcher, context) -> new MiasmaEntityRenderer(dispatcher));
         EntityRendererRegistry.INSTANCE.register(Entities.LIFESTEAL_ENTITY, (dispatcher, context) -> new LifeStealEntityRenderer(dispatcher));
         EntityRendererRegistry.INSTANCE.register(Entities.THORON_ENTITY, (dispatcher, context) -> new ThoronEntityRenderer(dispatcher));
@@ -59,6 +60,21 @@ public class AsunaClient implements ClientModInitializer {
                 LifeStealEntity lifeStealEntity = new LifeStealEntity(MinecraftClient.getInstance().world, x, y, z, MinecraftClient.getInstance().world.getEntityById(ownerId));
                 lifeStealEntity.setEntityId(entityId);
                 MinecraftClient.getInstance().world.addEntity(entityId, lifeStealEntity);
+            });
+        });
+
+        ClientSidePacketRegistry.INSTANCE.register(ManaBombEntity.ENTITY_ID, (context, packet) -> {
+            double x = packet.readDouble();
+            double y = packet.readDouble();
+            double z = packet.readDouble();
+
+            int entityId = packet.readInt();
+            int ownerId = packet.readInt();
+
+            context.getTaskQueue().execute(() -> {
+                ManaBombEntity manaBomb = new ManaBombEntity(MinecraftClient.getInstance().world, x, y, z, MinecraftClient.getInstance().world.getEntityById(ownerId));
+                manaBomb.setEntityId(entityId);
+                MinecraftClient.getInstance().world.addEntity(entityId, manaBomb);
             });
         });
 

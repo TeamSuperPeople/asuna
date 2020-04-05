@@ -8,18 +8,16 @@
       "text": "Surround your enemies with flames"
     },
     {
-    "type": "altar_recipe",
-    "item_groups": {
-      "Center": [
-        "minecraft:book"
-      ],
-      "First Ring": [
-        "asuna:blazing_core",
-        "asuna:blazing_core",
-        "asuna:blazing_core",
-        "asuna:blazing_core"
-      ]
-    }
+      "type": "altar_recipe",
+      "center": "minecraft:book",
+      "item_groups": {
+        "First Ring": [
+          "asuna:blazing_core",
+          "asuna:blazing_core",
+          "asuna:blazing_core",
+          "asuna:blazing_core"
+        ]
+      }
     }
   ]
 }

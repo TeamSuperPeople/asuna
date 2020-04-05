@@ -10,27 +10,8 @@
     },
     {
       "type": "altar_recipe",
-      "item_groups": {
-        "Center": [
-          "minecraft:diamond"
-        ],
-        "First Ring": [
-          "minecraft:apple"
-        ],
-        "Second Ring": [
-          "minecraft:apple"
-        ],
-        "Third Ring": [
-          "minecraft:blaze_rod",
-          "minecraft:blaze_rod",
-          "minecraft:magma_block",
-          "minecraft:magma_block",
-          "minecraft:red_wool",
-          "minecraft:red_wool",
-          "minecraft:lava_bucket",
-          "minecraft:lava_bucket"
-        ]
-      }
+      "required_mana": 32,
+      "center": "minecraft:iron_ingot"
     }
   ]
 }

@@ -77,7 +77,6 @@ public class ThoronEntity extends ThrownItemEntity {
         if (hitResult.getType() == HitResult.Type.ENTITY) {
             Entity entity = ((EntityHitResult) hitResult).getEntity();
             entity.damage(DamageSource.thrownProjectile(this, this.getOwner()), (float) 5);
-
         }
 
         if (!this.world.isClient) {

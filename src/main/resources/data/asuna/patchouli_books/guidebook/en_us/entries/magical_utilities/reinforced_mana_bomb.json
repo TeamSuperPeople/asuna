@@ -1,0 +1,24 @@
+{
+  "name": "Mana Grenade",
+  "icon": "minecraft:tnt",
+  "category": "magical_utilities",
+  "pages": [
+    {
+      "type": "text",
+      "text": "By further infusing the Mana Bomb with more explosives and reinforcements, the blast radius becomes even larger."
+    },
+    {
+      "type": "altar_recipe",
+      "required_mana": 16,
+      "center": "asuna:mana_bomb",
+      "item_groups": {
+        "First Ring": [
+          "minecraft:tnt",
+          "minecraft:tnt",
+          "minecraft:tnt",
+          "minecraft:tnt"
+        ]
+      }
+    }
+  ]
+}
