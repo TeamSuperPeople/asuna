@@ -36,7 +36,10 @@ public class ManaRelayBlockEntity extends BlockEntity implements BlockEntityClie
 
             // power block we're connected to (fuel machines)
             if(manaStorage.canInsert()) {
-                this.heldMana = manaStorage.insertMana(Math.min(this.getMaxManaOutput(), this.getMana()));
+                int amountTaken = Math.min(this.getMaxManaOutput(), this.getMana());
+                this.heldMana -= amountTaken;
+                int returnedMana = manaStorage.insertMana(amountTaken);
+                this.heldMana += returnedMana;
             }
 
             // extract from block if needed (take from generators)

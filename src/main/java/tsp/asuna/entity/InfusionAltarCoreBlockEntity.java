@@ -174,12 +174,13 @@ public class InfusionAltarCoreBlockEntity extends ManaBlockEntity implements Tic
         }
 
         // take item from pedestal
-        else if (!heldStack.isEmpty()) {
+        else if (!heldStack.isEmpty() && player.getStackInHand(hand).isEmpty()) {
             if(!world.isClient) {
-                player.inventory.offerOrDrop(world, heldStack);
-                heldStack = ItemStack.EMPTY;
+                player.setStackInHand(hand, heldStack.copy());
+                this.heldStack = ItemStack.EMPTY;
                 sync();
             }
+
             return ActionResult.SUCCESS;
         }
 

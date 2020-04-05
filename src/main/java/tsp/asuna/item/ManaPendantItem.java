@@ -1,13 +1,18 @@
 package tsp.asuna.item;
 
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.text.Text;
 import net.minecraft.util.DefaultedList;
+import net.minecraft.world.World;
 import tsp.asuna.Asuna;
 import tsp.asuna.api.ItemManaProvider;
 import tsp.asuna.api.cca.ManaComponent;
 import tsp.asuna.registry.Components;
+
+import java.util.List;
 
 public class ManaPendantItem extends Item implements ItemManaProvider {
 
@@ -36,5 +41,10 @@ public class ManaPendantItem extends Item implements ItemManaProvider {
 
         // add default (no-mana) stack
         super.appendStacks(group, stacks);
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
+        super.appendTooltip(stack, world, tooltip, context);
     }
 }
