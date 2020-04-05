@@ -9,8 +9,20 @@
       "text": "Conjure a ball of venomous gas from poisonous particles from the atmosphere to launch at your foes."
     },
     {
-      "type": "crafting",
-      "recipe": "minecraft:diamond_sword"
+      "type": "altar_recipe",
+      "required_mana": 64,
+      "center": "minecraft:book",
+      "item_groups": {
+        "First Ring": [
+          "minecraft:fermented_spider_eye",
+          "minecraft:fermented_spider_eye",
+          "minecraft:fermented_spider_eye",
+          "minecraft:fermented_spider_eye"
+        ],
+        "Second Ring": [
+          "minecraft:poisonous_potato"
+        ]
+      }
     }
   ]
 }

@@ -9,8 +9,17 @@
       "text": "Sent a bolt of lightning onto your enemies with a maximum range of 50 blocks."
     },
     {
-      "type": "crafting",
-      "recipe": "minecraft:diamond_sword"
+      "type": "altar_recipe",
+      "required_mana": 64,
+      "center": "minecraft:book",
+      "item_groups": {
+        "First Ring": [
+          "asuna:thundering_spirit",
+          "asuna:thundering_spirit",
+          "asuna:thundering_spirit",
+          "asuna:thundering_spirit"
+        ]
+      }
     }
   ]
 }
