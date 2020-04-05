@@ -2,7 +2,7 @@
   "name": "Terra Orb",
   "icon": "asuna:terra_orb",
   "category": "getting_started",
-  "sortnum": 1,
+  "sortnum": 7,
   "pages": [
     {
       "type": "text",

@@ -2,7 +2,7 @@
   "name": "Blazing Core",
   "icon": "asuna:blazing_core",
   "category": "getting_started",
-  "sortnum": 1,
+  "sortnum": 7,
   "pages": [
     {
       "type": "text",
