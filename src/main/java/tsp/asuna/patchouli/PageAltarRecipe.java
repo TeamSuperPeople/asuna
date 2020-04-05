@@ -60,8 +60,9 @@ public class PageAltarRecipe extends PageWithText {
             parent.drawCenteredStringNoShadow(label, GuiBook.PAGE_WIDTH / 2, yOffset, book.headerColor);
 
             int xOffset = 0;
+            int pageCenter = GuiBook.PAGE_WIDTH / 2;
             for (ItemStack itemStack : stacks) {
-                parent.renderItemStack(GuiBook.PAGE_WIDTH / 2 - 8 + xOffset, 15 + yOffset + (yOffset > 0 ? -4 : 0), mouseX, mouseY, itemStack);
+                parent.renderItemStack(pageCenter + xOffset - (stacks.size() * 16) / 2, 15 + yOffset + (yOffset > 0 ? -4 : 0), mouseX, mouseY, itemStack);
                 xOffset += 16;
             }
 

@@ -2,6 +2,7 @@
   "name": "Manairon Tools",
   "icon": "asuna:manairon_pickaxe",
   "category": "getting_started",
+  "sortnum": 3,
   "pages": [
     {
       "type": "text",

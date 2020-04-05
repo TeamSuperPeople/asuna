@@ -1,8 +1,8 @@
 {
-  "name": "Mana Infusion 2",
-  "icon": "asuna:mana_infusion",
+  "name": "Mana Infusion: Expanded",
+  "icon": "asuna:infusion_altar_pedestal",
   "category": "getting_started",
-  "sortnum": 2,
+  "sortnum": 5,
   "pages": [
     {
       "type": "text",

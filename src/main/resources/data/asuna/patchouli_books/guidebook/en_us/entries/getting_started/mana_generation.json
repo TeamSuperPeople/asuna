@@ -10,7 +10,7 @@
     },
     {
       "type": "crafting",
-      "recipe": "minecraft:furnace"
+      "recipe": "asuna:infernal_absorber"
     }
   ]
 }
