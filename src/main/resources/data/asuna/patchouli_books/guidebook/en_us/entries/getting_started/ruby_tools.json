@@ -10,13 +10,13 @@
     },
     {
       "type": "crafting",
-      "recipe": "asuna:manairon_sword",
-      "recipe2": "asuna:manairon_pickaxe"
+      "recipe": "asuna:ruby_sword",
+      "recipe2": "asuna:ruby_pickaxe"
     },
     {
       "type": "crafting",
-      "recipe": "asuna:manairon_axe",
-      "recipe2": "asuna:manairon_shovel"
+      "recipe": "asuna:ruby_axe",
+      "recipe2": "asuna:ruby_shovel"
     }
   ]
 }
