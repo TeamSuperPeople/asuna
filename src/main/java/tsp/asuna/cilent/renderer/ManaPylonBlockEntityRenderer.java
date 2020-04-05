@@ -6,11 +6,13 @@ import net.minecraft.client.render.block.entity.BlockEntityRenderDispatcher;
 import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import net.minecraft.client.render.model.json.ModelTransformation;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.registry.Registry;
 import tsp.asuna.Asuna;
 import tsp.asuna.cilent.LabelRenderer;
 import tsp.asuna.entity.ManaPylonBlockEntity;
+import tsp.asuna.registry.Items;
 
 public class ManaPylonBlockEntityRenderer extends BlockEntityRenderer<ManaPylonBlockEntity> {
 
@@ -22,7 +24,10 @@ public class ManaPylonBlockEntityRenderer extends BlockEntityRenderer<ManaPylonB
 
     @Override
     public void render(ManaPylonBlockEntity blockEntity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
-        LabelRenderer.renderLabelIfPresent(blockEntity, "Mana: " + blockEntity.getMana(), 0, matrices, vertexConsumers, 15728880);
+        if(MinecraftClient.getInstance().player.getEquippedStack(EquipmentSlot.HEAD).getItem().equals(Items.ALL_SEEING_GLASSES)) {
+            LabelRenderer.renderLabelIfPresent(blockEntity, "Mana: " + blockEntity.getMana(), 0, matrices, vertexConsumers, 15728880);
+        }
+
         blockEntity.incrementAnimationProgress();
 
         matrices.push();

@@ -1,5 +1,8 @@
 package tsp.asuna.registry;
 
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.ArmorMaterials;
 import net.minecraft.item.Item;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
@@ -29,9 +32,10 @@ public class Items {
     public static final Item MIASMA_EFFECT = register("miasma_effect", new Item(new Item.Settings()));
     public static final Item THORON_EFFECT = register("thoron_effect", new Item(new Item.Settings()));
 
-
     // tools
     public static final Item CRYSTAL_LINKER = register("crystal_linker", new CrystalLinkerItem(new Item.Settings().group(ASUNA_SPELLS).maxCount(1).rarity(Rarity.UNCOMMON)));
+    public static final Item ALL_SEEING_GLASSES = register("all_seeing_glasses", new ArmorItem(ArmorMaterials.IRON, EquipmentSlot.HEAD, new Item.Settings().group(ASUNA_SPELLS).maxDamage(-1).maxCount(1)));
+
 
     public static final Item MANAIRON_PICKAXE = register("manairon_pickaxe", new ManaPickaxeItem(new ManaIronToolMaterial(), 1, 256));
     public static final Item MANAIRON_SWORD = register("manairon_sword", new ManaSwordItem(new ManaIronToolMaterial(), 3, 256));
