@@ -33,7 +33,7 @@ public class AltarRecipeUtils {
         }
     }
 
-    public void takeRingItems(List<InfusionAltarPedestalBlockEntity> pedestals, Item[] ingredients) {
+    public static void takeRingItems(List<InfusionAltarPedestalBlockEntity> pedestals, Item[] ingredients) {
         if(pedestals != null) {
             for (Item item : ingredients) {
                 for (InfusionAltarPedestalBlockEntity be : pedestals) {
@@ -46,7 +46,7 @@ public class AltarRecipeUtils {
         }
     }
 
-    public boolean ringMatches(List<InfusionAltarPedestalBlockEntity> pedestals, Item[] ringIngredients) {
+    public static boolean ringMatches(List<InfusionAltarPedestalBlockEntity> pedestals, Item[] ringIngredients) {
         // pedestals are null, not a match
         if(pedestals == null) {
             return false;
