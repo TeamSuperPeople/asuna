@@ -68,10 +68,16 @@ public class InfusionAltarCoreBlockEntity extends ManaBlockEntity implements Tic
                 for (Map.Entry<Identifier, AltarRecipe> entry : AltarRecipeRegistry.getRecipes().entrySet()) {
                     if (entry.getValue().getCenterItem() == heldStack.getItem()) {
                         if (AltarRecipeUtils.matches(entry.getValue(), getAltarState())) {
-                            isInfusing = true;
-                            lockPedestals(true);
-                            cachedRecipe = entry.getValue();
-                            return;
+                            if (entry.getValue().getManaRequirement() <= this.getMana()) {
+                                isInfusing = true;
+                                lockPedestals(true);
+                                cachedRecipe = entry.getValue();
+
+                                // instantly take required mana
+                                this.storedMana -= entry.getValue().getManaRequirement();
+
+                                return;
+                            }
                         }
                     }
                 }
