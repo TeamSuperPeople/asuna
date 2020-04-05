@@ -11,6 +11,7 @@
 
   "item.asuna.thunderband": "Thunderband",
   "item.asuna.crystal_linker": "Crystal Linker",
+  "item.asuna.all_seeing_glasses": "All Seeing Glasses",
 
   "item.asuna.ruby": "Ruby",
   "item.asuna.manadiamond": "Manadiamond",
@@ -47,5 +48,6 @@
   "block.asuna.ruby_ore": "Ruby Ore",
   "block.asuna.infusion_altar_core": "Infusion Altar Core",
   "block.asuna.infusion_altar_pedestal": "Infusion Altar Pedestal",
-  "block.asuna.mana_crystal": "Mana Crystal"
+  "block.asuna.mana_crystal": "Mana Crystal",
+  "block.asuna.burning_mana_generator": "Burning Mana Generator"
 }

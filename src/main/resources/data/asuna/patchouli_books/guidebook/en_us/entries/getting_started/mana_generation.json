@@ -1,6 +1,6 @@
 {
   "name": "Mana Generation",
-  "icon": "asuna:infernal_absorber",
+  "icon": "asuna:burning_mana_generator",
   "category": "getting_started",
   "sortnum": 1,
   "pages": [
@@ -10,7 +10,7 @@
     },
     {
       "type": "crafting",
-      "recipe": "asuna:infernal_absorber"
+      "recipe": "asuna:burning_mana_generator"
     }
   ]
 }
