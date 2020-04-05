@@ -1,0 +1,22 @@
+{
+  "name": "Ruby Tools",
+  "icon": "asuna:ruby_pickaxe",
+  "category": "getting_started",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "text",
+      "text": "You can give yourself fire resistance after doing an action with ruby tools"
+    },
+    {
+      "type": "crafting",
+      "recipe": "asuna:ruby_sword",
+      "recipe2": "asuna:ruby_pickaxe"
+    },
+    {
+      "type": "crafting",
+      "recipe": "asuna:ruby_axe",
+      "recipe2": "asuna:ruby_shovel"
+    }
+  ]
+}

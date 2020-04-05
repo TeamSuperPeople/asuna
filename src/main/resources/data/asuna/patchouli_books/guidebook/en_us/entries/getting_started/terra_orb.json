@@ -1,0 +1,31 @@
+{
+  "name": "Terra Orb",
+  "icon": "asuna:terra_orb",
+  "category": "getting_started",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "text",
+      "text": "You notice that ender pearls are able to store up high amounts of mana and brainstorm of a way to infuse mana into them by infusing elements along with it."
+    },
+    {
+      "type": "altar_recipe",
+      "required_mana": 64,
+      "center": "minecraft:ender_pearl",
+      "item_groups": {
+        "First Ring": [
+          "asuna:mana_shard",
+          "asuna:mana_shard",
+          "asuna:mana_shard",
+          "asuna:mana_shard"
+        ],
+        "Second Ring": [
+          "minecraft:oak_sapling",
+          "minecraft:grass",
+          "minecraft:wheat_seeds",
+          "minecraft:dirt"
+        ]
+      }
+    }
+  ]
+}

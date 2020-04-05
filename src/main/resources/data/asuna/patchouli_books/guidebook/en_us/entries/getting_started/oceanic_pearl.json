@@ -1,0 +1,31 @@
+{
+  "name": "Oceanic Pearl",
+  "icon": "asuna:oceanic_pearl",
+  "category": "getting_started",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "text",
+      "text": "You notice that ender pearls are able to store up high amounts of mana and brainstorm of a way to infuse mana into them by infusing elements along with it."
+    },
+    {
+      "type": "altar_recipe",
+      "required_mana": 64,
+      "center": "minecraft:ender_pearl",
+      "item_groups": {
+        "First Ring": [
+          "asuna:mana_shard",
+          "asuna:mana_shard",
+          "asuna:mana_shard",
+          "asuna:mana_shard"
+        ],
+        "Second Ring": [
+          "minecraft:prismarine_shard",
+          "minecraft:salmon",
+          "minecraft:water_bucket",
+          "minecraft:nautilus_shell"
+        ]
+      }
+    }
+  ]
+}
