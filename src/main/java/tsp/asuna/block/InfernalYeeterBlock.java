@@ -1,8 +1,10 @@
 package tsp.asuna.block;
 
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.tools.FabricToolTags;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.StateManager;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
@@ -12,7 +14,7 @@ import tsp.asuna.entity.InfernalYeeterBlockEntity;
 public class InfernalYeeterBlock extends FacingBlock implements BlockEntityProvider {
 
     public InfernalYeeterBlock() {
-        super(FabricBlockSettings.of(Material.STONE).build());
+        super(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE).hardness(1.2f).breakByHand(false).breakByTool(FabricToolTags.PICKAXES,2).build());
     }
 
     @Override

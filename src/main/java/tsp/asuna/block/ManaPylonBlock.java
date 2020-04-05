@@ -1,15 +1,17 @@
 package tsp.asuna.block;
 
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.tools.FabricToolTags;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.world.BlockView;
 import tsp.asuna.entity.ManaPylonBlockEntity;
 
 public class ManaPylonBlock extends AbstractGlassBlock implements BlockEntityProvider {
 
     public ManaPylonBlock() {
-        super(FabricBlockSettings.of(Material.STONE).nonOpaque().build());
+        super(FabricBlockSettings.of(Material.STONE).nonOpaque().sounds(BlockSoundGroup.STONE).hardness(1.2f).breakByHand(false).breakByTool(FabricToolTags.PICKAXES,2).build());
     }
 
     @Override
