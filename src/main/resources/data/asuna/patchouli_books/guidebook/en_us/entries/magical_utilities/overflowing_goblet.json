@@ -1,0 +1,41 @@
+{
+  "name": "Overflowing Goblet",
+  "icon": "asuna:overflowing_goblet",
+  "category": "magical_utilities",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "text",
+      "text": "An overflowing goblet, which will never run out of water. Feeling thirsty yet?"
+    },
+    {
+      "type": "altar_recipe",
+      "required_mana": 128,
+      "center": "minecraft:bucket",
+      "item_groups": {
+        "First Ring": [
+          "asuna:oceanic_pearl",
+          "asuna:oceanic_pearl",
+          "asuna:oceanic_pearl",
+          "asuna:oceanic_pearl"
+        ],
+        "Second Ring": [
+          "minecraft:gold_ingot",
+          "minecraft:gold_ingot",
+          "minecraft:gold_block",
+          "minecraft:gold_block"
+        ],
+        "Third Ring": [
+          "minecraft:water_bucket",
+          "minecraft:water_bucket",
+          "minecraft:water_bucket",
+          "minecraft:water_bucket",
+          "minecraft:water_bucket",
+          "minecraft:water_bucket",
+          "minecraft:water_bucket",
+          "minecraft:water_bucket"
+        ]
+      }
+    }
+  ]
+}

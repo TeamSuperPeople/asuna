@@ -1,7 +1,8 @@
 {
-  "name": "Mana Grenade",
-  "icon": "minecraft:tnt",
+  "name": "Reinforced Mana Bomb",
+  "icon": "asuna:reinforced_mana_bomb",
   "category": "magical_utilities",
+  "sortnum": 1,
   "pages": [
     {
       "type": "text",

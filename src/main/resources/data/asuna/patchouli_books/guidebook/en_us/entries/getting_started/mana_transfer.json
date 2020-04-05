@@ -1,0 +1,17 @@
+{
+  "name": "Mana Transfer",
+  "icon": "asuna:mana_relay",
+  "category": "getting_started",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "text",
+      "text": "By directing crystals to channel their energy into other sources, I can move mana around quickly and efficiently.$(br2)Placing a Mana Relay above a block will either extract or insert energy into it.$(br2)You can direct Mana Pylons using a Crystal Linker."
+    },
+    {
+      "type": "crafting",
+      "recipe": "asuna:mana_relay",
+      "recipe2": "asuna:crystal_linker"
+    }
+  ]
+}

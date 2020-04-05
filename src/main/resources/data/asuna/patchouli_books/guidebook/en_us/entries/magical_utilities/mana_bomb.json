@@ -1,6 +1,6 @@
 {
   "name": "Mana Grenade",
-  "icon": "minecraft:tnt",
+  "icon": "asuna:mana_bomb",
   "category": "magical_utilities",
   "pages": [
     {
