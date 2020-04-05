@@ -22,6 +22,7 @@ public class Blocks {
     public static final Block RUBY_ORE = register("ruby_ore", new Block(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE).hardness(2.2f).breakByHand(false).breakByTool(FabricToolTags.PICKAXES,3).build()), new Item.Settings().group(Asuna.ASUNA_SPELLS));
     public static final Block INFUSION_ALTAR_CORE = register("infusion_altar_core", new InfusionAltarCoreBlock(), new Item.Settings().group(Asuna.ASUNA_SPELLS));
     public static final Block INFUSION_ALTAR_PEDESTAL = register("infusion_altar_pedestal", new InfusionAltarPedestalBlock(), new Item.Settings().group(Asuna.ASUNA_SPELLS));
+    public static final Block BURNING_MANA_GENERATOR = register("burning_mana_generator", new BurningManaGeneratorBlock(), new Item.Settings().group(Asuna.ASUNA_SPELLS));
 
 
     public static Block register(String name, Block block, Item.Settings settings) {

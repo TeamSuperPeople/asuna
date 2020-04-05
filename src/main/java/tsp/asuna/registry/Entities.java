@@ -55,6 +55,11 @@ public class Entities {
             BlockEntityType.Builder.create(InfusionAltarPedestalBlockEntity::new, Blocks.INFUSION_ALTAR_PEDESTAL).build(null)
     );
 
+    public static final BlockEntityType<BurningManaGeneratorBlockEntity> BURNING_MANA_GENERATOR = register(
+            "burning_mana_generator",
+            BlockEntityType.Builder.create(BurningManaGeneratorBlockEntity::new, Blocks.BURNING_MANA_GENERATOR).build(null)
+    );
+
 
     /**
      * Registers and returns the provided {@link BlockEntityType} with the given name.
