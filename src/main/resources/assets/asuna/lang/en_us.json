@@ -17,6 +17,7 @@
   "item.asuna.ultimate_mana_bomb": "Ultimate Mana Bomb",
   "item.asuna.overflowing_goblet": "Overflowing Goblet",
   "item.asuna.mana_pendant": "Mana Pendant",
+  "item.asuna.thoron_effect": "Thoron Effect",
 
   "item.asuna.ruby": "Ruby",
   "item.asuna.manadiamond": "Manadiamond",
@@ -54,5 +55,7 @@
   "block.asuna.infusion_altar_core": "Infusion Altar Core",
   "block.asuna.infusion_altar_pedestal": "Infusion Altar Pedestal",
   "block.asuna.mana_crystal": "Mana Crystal",
-  "block.asuna.burning_mana_generator": "Burning Mana Generator"
+  "block.asuna.burning_mana_generator": "Burning Mana Generator",
+
+  "advancements.asuna.find_mana_crystal": "Find Mana Crystal"
 }
