@@ -34,6 +34,7 @@ public class AsunaClient implements ClientModInitializer {
         EntityRendererRegistry.INSTANCE.register(Entities.LIFESTEAL_ENTITY, (dispatcher, context) -> new LifeStealEntityRenderer(dispatcher));
         EntityRendererRegistry.INSTANCE.register(Entities.THORON_ENTITY, (dispatcher, context) -> new ThoronEntityRenderer(dispatcher));
 
+        BlockRenderLayerMap.INSTANCE.putBlock(Blocks.MANA_CRYSTAL, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(Blocks.MANA_PYLON, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(Blocks.MANA_RELAY, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(Blocks.INFUSION_ALTAR_CORE, RenderLayer.getCutout());
