@@ -1,0 +1,12 @@
+{
+  "name": "Ruby",
+  "icon": "asuna:ruby",
+  "category": "getting_started",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Ruby is a special flame resistance material that can only be found under Y 16"
+    }
+  ]
+}

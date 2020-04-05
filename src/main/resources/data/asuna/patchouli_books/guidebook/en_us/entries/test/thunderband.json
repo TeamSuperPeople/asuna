@@ -1,0 +1,25 @@
+{
+  "name": "Thunderband",
+  "icon": "asuna:thunderband",
+  "category": "thaumaturgy",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Infuse electricity into a gold sword to create a sword made out of lightning"
+    },
+    {
+      "type": "altar_recipe",
+      "required_mana": 64,
+      "center": "minecraft:golden_sword",
+      "item_groups": {
+        "First Ring": [
+          "asuna:thundering_spirit",
+          "asuna:thundering_spirit",
+          "asuna:thundering_spirit",
+          "asuna:thundering_spirit"
+        ]
+      }
+    }
+  ]
+}
