@@ -72,6 +72,7 @@ public class Items {
     public static final Item MANA_BOMB = register("mana_bomb", new ManaBombItem(4.0f));
     public static final Item REINFORCED_MANA_BOMB = register("reinforced_mana_bomb", new ManaBombItem(16.0f));
     public static final Item ULTIMATE_MANA_BOMB = register("ultimate_mana_bomb", new ManaBombItem(50.0f));
+    public static final Item OVERFLOWING_GOBLET = register("overflowing_goblet", new OverflowingGobletItem());
 
     public static Item register(String name, Item instance) {
         return Registry.register(Registry.ITEM, Asuna.id(name), instance);
