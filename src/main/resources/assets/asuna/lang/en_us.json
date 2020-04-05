@@ -57,5 +57,6 @@
   "block.asuna.mana_crystal": "Mana Crystal",
   "block.asuna.burning_mana_generator": "Burning Mana Generator",
 
-  "advancements.asuna.find_mana_crystal": "Find Mana Crystal"
+  "advancements.asuna.find_mana_crystal.title": "Find Mana Crystal",
+  "advancements.asuna.find_mana_crystal.description": "Find a Mana Crystal and break it, which rewards you with several Mana Shards."
 }
