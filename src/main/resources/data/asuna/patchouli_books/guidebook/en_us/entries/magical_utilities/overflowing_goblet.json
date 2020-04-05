@@ -2,6 +2,7 @@
   "name": "Overflowing Goblet",
   "icon": "asuna:overflowing_goblet",
   "category": "magical_utilities",
+  "sortnum": 4,
   "pages": [
     {
       "type": "text",
