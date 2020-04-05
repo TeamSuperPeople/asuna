@@ -2,6 +2,7 @@
   "name": "Portable Mana Storage",
   "icon": "asuna:mana_pendant",
   "category": "thaumaturgy",
+  "advancement": "asuna:find_mana_crystal",
   "pages": [
     {
       "type": "text",

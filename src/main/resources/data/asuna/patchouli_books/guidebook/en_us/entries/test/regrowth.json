@@ -2,6 +2,7 @@
   "name": "Regrowth",
   "icon": "asuna:regrowth",
   "category": "thaumaturgy",
+  "advancement": "asuna:find_mana_crystal",
   "sortnum": 1,
   "pages": [
     {

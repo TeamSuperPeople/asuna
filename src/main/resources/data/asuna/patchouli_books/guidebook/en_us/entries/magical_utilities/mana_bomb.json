@@ -2,6 +2,7 @@
   "name": "Mana Grenade",
   "icon": "asuna:mana_bomb",
   "category": "magical_utilities",
+  "advancement": "asuna:find_mana_crystal",
   "pages": [
     {
       "type": "text",

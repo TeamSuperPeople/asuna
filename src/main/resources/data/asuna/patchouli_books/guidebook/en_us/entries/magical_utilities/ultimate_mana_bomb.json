@@ -2,6 +2,7 @@
   "name": "Ultimate Mana Grenade",
   "icon": "asuna:ultimate_mana_bomb",
   "category": "magical_utilities",
+  "advancement": "asuna:find_mana_crystal",
   "sortnum": 2,
   "pages": [
     {
