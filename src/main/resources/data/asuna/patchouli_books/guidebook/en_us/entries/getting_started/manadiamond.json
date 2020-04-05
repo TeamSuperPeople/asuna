@@ -2,6 +2,7 @@
   "name": "Manadiamond",
   "icon": "asuna:manadiamond",
   "category": "getting_started",
+  "advancement": "asuna:find_mana_crystal",
   "sortnum": 4,
   "pages": [
     {

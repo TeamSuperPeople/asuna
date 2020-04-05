@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tools.FabricToolTags;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.StateManager;
 import net.minecraft.util.math.BlockPos;
@@ -26,9 +27,11 @@ public class InfernalYeeterBlock extends FacingBlock implements BlockEntityProvi
         if(world.isReceivingRedstonePower(pos)) {
             BlockEntity entity = world.getBlockEntity(pos);
 
-            if (entity instanceof InfernalYeeterBlockEntity) {
-                InfernalYeeterBlockEntity infernalYeeter = (InfernalYeeterBlockEntity) entity;
-                infernalYeeter.pulse(world.getReceivedRedstonePower(pos));
+            if(world.getReceivedRedstonePower(pos) > 0) {
+                if (entity instanceof InfernalYeeterBlockEntity) {
+                    InfernalYeeterBlockEntity infernalYeeter = (InfernalYeeterBlockEntity) entity;
+                    infernalYeeter.pulse(world.getReceivedRedstonePower(pos));
+                }
             }
         }
     }
@@ -38,6 +41,11 @@ public class InfernalYeeterBlock extends FacingBlock implements BlockEntityProvi
         if(builder != null) {
             builder.add(FACING);
         }
+    }
+
+    @Override
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        return (BlockState)this.getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite());
     }
 
     @Override

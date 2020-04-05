@@ -2,11 +2,16 @@
   "name": "Ruby",
   "icon": "asuna:ruby",
   "category": "getting_started",
+  "advancement": "asuna:find_mana_crystal",
   "sortnum": 4,
   "pages": [
     {
       "type": "text",
       "text": "Ruby is a special flame resistance material that can only be found under Y 16"
+    },
+    {
+      "type": "spotlight",
+      "item": "asuna:ruby_ore"
     }
   ]
 }
