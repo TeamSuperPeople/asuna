@@ -1,1 +1,10 @@
-# Asuna is a magic mod by Team Super People.
+## Asuna
+
+Asuna is a magical mod designed by Team Super People.
+
+### Magical Crafting!
+
+### Utility Items!
+![](resources/utility_items.png)
+
+### Special Tools!
