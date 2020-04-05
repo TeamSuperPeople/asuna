@@ -8,8 +8,17 @@
       "text": "Regrowth applies a bonemeal effect to the target block when used."
     },
     {
-      "type": "crafting",
-      "recipe": "minecraft:diamond_sword"
+      "type": "altar_recipe",
+      "required_mana": 64,
+      "center": "minecraft:book",
+      "item_groups": {
+        "First Ring": [
+          "asuna:terra_orb",
+          "asuna:terra_orb",
+          "asuna:terra_orb",
+          "asuna:terra_orb"
+        ]
+      }
     }
   ]
 }
