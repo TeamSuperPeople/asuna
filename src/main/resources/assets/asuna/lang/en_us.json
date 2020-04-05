@@ -5,6 +5,10 @@
   "item.asuna.regrowth": "Regrowth",
   "item.asuna.thoron": "Thoron",
   "item.asuna.thunder": "Thunder",
+  "item.asuna.bolganone": "Bolganone",
+
+  "item.asuna.thunderband": "Thunderband",
+  "item.asuna.crystal_linker": "Crystal Linker",
 
   "item.asuna.ruby": "Ruby",
   "item.asuna.manadiamond": "Manadiamond",
@@ -26,5 +30,19 @@
   "item.asuna.manadiamond_axe": "Manadiamond Axe",
   "item.asuna.manadiamond_shovel": "Manadiamond Shovel",
   "item.asuna.manadiamond_sword": "Manadiamond Sword",
-  "item.asuna.manadiamond_hoe": "Manadiamond Hoe"
+  "item.asuna.manadiamond_hoe": "Manadiamond Hoe",
+
+  "item.asuna.blazing_core": "Blazing Core",
+  "item.asuna.thundering_spirit": "Thundering Spirit",
+  "item.asuna.oceanic pearl": "Oceanic Pearl",
+  "item.asuna.terra_orb": "Terra Orb",
+
+  "block.asuna.mana_relay": "Mana Relay",
+  "block.asuna.mana_pylon": "Mana Pylon",
+  "block.asuna.infernal_absorber": "Infernal Absorber",
+  "block.asuna.infernal_yeeter": "Infernal Yeeter",
+  "block.asuna.ruby_ore": "Ruby Ore",
+  "block.asuna.infusion_altar_core": "Infusion Altar Core",
+  "block.asuna.infusion_altar_pedestal": "Infusion Altar Pedestal"
+
 }
