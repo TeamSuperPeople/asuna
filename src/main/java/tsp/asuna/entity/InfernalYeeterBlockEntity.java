@@ -1,4 +1,4 @@
-package tsp.asuna.entities;
+package tsp.asuna.entity;
 
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;

@@ -11,7 +11,7 @@ import net.minecraft.client.util.math.Vector3f;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import tsp.asuna.Asuna;
-import tsp.asuna.entities.MiasmaEntity;
+import tsp.asuna.entity.MiasmaEntity;
 import tsp.asuna.registry.Items;
 
 public class MiasmaEntityRenderer extends EntityRenderer<MiasmaEntity> {

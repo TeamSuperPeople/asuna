@@ -1,12 +1,10 @@
-package tsp.asuna.materials;
+package tsp.asuna.material;
 
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import tsp.asuna.registry.Items;
 
-import javax.tools.Tool;
-
-public class ManaDiamondToolMaterial implements ToolMaterial {
+public class ManaIronToolMaterial implements ToolMaterial {
 
     @Override
     public int getDurability() {
@@ -15,17 +13,17 @@ public class ManaDiamondToolMaterial implements ToolMaterial {
 
     @Override
     public float getMiningSpeed() {
-        return 8.0F;
+        return 6.0F;
     }
 
     @Override
     public float getAttackDamage() {
-        return 3.0F;
+        return 2.0F;
     }
 
     @Override
     public int getMiningLevel() {
-        return 3;
+        return 2;
     }
 
     @Override
@@ -35,6 +33,6 @@ public class ManaDiamondToolMaterial implements ToolMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(Items.MANA_DIAMOND);
+        return Ingredient.ofItems(Items.MANA_IRON);
     }
 }

@@ -1,7 +1,5 @@
-package tsp.asuna.entities;
+package tsp.asuna.entity;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.block.entity.BlockEntityClientSerializable;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.nbt.CompoundTag;
@@ -13,78 +11,88 @@ import tsp.asuna.registry.Entities;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ManaPylonBlockEntity extends BlockEntity implements BlockEntityClientSerializable, Tickable, ManaStorage, ManaConnectable {
+public class ManaRelayBlockEntity extends BlockEntity implements BlockEntityClientSerializable, Tickable, ManaStorage, ManaConnectable {
 
     private final static int MAX_MANA = 1000;
     private final static int MAX_OUTPUT = 100;
     private final static int MAX_INPUT = 100;
 
-    @Environment(EnvType.CLIENT)
-    private int animationProgress = 0;
-
     private int heldMana = 0;
     private final List<ManaConnectable> manaTargets = new ArrayList<>();
 
-    public ManaPylonBlockEntity() {
-        super(Entities.MANA_PYLON);
+    public ManaRelayBlockEntity() {
+        super(Entities.MANA_RELAY);
     }
 
     @Override
     public void tick() {
-        manaTargets.forEach(relay -> {
+        if(world == null || world.isClient) {
+            return;
+        }
 
-        });
-    }
+        // check storage below
+        if(world.getBlockEntity(pos.down()) instanceof ManaStorage) {
+            ManaStorage manaStorage = (ManaStorage) world.getBlockEntity(pos.down());
 
-    @Environment(EnvType.CLIENT)
-    public int getAnimationProgress() {
-        return animationProgress;
-    }
+            // power block we're connected to (fuel machines)
+            if(manaStorage.canInsert()) {
+                this.heldMana = manaStorage.insertMana(Math.min(this.getMaxManaOutput(), this.getMana()));
+            }
 
-    @Environment(EnvType.CLIENT)
-    public void incrementAnimationProgress() {
-        this.animationProgress++;
+            // extract from block if needed (take from generators)
+            else if (manaStorage.canExtract()) {
+                int extractionAmount = Math.min(this.getMaxManaInput(), manaStorage.getMaxManaOutput());
+                if(extractionAmount + heldMana > MAX_MANA) {
+                    extractionAmount = MAX_MANA - heldMana;
+                }
+
+                manaStorage.insertMana(this.insertMana(manaStorage.extract(extractionAmount)));
+                sync();
+            }
+        }
+
+
+
+        // deliver energy to relays
+        int amountPerConnection = (int) Math.floor(Math.min(MAX_OUTPUT, getMana()) / (float) manaTargets.size());
+        int amountActuallyTaken = 0;
+
+        for (ManaConnectable connection : manaTargets) {
+            if (connection instanceof ManaStorage) {
+                ManaStorage storage = (ManaStorage) connection;
+                int denied = storage.insertMana(amountPerConnection);
+                amountActuallyTaken += amountPerConnection - denied;
+
+                if(storage instanceof BlockEntityClientSerializable) {
+                    ((BlockEntityClientSerializable) storage).sync();
+                }
+            }
+        }
+
+        this.heldMana -= amountActuallyTaken;
+        sync();
     }
 
     @Override
     public CompoundTag toTag(CompoundTag tag) {
-//        // store relays
-//        ListTag linkedRelaysTag = new ListTag();
-//        linkedRelays.forEach((relay, action) -> linkedRelaysTag.add(NbtType.LONG, LongTag.of(relay.getPos().asLong())));
-//        tag.put("Relays", linkedRelaysTag);
-//
-//        // store mana information
-//        tag.putInt("HeldMana", heldMana);
-
+        tag.putInt("HeldMana", heldMana);
         return super.toTag(tag);
     }
 
     @Override
     public void fromTag(CompoundTag tag) {
-//        // retrieve relays
-//        ListTag relays = tag.getList("Relays", NbtType.LONG);
-//        relays.forEach(longTag -> {
-//            BlockEntity potentialPylon = world.getBlockEntity(BlockPos.fromLong(((LongTag) longTag).getLong()));
-//
-//            if (potentialPylon instanceof ManaRelayBlockEntity) {
-//                linkedRelays.add((ManaRelayBlockEntity) potentialPylon);
-//            }
-//        });
-//
-//        // update mana
-//        this.heldMana = tag.getInt("HeldMana");
-
+        this.heldMana = tag.getInt("HeldMana");
         super.fromTag(tag);
     }
 
     @Override
     public void fromClientTag(CompoundTag tag) {
-
+        fromTag(tag);
     }
 
     @Override
     public CompoundTag toClientTag(CompoundTag tag) {
-        return tag;
+        return toTag(tag);
     }
 
     @Override
@@ -143,12 +151,12 @@ public class ManaPylonBlockEntity extends BlockEntity implements BlockEntityClie
 
     @Override
     public boolean canInsert() {
-        return true;
+        return false;
     }
 
     @Override
     public boolean canExtract() {
-        return true;
+        return false;
     }
 
     @Override

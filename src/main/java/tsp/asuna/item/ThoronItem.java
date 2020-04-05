@@ -15,7 +15,7 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import tsp.asuna.entities.ThoronEntity;
+import tsp.asuna.entity.ThoronEntity;
 
 import java.util.List;
 import java.util.concurrent.Executors;

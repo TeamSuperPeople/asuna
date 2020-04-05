@@ -7,7 +7,7 @@ import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import net.minecraft.client.render.model.json.ModelTransformation;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.client.util.math.Vector3f;
-import tsp.asuna.entities.InfusionAltarPedestalBlockEntity;
+import tsp.asuna.entity.InfusionAltarPedestalBlockEntity;
 
 public class InfusionAltarPedestalBlockEntityRenderer extends BlockEntityRenderer<InfusionAltarPedestalBlockEntity> {
 

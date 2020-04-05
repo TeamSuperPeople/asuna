@@ -1,4 +1,4 @@
-package tsp.asuna;
+package tsp.asuna.util;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.hit.EntityHitResult;

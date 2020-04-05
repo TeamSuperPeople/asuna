@@ -14,4 +14,8 @@ public class Components {
     public static void init() {
 
     }
+
+    private Components() {
+        // NO-OP
+    }
 }

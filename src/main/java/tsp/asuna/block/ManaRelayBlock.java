@@ -7,7 +7,7 @@ import net.minecraft.entity.EntityContext;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
-import tsp.asuna.entities.ManaRelayBlockEntity;
+import tsp.asuna.entity.ManaRelayBlockEntity;
 
 public class ManaRelayBlock extends Block implements BlockEntityProvider {
 

@@ -4,7 +4,7 @@ import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.util.Identifier;
 import tsp.asuna.Asuna;
-import tsp.asuna.entities.LifeStealEntity;
+import tsp.asuna.entity.LifeStealEntity;
 
 public class LifeStealEntityRenderer extends EntityRenderer<LifeStealEntity> {
     public LifeStealEntityRenderer(EntityRenderDispatcher dispatcher) {

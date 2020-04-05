@@ -1,4 +1,4 @@
-package tsp.asuna.entities;
+package tsp.asuna.entity;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -12,9 +12,10 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
-import tsp.asuna.recipe.AltarRecipes;
+import tsp.asuna.recipe.AltarRecipe;
+import tsp.asuna.recipe.AltarRecipeRegistry;
 import tsp.asuna.recipe.AltarState;
-import tsp.asuna.recipe.InfusionAltarRecipe;
+import tsp.asuna.recipe.AltarRecipeUtils;
 import tsp.asuna.registry.Entities;
 
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class InfusionAltarCoreBlockEntity extends ManaBlockEntity implements Tic
     private static final int MAX_INPUT = 100;
 
     private ItemStack heldStack = ItemStack.EMPTY;
-    private InfusionAltarRecipe cachedRecipe;
+    private AltarRecipe cachedRecipe;
 
     private boolean isInfusing = false;
     private int infusionProgress = 0;
@@ -48,14 +49,14 @@ public class InfusionAltarCoreBlockEntity extends ManaBlockEntity implements Tic
                     infusionProgress = 0;
                     lockPedestals(false);
                     heldStack = cachedRecipe.getOutput().copy();
-                    this.cachedRecipe.takeItems(getAltarState());
+                    AltarRecipeUtils.takeItems(this.cachedRecipe, getAltarState());
                     this.cachedRecipe = null;
                     sync();
                 }
             } else {
-                for (Map.Entry<Identifier, InfusionAltarRecipe> entry : AltarRecipes.getRecipes().entrySet()) {
+                for (Map.Entry<Identifier, AltarRecipe> entry : AltarRecipeRegistry.getRecipes().entrySet()) {
                     if (entry.getValue().getCenterItem() == heldStack.getItem()) {
-                        if (entry.getValue().matches(getAltarState())) {
+                        if (AltarRecipeUtils.matches(entry.getValue(), getAltarState())) {
                             isInfusing = true;
                             lockPedestals(true);
                             cachedRecipe = entry.getValue();

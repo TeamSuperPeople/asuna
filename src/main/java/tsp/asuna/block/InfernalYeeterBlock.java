@@ -7,7 +7,7 @@ import net.minecraft.state.StateManager;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import tsp.asuna.entities.InfernalYeeterBlockEntity;
+import tsp.asuna.entity.InfernalYeeterBlockEntity;
 
 public class InfernalYeeterBlock extends FacingBlock implements BlockEntityProvider {
 

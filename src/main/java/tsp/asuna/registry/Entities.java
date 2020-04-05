@@ -9,7 +9,7 @@ import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.registry.Registry;
 import tsp.asuna.Asuna;
-import tsp.asuna.entities.*;
+import tsp.asuna.entity.*;
 
 public class Entities {
 

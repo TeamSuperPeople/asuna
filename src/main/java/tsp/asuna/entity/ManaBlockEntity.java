@@ -1,10 +1,9 @@
-package tsp.asuna.entities;
+package tsp.asuna.entity;
 
 import net.fabricmc.fabric.api.block.entity.BlockEntityClientSerializable;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.util.Tickable;
 import tsp.asuna.api.ManaStorage;
 
 public abstract class ManaBlockEntity extends BlockEntity implements BlockEntityClientSerializable, ManaStorage {

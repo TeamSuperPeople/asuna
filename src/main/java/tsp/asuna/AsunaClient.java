@@ -12,7 +12,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.ItemStack;
 import tsp.asuna.cilent.renderer.*;
-import tsp.asuna.entities.*;
+import tsp.asuna.entity.*;
 import tsp.asuna.item.CrystalLinkerItem;
 import tsp.asuna.patchouli.PageAltarRecipe;
 import tsp.asuna.registry.Blocks;

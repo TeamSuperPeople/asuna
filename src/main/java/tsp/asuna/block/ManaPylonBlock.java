@@ -4,7 +4,7 @@ import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.world.BlockView;
-import tsp.asuna.entities.ManaPylonBlockEntity;
+import tsp.asuna.entity.ManaPylonBlockEntity;
 
 public class ManaPylonBlock extends AbstractGlassBlock implements BlockEntityProvider {
 

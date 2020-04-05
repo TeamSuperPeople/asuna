@@ -1,4 +1,4 @@
-package tsp.asuna.entities;
+package tsp.asuna.entity;
 
 import io.netty.buffer.Unpooled;
 import net.fabricmc.fabric.api.network.ServerSidePacketRegistry;
@@ -23,8 +23,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import tsp.asuna.Asuna;
 import tsp.asuna.registry.Entities;
-
-import java.util.ArrayList;
 
 public class LifeStealEntity extends ThrownItemEntity {
 

@@ -15,7 +15,7 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import tsp.asuna.entities.MiasmaEntity;
+import tsp.asuna.entity.MiasmaEntity;
 
 import java.util.List;
 

@@ -5,11 +5,11 @@ import net.minecraft.util.Identifier;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AltarRecipes {
+public class AltarRecipeRegistry {
 
-    private static final Map<Identifier, InfusionAltarRecipe> recipes = new HashMap<>();
+    private static final Map<Identifier, AltarRecipe> recipes = new HashMap<>();
 
-    public static void registerRecipe(InfusionAltarRecipe recipe) {
+    public static void registerRecipe(AltarRecipe recipe) {
         if(recipes.containsKey(recipe.getId())) {
 
         } else {
@@ -17,7 +17,7 @@ public class AltarRecipes {
         }
     }
 
-    public static Map<Identifier, InfusionAltarRecipe> getRecipes() {
+    public static Map<Identifier, AltarRecipe> getRecipes() {
         return recipes;
     }
 }

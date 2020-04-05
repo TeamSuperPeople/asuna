@@ -2,13 +2,11 @@ package tsp.asuna.registry;
 
 import net.minecraft.item.Item;
 import net.minecraft.util.Rarity;
-import net.minecraft.item.ToolMaterial;
 import net.minecraft.util.registry.Registry;
 import tsp.asuna.Asuna;
 import tsp.asuna.item.*;
-import tsp.asuna.materials.ManaDiamondToolMaterial;
-import tsp.asuna.materials.ManaIronToolMaterial;
-import tsp.asuna.materials.RubyToolMaterial;
+import tsp.asuna.material.ManaDiamondToolMaterial;
+import tsp.asuna.material.ManaIronToolMaterial;
 
 import static tsp.asuna.Asuna.ASUNA_SPELLS;
 

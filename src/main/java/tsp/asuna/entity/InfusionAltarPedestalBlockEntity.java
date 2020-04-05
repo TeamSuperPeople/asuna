@@ -1,4 +1,4 @@
-package tsp.asuna.entities;
+package tsp.asuna.entity;
 
 import net.fabricmc.fabric.api.block.entity.BlockEntityClientSerializable;
 import net.minecraft.block.BlockState;

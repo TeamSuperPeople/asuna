@@ -1,8 +1,7 @@
-package tsp.asuna.materials;
+package tsp.asuna.material;
 
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
-import tsp.asuna.registry.Items;
 
 public class ThundergemToolMaterial implements ToolMaterial {
 

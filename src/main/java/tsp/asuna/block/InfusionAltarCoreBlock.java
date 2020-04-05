@@ -15,7 +15,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import tsp.asuna.entities.InfusionAltarCoreBlockEntity;
+import tsp.asuna.entity.InfusionAltarCoreBlockEntity;
 
 public class InfusionAltarCoreBlock extends Block implements BlockEntityProvider {
 

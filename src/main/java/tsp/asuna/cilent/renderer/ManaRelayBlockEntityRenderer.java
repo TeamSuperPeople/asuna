@@ -5,8 +5,7 @@ import net.minecraft.client.render.block.entity.BlockEntityRenderDispatcher;
 import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import tsp.asuna.cilent.LabelRenderer;
-import tsp.asuna.entities.ManaPylonBlockEntity;
-import tsp.asuna.entities.ManaRelayBlockEntity;
+import tsp.asuna.entity.ManaRelayBlockEntity;
 
 public class ManaRelayBlockEntityRenderer extends BlockEntityRenderer<ManaRelayBlockEntity> {
 

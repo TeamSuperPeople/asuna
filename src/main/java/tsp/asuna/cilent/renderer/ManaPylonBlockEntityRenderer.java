@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.registry.Registry;
 import tsp.asuna.Asuna;
 import tsp.asuna.cilent.LabelRenderer;
-import tsp.asuna.entities.ManaPylonBlockEntity;
+import tsp.asuna.entity.ManaPylonBlockEntity;
 
 public class ManaPylonBlockEntityRenderer extends BlockEntityRenderer<ManaPylonBlockEntity> {
 
