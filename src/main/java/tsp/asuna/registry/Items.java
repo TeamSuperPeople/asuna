@@ -4,6 +4,7 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterials;
 import net.minecraft.item.Item;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 import tsp.asuna.Asuna;
@@ -55,22 +56,17 @@ public class Items {
     public static final Item RUBY_SWORD = register("ruby_sword", new RubySwordItem(ToolMaterials.RUBY, 3,-2.4F,new Item.Settings().group(ASUNA_SPELLS)));
 
     // materials
-    public static final Item MANA_IRON = register("manairon", new Item(new Item.Settings().group(ASUNA_SPELLS)));
+    public static final Item MANA_IRON = register("manairon", new ColoredNameItem(new Item.Settings().group(ASUNA_SPELLS), Formatting.AQUA));
     public static final Item AURORA_INGOT = register("aurora_ingot", new Item(new Item.Settings().group(ASUNA_SPELLS)));
     public static final Item RUBY = register("ruby", new Item(new Item.Settings().group(ASUNA_SPELLS)));
     public static final Item MANA_DIAMOND = register("manadiamond", new Item(new Item.Settings().group(ASUNA_SPELLS)));
-    public static final Item MANA_SHARD = register("mana_shard", new Item(new Item.Settings().rarity(Rarity.RARE).group(ASUNA_SPELLS)));
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
+    public static final Item MANA_SHARD = register("mana_shard", new Item(new Item.Settings().group(ASUNA_SPELLS)));
 
     // elemental materials
-    public static final Item BLAZING_CORE = register("blazing_core", new Item(new Item.Settings().group(ASUNA_SPELLS)));
-    public static final Item THUNDERING_SPIRIT = register("thundering_spirit", new Item(new Item.Settings().group(ASUNA_SPELLS)));
-    public static final Item OCEANIC_PEARL = register("oceanic_pearl", new Item(new Item.Settings().group(ASUNA_SPELLS)));
-    public static final Item TERRA_ORB = register("terra_orb", new Item(new Item.Settings().group(ASUNA_SPELLS)));
+    public static final Item BLAZING_CORE = register("blazing_core", new ColoredNameItem(new Item.Settings().group(ASUNA_SPELLS), Formatting.RED));
+    public static final Item THUNDERING_SPIRIT = register("thundering_spirit", new ColoredNameItem(new Item.Settings().group(ASUNA_SPELLS), Formatting.YELLOW));
+    public static final Item OCEANIC_PEARL = register("oceanic_pearl", new ColoredNameItem(new Item.Settings().group(ASUNA_SPELLS), Formatting.BLUE));
+    public static final Item TERRA_ORB = register("terra_orb", new ColoredNameItem(new Item.Settings().group(ASUNA_SPELLS), Formatting.DARK_GREEN));
 
     // blocks
 
