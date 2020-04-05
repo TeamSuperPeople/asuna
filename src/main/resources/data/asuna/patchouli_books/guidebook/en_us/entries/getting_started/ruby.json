@@ -2,7 +2,7 @@
   "name": "Ruby",
   "icon": "asuna:ruby",
   "category": "getting_started",
-  "sortnum": 3,
+  "sortnum": 4,
   "pages": [
     {
       "type": "text",

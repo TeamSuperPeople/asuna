@@ -139,7 +139,7 @@ public class Recipes {
                 new AltarRecipeBuilder(Asuna.id("terra_orb"), AltarRecipeTier.MEDIUM)
                         .centerStack(net.minecraft.item.Items.ENDER_PEARL)
                         .withFirstRingOf(new Item[]{Items.MANA_SHARD,Items.MANA_SHARD,Items.MANA_SHARD,Items.MANA_SHARD})
-                        .withSecondRingOf(new Item[]{net.minecraft.item.Items.GRASS,net.minecraft.item.Items.OAK_SAPLING,net.minecraft.item.Items.WHEAT_SEEDS,net.minecraft.item.Items.DANDELION})
+                        .withSecondRingOf(new Item[]{net.minecraft.item.Items.GRASS,net.minecraft.item.Items.OAK_SAPLING,net.minecraft.item.Items.WHEAT_SEEDS,net.minecraft.item.Items.DIRT})
                         .withOutput(new ItemStack(Items.TERRA_ORB))
                         .withManaRequirement(32)
                         .build()
