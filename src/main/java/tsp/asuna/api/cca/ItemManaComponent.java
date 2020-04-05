@@ -11,9 +11,9 @@ public class ItemManaComponent implements ManaComponent, CopyableComponent<ManaC
     private int mana;
     private int maxMana;
 
-    public ItemManaComponent(int maxMana) {
+    public ItemManaComponent(int maxMana, int startingMana) {
         this.maxMana = maxMana;
-        this.mana = maxMana;
+        this.mana = startingMana;
     }
 
     @Override

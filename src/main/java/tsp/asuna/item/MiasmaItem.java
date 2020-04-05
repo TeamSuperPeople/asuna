@@ -19,16 +19,16 @@ import tsp.asuna.entity.MiasmaEntity;
 
 import java.util.List;
 
-public class MiasmaItem extends Item {
+public class MiasmaItem extends ManaUtilizerItem {
 
     public MiasmaItem(Settings settings) {
-        super(settings);
+        super(settings, 8);
     }
 
     @Environment(EnvType.CLIENT)
 
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+    public TypedActionResult<ItemStack> manaUse(World world, PlayerEntity user, Hand hand) {
         assert world != null;
 
         ItemStack itemStack = user.getStackInHand(hand);

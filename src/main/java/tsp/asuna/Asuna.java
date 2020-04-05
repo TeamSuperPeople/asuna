@@ -23,9 +23,21 @@ public class Asuna implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        Registry.ITEM.forEach(item -> {
+            if (item instanceof ManaDurable) {
+                ItemComponentCallback.event(item).register((stack, components) -> components.put(Components.MANA, new ItemManaComponent(
+                        ((ManaDurable) item).getMaxMana(),
+                        ((ManaDurable) item).getStartingMana()
+                )));
+            }
+        });
+
         RegistryEntryAddedCallback.event(Registry.ITEM).register((i, identifier, item) -> {
             if (item instanceof ManaDurable) {
-                ItemComponentCallback.event(item).register((stack, components) -> components.put(Components.MANA, new ItemManaComponent(((ManaDurable) item).getMaxMana())));
+                ItemComponentCallback.event(item).register((stack, components) -> components.put(Components.MANA, new ItemManaComponent(
+                        ((ManaDurable) item).getMaxMana(),
+                        ((ManaDurable) item).getStartingMana()
+                )));
             }
         });
 
