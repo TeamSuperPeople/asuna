@@ -1,0 +1,25 @@
+{
+  "name": "Bolganone",
+  "icon": "asuna:bolganone",
+  "category": "thaumaturgy",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Surround your enemies with flames"
+    },
+    {
+    "type": "altar_recipe",
+    "item_groups": {
+      "Center": [
+        "minecraft:book"
+      ],
+      "First Ring": [
+        "asuna:blazing_core",
+        "asuna:blazing_core",
+        "asuna:blazing_core",
+        "asuna:blazing_core"
+      ]
+    }
+    }
+  ]
+}

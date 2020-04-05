@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "1X2",
+    "X#X",
+    "3X4"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:ender_pearl"
+    },
+    "X": {
+      "item": "asuna:mana_shard"
+    },
+    "1": {
+      "item": "minecraft:water_bucket"
+    },
+    "2": {
+      "tag": "minecraft:fishes"
+    },
+    "3": {
+      "item": "minecraft:prismarine_shard"
+    },
+    "4": {
+      "item": "minecraft:nautilus_shell"
+    }
+  },
+  "result": {
+    "item": "asuna:oceanic_pearl"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X1X",
+    "X2X",
+    "XXX"
+  ],
+  "key": {
+    "1": {
+      "item": "asuna:mana_shard"
+    },
+    "2": {
+      "item": "minecraft:bucket"
+    },
+    "X": {
+      "item": "minecraft:cobblestone"
+    }
+  },
+  "result": {
+    "item": "asuna:infernal_absorber"
+  }
+}

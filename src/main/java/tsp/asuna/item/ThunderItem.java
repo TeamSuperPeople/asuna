@@ -28,12 +28,6 @@ public class ThunderItem extends Item {
     }
 
     @Environment(EnvType.CLIENT)
-    @Override
-    public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-        super.appendTooltip(stack, world, tooltip, context);
-        tooltip.add(new TranslatableText("Conjure a ball of venomous gas from poisonous particles").formatted(Formatting.GRAY));
-        tooltip.add(new TranslatableText("from the atmosphere to launch at your foes").formatted(Formatting.GRAY));
-    }
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " X ",
+    " X ",
+    "111"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:iron_ingot"
+    },
+    "X": {
+      "item": "asuna:mana_shard"
+    }
+  },
+  "result": {
+    "item": "asuna:mana_relay"
+  }
+}
