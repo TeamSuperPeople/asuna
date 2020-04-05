@@ -6,15 +6,25 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
+import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import tsp.asuna.registry.Blocks;
+import tsp.asuna.registry.World;
 
 public class WorldSetup {
 
     public static void setup() {
         Registry.BIOME.forEach(WorldSetup::handleBiome);
         RegistryEntryAddedCallback.event(Registry.BIOME).register((i, identifier, biome) -> handleBiome(biome));
+
+        Registry.BIOME.forEach(biome -> {
+            biome.addFeature(GenerationStep.Feature.TOP_LAYER_MODIFICATION, World.MANA_CRYSTAL.configure(new DefaultFeatureConfig()));
+        });
+
+        RegistryEntryAddedCallback.event(Registry.BIOME).register((i, identifier, biome) -> {
+            biome.addFeature(GenerationStep.Feature.TOP_LAYER_MODIFICATION, World.MANA_CRYSTAL.configure(new DefaultFeatureConfig()));
+        });
     }
 
     private static void handleBiome(Biome biome) {

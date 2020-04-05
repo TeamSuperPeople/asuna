@@ -3,10 +3,10 @@
   "package": "tsp.asuna.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "ItemRendererMixin"
+    "CarverMixin"
   ],
   "client": [
-
+    "ItemRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

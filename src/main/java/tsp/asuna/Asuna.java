@@ -7,19 +7,23 @@ import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.registry.Registry;
 import tsp.asuna.api.ManaDurable;
 import tsp.asuna.api.cca.ItemManaComponent;
-import tsp.asuna.registry.Blocks;
-import tsp.asuna.registry.Components;
-import tsp.asuna.registry.Items;
-import tsp.asuna.registry.Recipes;
+import tsp.asuna.registry.*;
 import tsp.asuna.world.WorldSetup;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Asuna implements ModInitializer {
 
     public static final ItemGroup ASUNA_SPELLS = FabricItemGroupBuilder.build(id("spells"), () -> new ItemStack(Items.MIASMA));
     public static final String MODID = "asuna";
+    public static final Map<ChunkPos, ArrayList<BlockPos>> caveAirList = new HashMap<>();
 
     @Override
     public void onInitialize() {
@@ -46,6 +50,7 @@ public class Asuna implements ModInitializer {
         Blocks.init();
         Recipes.init();
         WorldSetup.setup();
+        World.init();
     }
 
     public static Identifier id(String path) {
