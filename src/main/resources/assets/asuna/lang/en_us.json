@@ -13,6 +13,7 @@
   "item.asuna.ruby": "Ruby",
   "item.asuna.manadiamond": "Manadiamond",
   "item.asuna.manairon": "Manairon",
+  "item.asuna.mana_shard": "Mana Shard",
 
   "item.asuna.manairon_pickaxe": "Manairon Pickaxe",
   "item.asuna.manairon_axe": "Manairon Axe",
@@ -43,6 +44,6 @@
   "block.asuna.infernal_yeeter": "Infernal Yeeter",
   "block.asuna.ruby_ore": "Ruby Ore",
   "block.asuna.infusion_altar_core": "Infusion Altar Core",
-  "block.asuna.infusion_altar_pedestal": "Infusion Altar Pedestal"
-
+  "block.asuna.infusion_altar_pedestal": "Infusion Altar Pedestal",
+  "block.asuna.mana_crystal": "Mana Crystal"
 }
