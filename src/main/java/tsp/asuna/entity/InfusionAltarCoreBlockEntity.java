@@ -12,10 +12,12 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
+import tsp.asuna.api.ManaDurable;
 import tsp.asuna.recipe.AltarRecipe;
 import tsp.asuna.recipe.AltarRecipeRegistry;
 import tsp.asuna.recipe.AltarState;
 import tsp.asuna.recipe.AltarRecipeUtils;
+import tsp.asuna.registry.Components;
 import tsp.asuna.registry.Entities;
 
 import java.util.ArrayList;
@@ -41,6 +43,15 @@ public class InfusionAltarCoreBlockEntity extends ManaBlockEntity implements Tic
     @Override
     public void tick() {
         if(world != null && !world.isClient && !heldStack.isEmpty()) {
+            // charge items
+            if(!isInfusing && heldStack.getItem() instanceof ManaDurable) {
+                if(this.getMana() > 0) {
+                    Components.MANA.get(heldStack).increment(1);
+                    this.storedMana --;
+                    sync();
+                }
+            }
+
             if(isInfusing) {
                 infusionProgress++;
 
