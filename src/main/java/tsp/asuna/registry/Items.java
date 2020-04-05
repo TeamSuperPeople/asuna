@@ -60,7 +60,7 @@ public class Items {
     public static final Item AURORA_INGOT = register("aurora_ingot", new Item(new Item.Settings().group(ASUNA_SPELLS)));
     public static final Item RUBY = register("ruby", new Item(new Item.Settings().group(ASUNA_SPELLS)));
     public static final Item MANA_DIAMOND = register("manadiamond", new Item(new Item.Settings().group(ASUNA_SPELLS)));
-    public static final Item MANA_SHARD = register("mana_shard", new Item(new Item.Settings().group(ASUNA_SPELLS)));
+    public static final Item MANA_SHARD = register("mana_shard", new Item(new Item.Settings().rarity(Rarity.RARE).group(ASUNA_SPELLS)));
 
     // elemental materials
     public static final Item BLAZING_CORE = register("blazing_core", new ColoredNameItem(new Item.Settings().group(ASUNA_SPELLS), Formatting.RED));
