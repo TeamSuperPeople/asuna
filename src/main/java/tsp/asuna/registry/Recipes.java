@@ -44,7 +44,7 @@ public class Recipes {
                         .centerStack(net.minecraft.item.Items.IRON_INGOT)
                         .withFirstRingOf(new Item[]{Items.MANA_SHARD})
                         .withOutput(new ItemStack(Items.MANA_IRON))
-                        .withManaRequirement(8)
+                        .withManaRequirement(16)
                         .build()
         );
 

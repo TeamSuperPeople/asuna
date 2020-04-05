@@ -7,6 +7,16 @@
     {
       "type": "text",
       "text": "Manadiamond is an enhanced form of Diamond that pulls durability and strength from mana.$(br2)It can be created by infusing Diamonds with a large amount of mana at once."
+    },
+    {
+      "type": "altar_recipe",
+      "required_mana": 32,
+      "center": "minecraft:diamond",
+      "item_groups": {
+        "First Ring": [
+          "asuna:mana_shard"
+        ]
+      }
     }
   ]
 }
