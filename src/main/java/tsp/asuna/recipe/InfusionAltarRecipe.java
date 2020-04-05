@@ -14,15 +14,17 @@ InfusionAltarRecipe {
     private final Identifier id;
     private final RecipeTier tier;
     private final Item centerStack;
+    private final int manaRequirement;
     private final Item[] firstRingIngredients;
     private final Item[] secondRingIngredients;
     private final Item[] thirdRingIngredients;
     private final ItemStack output;
 
-    private InfusionAltarRecipe(Identifier id, RecipeTier tier, Item centerStack, Item[] firstRingIngredients, Item[] secondRingIngredients, Item[] thirdRingIngredients, ItemStack output) {
+    private InfusionAltarRecipe(Identifier id, RecipeTier tier, Item centerStack, int manaRequirement, Item[] firstRingIngredients, Item[] secondRingIngredients, Item[] thirdRingIngredients, ItemStack output) {
         this.id = id;
         this.tier = tier;
         this.centerStack = centerStack;
+        this.manaRequirement = manaRequirement;
         this.firstRingIngredients = firstRingIngredients;
         this.secondRingIngredients = secondRingIngredients;
         this.thirdRingIngredients = thirdRingIngredients;
@@ -35,6 +37,10 @@ InfusionAltarRecipe {
 
     public Item getCenterItem() {
         return centerStack;
+    }
+
+    public int getManaRequirement() {
+        return manaRequirement;
     }
 
     public Item[] getFirstRingIngredients() {
@@ -60,7 +66,7 @@ InfusionAltarRecipe {
     public boolean matches(AltarState altarState) {
         boolean first = firstRingMatches(altarState.getFirstRingPedestals());
         boolean second = tier == RecipeTier.SIMPLE || (tier == RecipeTier.MEDIUM || tier == RecipeTier.ADVANCED) && secondRingMatches(altarState.getSecondRingAltars());
-        boolean third = tier != RecipeTier.ADVANCED || (tier == RecipeTier.ADVANCED) && thirdRingMatches(altarState.getThirdRingAltars());
+        boolean third = tier != RecipeTier.ADVANCED || thirdRingMatches(altarState.getThirdRingAltars());
 
         return
                 altarState.getCore().getHeldStack().getItem() == getCenterItem()
@@ -156,6 +162,7 @@ InfusionAltarRecipe {
         private Identifier id;
         private RecipeTier tier;
         private Item centerStack;
+        private int manaRequirement = 0;
         private Item[] firstRingIngredients;
         private Item[] secondRingIngredients;
         private Item[] thirdRingIngredients;
@@ -168,6 +175,11 @@ InfusionAltarRecipe {
 
         public Builder centerStack(Item centerStack) {
             this.centerStack = centerStack;
+            return this;
+        }
+
+        public Builder withManaRequirement(int manaRequirement) {
+            this.manaRequirement = manaRequirement;
             return this;
         }
 
@@ -202,7 +214,7 @@ InfusionAltarRecipe {
         }
 
         public InfusionAltarRecipe build() {
-            return new InfusionAltarRecipe(id, tier, centerStack, firstRingIngredients, secondRingIngredients, thirdRingIngredients, output);
+            return new InfusionAltarRecipe(id, tier, centerStack, manaRequirement, firstRingIngredients, secondRingIngredients, thirdRingIngredients, output);
         }
     }
 

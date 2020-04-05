@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=down":  { "model": "asuna:block/infernal_yeeter_vertical", "x": 180 },
+    "facing=up":    { "model": "asuna:block/infernal_yeeter_vertical" },
+    "facing=north": { "model": "asuna:block/infernal_yeeter" },
+    "facing=south": { "model": "asuna:block/infernal_yeeter", "y": 180 },
+    "facing=west":  { "model": "asuna:block/infernal_yeeter", "y": 270 },
+    "facing=east":  { "model": "asuna:block/infernal_yeeter", "y": 90 }
+  }
+}
