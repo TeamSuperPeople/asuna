@@ -1,6 +1,7 @@
 package tsp.asuna.block;
 
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.tools.FabricToolTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.BlockState;
@@ -8,6 +9,7 @@ import net.minecraft.block.Material;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.EntityContext;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -22,7 +24,7 @@ public class InfusionAltarPedestalBlock extends Block implements BlockEntityProv
     private static final VoxelShape SHAPE = Block.createCuboidShape(3, 0, 3, 13, 14, 13);
 
     public InfusionAltarPedestalBlock() {
-        super(FabricBlockSettings.of(Material.STONE).build());
+        super(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.STONE).hardness(1.2f).breakByHand(false).breakByTool(FabricToolTags.PICKAXES,2).build());
     }
 
     @Override

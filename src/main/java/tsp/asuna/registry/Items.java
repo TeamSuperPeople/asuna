@@ -57,6 +57,11 @@ public class Items {
     public static final Item MANA_DIAMOND = register("manadiamond", new Item(new Item.Settings().group(ASUNA_SPELLS)));
     public static final Item MANA_SHARD = register("mana_shard", new Item(new Item.Settings().rarity(Rarity.RARE).group(ASUNA_SPELLS)));
 
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
     // elemental materials
     public static final Item BLAZING_CORE = register("blazing_core", new Item(new Item.Settings().group(ASUNA_SPELLS)));
     public static final Item THUNDERING_SPIRIT = register("thundering_spirit", new Item(new Item.Settings().group(ASUNA_SPELLS)));
