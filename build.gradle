@@ -1,7 +1,6 @@
 plugins {
     id 'fabric-loom' version '0.2.7-SNAPSHOT'
     id 'maven-publish'
-    id 'org.jetbrains.kotlin.jvm' version '1.3.71'
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -51,9 +50,6 @@ dependencies {
     include "com.github.NerdHubMC.Cardinal-Components-API:cardinal-components-base:${project.cardinal_version}"
     modCompile "com.github.NerdHubMC.Cardinal-Components-API:cardinal-components-item:${project.cardinal_version}"
     include "com.github.NerdHubMC.Cardinal-Components-API:cardinal-components-item:${project.cardinal_version}"
-
-    // literally who added this
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
 processResources {
@@ -106,15 +102,5 @@ publishing {
     repositories {
         // uncomment to publish to the local maven
         // mavenLocal()
-    }
-}
-compileKotlin {
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-}
-compileTestKotlin {
-    kotlinOptions {
-        jvmTarget = "1.8"
     }
 }
