@@ -59,8 +59,8 @@ InfusionAltarRecipe {
 
     public boolean matches(AltarState altarState) {
         boolean first = firstRingMatches(altarState.getFirstRingPedestals());
-        boolean second = (tier == RecipeTier.MEDIUM || tier == RecipeTier.ADVANCED) && secondRingMatches(altarState.getSecondRingAltars());
-        boolean third = (tier == RecipeTier.ADVANCED) && thirdRingMatches(altarState.getThirdRingAltars());
+        boolean second = tier == RecipeTier.SIMPLE || (tier == RecipeTier.MEDIUM || tier == RecipeTier.ADVANCED) && secondRingMatches(altarState.getSecondRingAltars());
+        boolean third = tier != RecipeTier.ADVANCED || (tier == RecipeTier.ADVANCED) && thirdRingMatches(altarState.getThirdRingAltars());
 
         return
                 altarState.getCore().getHeldStack().getItem() == getCenterItem()
