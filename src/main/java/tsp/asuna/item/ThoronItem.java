@@ -22,15 +22,16 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-public class ThoronItem extends Item {
+public class ThoronItem extends ManaUtilizerItem {
+
     public ThoronItem(Settings settings) {
-        super(settings);
+        super(settings, 8);
     }
 
     @Environment(EnvType.CLIENT)
 
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+    public TypedActionResult<ItemStack> manaUse(World world, PlayerEntity user, Hand hand) {
         assert world != null;
 
         ItemStack itemStack = user.getStackInHand(hand);

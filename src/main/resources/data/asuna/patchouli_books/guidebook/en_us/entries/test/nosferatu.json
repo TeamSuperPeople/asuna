@@ -2,6 +2,7 @@
   "name": "Nosferatu",
   "icon": "asuna:nosferatu",
   "category": "thaumaturgy",
+  "sortnum": 1,
   "pages": [
     {
       "type": "text",

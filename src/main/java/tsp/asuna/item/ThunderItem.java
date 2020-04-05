@@ -21,16 +21,16 @@ import tsp.asuna.entity.BetterLightningEntity;
 
 import java.util.List;
 
-public class ThunderItem extends Item {
+public class ThunderItem extends ManaUtilizerItem {
 
     public ThunderItem(Settings settings) {
-        super(settings);
+        super(settings, 8);
     }
 
     @Environment(EnvType.CLIENT)
 
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+    public TypedActionResult<ItemStack> manaUse(World world, PlayerEntity user, Hand hand) {
         assert world != null;
 
         ItemStack itemStack = user.getStackInHand(hand);

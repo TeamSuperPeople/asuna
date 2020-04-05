@@ -2,6 +2,7 @@
   "name": "Heal",
   "icon": "asuna:heal",
   "category": "thaumaturgy",
+  "sortnum": 1,
   "pages": [
     {
       "type": "text",

@@ -10,14 +10,14 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import tsp.asuna.entity.LifeStealEntity;
 
-public class LifeStealItem extends Item {
+public class LifeStealItem extends ManaUtilizerItem {
 
     public LifeStealItem(Settings settings) {
-        super(settings);
+        super(settings, 8);
     }
 
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+    public TypedActionResult<ItemStack> manaUse(World world, PlayerEntity user, Hand hand) {
         assert world != null;
 
         user.getItemCooldownManager().set(this, 20);

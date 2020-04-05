@@ -11,14 +11,14 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-public class HealItem extends Item {
+public class HealItem extends ManaUtilizerItem {
 
     public HealItem(Settings settings) {
-        super(settings);
+        super(settings, 8);
     }
 
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+    public TypedActionResult<ItemStack> manaUse(World world, PlayerEntity user, Hand hand) {
         assert world != null;
 
         ItemStack itemStack = user.getStackInHand(hand);
