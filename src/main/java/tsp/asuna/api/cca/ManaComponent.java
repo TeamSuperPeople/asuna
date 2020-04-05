@@ -8,4 +8,6 @@ public interface ManaComponent extends Component {
     void decrement();
     void decrement(int amount);
     void increment();
+    void increment(int amount);
+    void setMana(int mana);
 }

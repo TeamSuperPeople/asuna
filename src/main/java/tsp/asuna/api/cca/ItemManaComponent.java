@@ -41,6 +41,16 @@ public class ItemManaComponent implements ManaComponent, CopyableComponent<ManaC
         this.mana = Math.min(maxMana, mana + 1);
     }
 
+    @Override
+    public void increment(int amount) {
+        this.mana = Math.min(maxMana, mana + amount);
+    }
+
+    @Override
+    public void setMana(int mana) {
+        this.mana = mana;
+    }
+
     public boolean isDamaged() {
         return mana < maxMana;
     }
