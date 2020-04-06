@@ -4,7 +4,8 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "CarverMixin",
-    "MinecraftServerMixin"
+    "MinecraftServerMixin",
+    "PlayerManagerMixin"
   ],
   "client": [
     "ItemRendererMixin"
