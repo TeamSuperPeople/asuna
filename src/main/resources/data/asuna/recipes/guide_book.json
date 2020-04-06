@@ -1,19 +1,14 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "  B",
-    "   ",
-    "   "
-  ],
-  "key": {
-    "B": {
+  "type": "asuna:guidebook",
+  "ingredients": [
+    {
       "item": "minecraft:writable_book"
+    },
+    {
+      "item": "minecraft:coal"
     }
-  },
+  ],
   "result": {
-    "item": "patchouli:guide_book",
-    "nbt": {
-      "patchouli:book": "asuna:guidebook"
-    }
+    "item": "patchouli:guide_book"
   }
 }

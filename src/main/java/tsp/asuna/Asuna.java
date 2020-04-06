@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -14,6 +15,7 @@ import tsp.asuna.api.ManaDurable;
 import tsp.asuna.api.cca.ItemManaComponent;
 import tsp.asuna.command.AltarRecipeCommand;
 import tsp.asuna.recipe.AltarRecipeManager;
+import tsp.asuna.recipe.GuideBookRecipe;
 import tsp.asuna.registry.*;
 import tsp.asuna.world.WorldSetup;
 
@@ -27,6 +29,7 @@ public class Asuna implements ModInitializer {
     public static final String MODID = "asuna";
     public static final Map<ChunkPos, ArrayList<BlockPos>> caveAirList = new HashMap<>();
     public static final AltarRecipeManager ALTAR_RECIPE_MANAGER = new AltarRecipeManager();
+    public static final RecipeSerializer<GuideBookRecipe> BOOK_RECIPE = Registry.register(Registry.RECIPE_SERIALIZER, id("guidebook"), new GuideBookRecipe.Serializer());
 
     @Override
     public void onInitialize() {
