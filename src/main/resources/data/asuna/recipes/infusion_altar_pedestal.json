@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X2X",
+    " 2 ",
+    "X2X"
+  ],
+  "key": {
+    "X": {
+      "item": "asuna:mana_shard"
+    },
+    "2": {
+      "item": "minecraft:quartz_block"
+    }
+  },
+  "result": {
+    "item": "asuna:infusion_altar_pedestal"
+  }
+}
