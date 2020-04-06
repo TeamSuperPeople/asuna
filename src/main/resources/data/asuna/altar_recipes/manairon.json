@@ -1,0 +1,8 @@
+{
+  "center": "minecraft:iron_ingot",
+  "mana_requirement": 8,
+  "first_tier_ingredients": [
+    "asuna:mana_shard"
+  ],
+  "output": "asuna:manairon"
+}

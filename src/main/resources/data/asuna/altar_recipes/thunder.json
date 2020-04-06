@@ -1,0 +1,11 @@
+{
+  "center": "minecraft:book",
+  "mana_requirement": 64,
+  "first_tier_ingredients": [
+    "asuna:thundering_spirit",
+    "asuna:thundering_spirit",
+    "asuna:thundering_spirit",
+    "asuna:thundering_spirit"
+  ],
+  "output": "asuna:thunder"
+}

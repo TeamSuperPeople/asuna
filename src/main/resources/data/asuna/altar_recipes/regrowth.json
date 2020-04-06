@@ -1,0 +1,11 @@
+{
+  "center": "minecraft:book",
+  "mana_requirement": 64,
+  "first_tier_ingredients": [
+    "asuna:terra_orb",
+    "asuna:terra_orb",
+    "asuna:terra_orb",
+    "asuna:terra_orb"
+  ],
+  "output": "asuna:regrowth"
+}

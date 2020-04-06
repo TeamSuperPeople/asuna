@@ -12,6 +12,8 @@ import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.registry.Registry;
 import tsp.asuna.api.ManaDurable;
 import tsp.asuna.api.cca.ItemManaComponent;
+import tsp.asuna.command.AltarRecipeCommand;
+import tsp.asuna.recipe.AltarRecipeManager;
 import tsp.asuna.registry.*;
 import tsp.asuna.world.WorldSetup;
 
@@ -24,9 +26,11 @@ public class Asuna implements ModInitializer {
     public static final ItemGroup ASUNA_SPELLS = FabricItemGroupBuilder.build(id("spells"), () -> new ItemStack(Items.MIASMA));
     public static final String MODID = "asuna";
     public static final Map<ChunkPos, ArrayList<BlockPos>> caveAirList = new HashMap<>();
+    public static final AltarRecipeManager ALTAR_RECIPE_MANAGER = new AltarRecipeManager();
 
     @Override
     public void onInitialize() {
+
         Registry.ITEM.forEach(item -> {
             if (item instanceof ManaDurable) {
                 ItemComponentCallback.event(item).register((stack, components) -> components.put(Components.MANA, new ItemManaComponent(
@@ -48,9 +52,9 @@ public class Asuna implements ModInitializer {
         Components.init();
         Items.init();
         Blocks.init();
-        Recipes.init();
         WorldSetup.setup();
         World.init();
+        AltarRecipeCommand.init();
     }
 
     public static Identifier id(String path) {

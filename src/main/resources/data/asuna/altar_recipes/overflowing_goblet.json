@@ -1,0 +1,27 @@
+{
+  "center": "minecraft:bucket",
+  "mana_requirement": 128,
+  "first_tier_ingredients": [
+    "asuna:oceanic_pearl",
+    "asuna:oceanic_pearl",
+    "asuna:oceanic_pearl",
+    "asuna:oceanic_pearl"
+  ],
+  "second_tier_ingredients": [
+    "minecraft:gold_ingot",
+    "minecraft:gold_ingot",
+    "minecraft:gold_block",
+    "minecraft:gold_block"
+  ],
+  "third_tier_ingredients": [
+    "minecraft:water_bucket",
+    "minecraft:water_bucket",
+    "minecraft:water_bucket",
+    "minecraft:water_bucket",
+    "minecraft:water_bucket",
+    "minecraft:water_bucket",
+    "minecraft:water_bucket",
+    "minecraft:water_bucket"
+  ],
+  "output": "asuna:overflowing_goblet"
+}

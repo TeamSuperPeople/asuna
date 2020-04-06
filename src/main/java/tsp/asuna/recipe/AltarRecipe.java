@@ -1,60 +1,94 @@
 package tsp.asuna.recipe;
 
+import com.google.gson.annotations.SerializedName;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AltarRecipe {
 
-    private final Identifier id;
-    private final AltarRecipeTier tier;
-    private final Item centerStack;
-    private final int manaRequirement;
-    private final Item[] firstRingIngredients;
-    private final Item[] secondRingIngredients;
-    private final Item[] thirdRingIngredients;
-    private final ItemStack output;
+    @SerializedName("center")
+    private final String centerItem;
 
-    public AltarRecipe(Identifier id, AltarRecipeTier tier, Item centerStack, int manaRequirement, Item[] firstRingIngredients, Item[] secondRingIngredients, Item[] thirdRingIngredients, ItemStack output) {
-        this.id = id;
-        this.tier = tier;
-        this.centerStack = centerStack;
+    @SerializedName("mana_requirement")
+    private final int manaRequirement;
+
+    @SerializedName("first_tier_ingredients")
+    private final List<String> firstRingIngredients;
+
+    @SerializedName("second_tier_ingredients")
+    private final List<String> secondRingIngredients;
+
+    @SerializedName("third_tier_ingredients")
+    private final List<String> thirdRingIngredients;
+
+    @SerializedName("output")
+    private final String outputItem;
+
+    public AltarRecipe(String centerItem, int manaRequirement, List<String> firstRingIngredients, List<String> secondRingIngredients, List<String> thirdRingIngredients, String outputItem) {
+        this.centerItem = centerItem;
         this.manaRequirement = manaRequirement;
         this.firstRingIngredients = firstRingIngredients;
         this.secondRingIngredients = secondRingIngredients;
         this.thirdRingIngredients = thirdRingIngredients;
-        this.output = output;
-    }
-
-    public AltarRecipeTier getTier() {
-        return tier;
+        this.outputItem = outputItem;
     }
 
     public Item getCenterItem() {
-        return centerStack;
+        return Registry.ITEM.get(new Identifier(centerItem));
     }
 
     public int getManaRequirement() {
         return manaRequirement;
     }
 
-    public Item[] getFirstRingIngredients() {
-        return firstRingIngredients;
+    public List<Item> getFirstRingIngredients() {
+        if(firstRingIngredients == null) {
+            return null;
+        }
+
+        ArrayList<Item> ingredients = new ArrayList<>();
+
+        for(String s : firstRingIngredients) {
+            ingredients.add(Registry.ITEM.get(new Identifier(s)));
+        }
+
+        return ingredients;
     }
 
-    public Item[] getSecondRingIngredients() {
-        return secondRingIngredients;
+    public List<Item> getSecondRingIngredients() {
+        if(secondRingIngredients == null) {
+            return null;
+        }
+
+        ArrayList<Item> ingredients = new ArrayList<>();
+
+        for(String s : secondRingIngredients) {
+            ingredients.add(Registry.ITEM.get(new Identifier(s)));
+        }
+
+        return ingredients;
     }
 
-    public Item[] getThirdRingIngredients() {
-        return thirdRingIngredients;
+    public List<Item> getThirdRingIngredients() {
+        if(thirdRingIngredients == null) {
+            return null;
+        }
+
+        ArrayList<Item> ingredients = new ArrayList<>();
+
+        for(String s : thirdRingIngredients) {
+            ingredients.add(Registry.ITEM.get(new Identifier(s)));
+        }
+
+        return ingredients;
     }
 
     public ItemStack getOutput() {
-        return output;
-    }
-
-    public Identifier getId() {
-        return id;
+        return new ItemStack(Registry.ITEM.get(new Identifier(outputItem)));
     }
 }

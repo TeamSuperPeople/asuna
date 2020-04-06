@@ -1,0 +1,17 @@
+{
+  "center": "minecraft:ender_pearl",
+  "mana_requirement": 32,
+  "first_tier_ingredients": [
+    "asuna:mana_shard",
+    "asuna:mana_shard",
+    "asuna:mana_shard",
+    "asuna:mana_shard"
+  ],
+  "second_tier_ingredients": [
+    "minecraft:water_bucket",
+    "minecraft:salmon",
+    "minecraft:prismarine_shard",
+    "minecraft:nautilus_shell"
+  ],
+  "output": "asuna:oceanic_pearl"
+}

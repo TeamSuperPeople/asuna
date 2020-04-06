@@ -8,11 +8,10 @@ import java.util.List;
 
 public class AltarRecipeUtils {
 
-    // canCraft
-    public static boolean matches(AltarRecipe recipe, AltarState altarState) {
-        boolean first = ringMatches(altarState.getFirstRingPedestals(), recipe.getFirstRingIngredients());
-        boolean second = (recipe.getTier() != AltarRecipeTier.ADVANCED && recipe.getTier() != AltarRecipeTier.MEDIUM) || ringMatches(altarState.getSecondRingAltars(), recipe.getSecondRingIngredients());
-        boolean third = recipe.getTier() != AltarRecipeTier.ADVANCED || ringMatches(altarState.getThirdRingAltars(), recipe.getThirdRingIngredients());
+    public static boolean canCraft(AltarRecipe recipe, AltarState altarState) {
+        boolean first = recipe.getFirstRingIngredients() == null || ringMatches(altarState.getFirstRingPedestals(), recipe.getFirstRingIngredients());
+        boolean second = recipe.getSecondRingIngredients() == null || ringMatches(altarState.getSecondRingAltars(), recipe.getSecondRingIngredients());
+        boolean third = recipe.getThirdRingIngredients() == null || ringMatches(altarState.getThirdRingAltars(), recipe.getThirdRingIngredients());
 
         return
                 altarState.getCore().getHeldStack().getItem() == recipe.getCenterItem()
@@ -33,7 +32,7 @@ public class AltarRecipeUtils {
         }
     }
 
-    public static void takeRingItems(List<InfusionAltarPedestalBlockEntity> pedestals, Item[] ingredients) {
+    public static void takeRingItems(List<InfusionAltarPedestalBlockEntity> pedestals, List<Item> ingredients) {
         if(pedestals != null) {
             for (Item item : ingredients) {
                 for (InfusionAltarPedestalBlockEntity be : pedestals) {
@@ -46,7 +45,7 @@ public class AltarRecipeUtils {
         }
     }
 
-    public static boolean ringMatches(List<InfusionAltarPedestalBlockEntity> pedestals, Item[] ringIngredients) {
+    public static boolean ringMatches(List<InfusionAltarPedestalBlockEntity> pedestals, List<Item> ringIngredients) {
         // pedestals are null, not a match
         if(pedestals == null) {
             return false;

@@ -12,9 +12,9 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
+import tsp.asuna.Asuna;
 import tsp.asuna.api.ManaDurable;
 import tsp.asuna.recipe.AltarRecipe;
-import tsp.asuna.recipe.AltarRecipeRegistry;
 import tsp.asuna.recipe.AltarState;
 import tsp.asuna.recipe.AltarRecipeUtils;
 import tsp.asuna.registry.Components;
@@ -65,9 +65,9 @@ public class InfusionAltarCoreBlockEntity extends ManaBlockEntity implements Tic
                     sync();
                 }
             } else {
-                for (Map.Entry<Identifier, AltarRecipe> entry : AltarRecipeRegistry.getRecipes().entrySet()) {
+                for (Map.Entry<Identifier, AltarRecipe> entry : Asuna.ALTAR_RECIPE_MANAGER.getRecipes().entrySet()) {
                     if (entry.getValue().getCenterItem() == heldStack.getItem()) {
-                        if (AltarRecipeUtils.matches(entry.getValue(), getAltarState())) {
+                        if (AltarRecipeUtils.canCraft(entry.getValue(), getAltarState())) {
                             if (entry.getValue().getManaRequirement() <= this.getMana()) {
                                 isInfusing = true;
                                 lockPedestals(true);
