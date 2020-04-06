@@ -1,0 +1,9 @@
+{
+  "center": "minecraft:tnt",
+  "mana_requirement": 8,
+  "first_tier_ingredients": [
+    "minecraft:iron_ingot",
+    "minecraft:iron_ingot"
+  ],
+  "output": "azuma:mana_bomb"
+}

@@ -1,0 +1,11 @@
+{
+  "center": "azuma:mana_bomb",
+  "mana_requirement": 16,
+  "first_tier_ingredients": [
+    "minecraft:tnt",
+    "minecraft:tnt",
+    "minecraft:tnt",
+    "minecraft:tnt"
+  ],
+  "output": "azuma:reinforced_mana_bomb"
+}
