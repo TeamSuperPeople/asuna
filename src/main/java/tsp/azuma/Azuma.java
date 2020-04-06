@@ -3,10 +3,13 @@ package tsp.azuma;
 import nerdhub.cardinal.components.api.event.ItemComponentCallback;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
+import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.RecipeSerializer;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -50,6 +53,30 @@ public class Azuma implements ModInitializer {
                         ((ManaDurable) item).getStartingMana()
                 )));
             }
+        });
+
+        AttackBlockCallback.EVENT.register((playerEntity, world, hand, blockPos, direction) -> {
+            ItemStack heldStack = playerEntity.getStackInHand(hand);
+
+            if(heldStack.getItem() instanceof ManaDurable) {
+                if(Components.MANA.get(heldStack).getMana() <= 0) {
+                    return ActionResult.FAIL;
+                }
+            }
+
+            return ActionResult.PASS;
+        });
+
+        AttackEntityCallback.EVENT.register((playerEntity, world, hand, entity, entityHitResult) -> {
+            ItemStack heldStack = playerEntity.getStackInHand(hand);
+
+            if(heldStack.getItem() instanceof ManaDurable) {
+                if(Components.MANA.get(heldStack).getMana() <= 0) {
+                    return ActionResult.FAIL;
+                }
+            }
+
+            return ActionResult.PASS;
         });
 
         Components.init();
