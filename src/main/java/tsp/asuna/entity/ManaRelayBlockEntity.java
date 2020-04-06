@@ -216,10 +216,12 @@ public class ManaRelayBlockEntity extends BlockEntity implements BlockEntityClie
 
     @Override
     public void addTarget(ManaConnectable target) {
-        this.manaTargets.add(target);
+        if(!this.manaTargets.contains(target)) {
+            this.manaTargets.add(target);
 
-        if(!world.isClient) {
-            sync();
+            if (!world.isClient) {
+                sync();
+            }
         }
     }
 }
