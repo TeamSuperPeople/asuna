@@ -27,6 +27,7 @@ public class ManaPylonBlockEntity extends BlockEntity implements BlockEntityClie
     private int animationProgress = 0;
 
     private int heldMana = 0;
+    private final List<BlockPos> tempTargetPositions = new ArrayList<>();
     private final List<ManaConnectable> manaTargets = new ArrayList<>();
 
     public ManaPylonBlockEntity() {
@@ -35,10 +36,48 @@ public class ManaPylonBlockEntity extends BlockEntity implements BlockEntityClie
 
     @Override
     public void tick() {
-        // todo: implement pylon sending energy
-        manaTargets.forEach(relay -> {
+        if(world == null) {
+            return;
+        }
 
-        });
+        // get mana targets from positions
+        if(!tempTargetPositions.isEmpty()) {
+            tempTargetPositions.forEach(pos -> {
+                if(world.getBlockEntity(pos) instanceof ManaConnectable) {
+                    manaTargets.add((ManaConnectable) world.getBlockEntity(pos));
+                }
+            });
+
+            tempTargetPositions.clear();
+        }
+
+        if(world.isClient) {
+            return;
+        }
+
+        // deliver energy to relays
+        if(this.heldMana > 0) {
+            int amountPerConnection = (int) Math.floor(Math.min(MAX_OUTPUT, getMana()) / (float) manaTargets.size());
+            int amountActuallyTaken = 0;
+
+            for (ManaConnectable connection : manaTargets) {
+                if (connection instanceof ManaStorage) {
+                    ManaStorage storage = (ManaStorage) connection;
+                    int denied = storage.insertMana(amountPerConnection);
+                    amountActuallyTaken += amountPerConnection - denied;
+
+                    if (storage instanceof BlockEntityClientSerializable) {
+                        ((BlockEntityClientSerializable) storage).sync();
+                    }
+                }
+            }
+
+            if (amountActuallyTaken > 0) {
+                this.heldMana -= amountActuallyTaken;
+                sync();
+                markDirty();
+            }
+        }
     }
 
     public List<ManaConnectable> getManaTargets() {
@@ -61,7 +100,7 @@ public class ManaPylonBlockEntity extends BlockEntity implements BlockEntityClie
         ListTag connectionsTag = new ListTag();
         manaTargets.forEach(relay -> {
             if(relay instanceof BlockEntity) {
-                connectionsTag.add(NbtType.LONG, LongTag.of(((BlockEntity) relay).getPos().asLong()));
+                connectionsTag.add(LongTag.of(((BlockEntity) relay).getPos().asLong()));
             }
         });
 
@@ -73,15 +112,16 @@ public class ManaPylonBlockEntity extends BlockEntity implements BlockEntityClie
 
     @Override
     public void fromTag(CompoundTag tag) {
+        tempTargetPositions.clear();
+        manaTargets.clear();
+
         // retrieve connections
         ListTag relays = tag.getList("Connections", NbtType.LONG);
-        relays.forEach(longTag -> {
-            BlockEntity potentialPylon = world.getBlockEntity(BlockPos.fromLong(((LongTag) longTag).getLong()));
-
-            if (potentialPylon instanceof ManaConnectable) {
-                manaTargets.add((ManaConnectable) potentialPylon);
-            }
-        });
+        if(relays != null) {
+            relays.forEach(longTag -> {
+                tempTargetPositions.add(BlockPos.fromLong(((LongTag) longTag).getLong()));
+            });
+        }
 
         // update mana
         this.heldMana = tag.getInt("HeldMana");
