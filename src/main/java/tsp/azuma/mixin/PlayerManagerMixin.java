@@ -9,7 +9,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import tsp.azuma.registry.Components;
-import vazkii.patchouli.common.base.Patchouli;
 import vazkii.patchouli.common.item.PatchouliItems;
 
 @Mixin(PlayerManager.class)
