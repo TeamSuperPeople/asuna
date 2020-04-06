@@ -1,12 +1,12 @@
 {
-  "name": "Portable Mana Storage 3",
+  "name": "Portable Mana Storage Mk3",
   "icon": "azuma:manaruby_pendant",
   "category": "thaumaturgy",
-  "advancement": "azuma:find_mana_crystal",
+  "advancement": "azuma:craft_mana_pendant",
   "pages": [
     {
       "type": "text",
-      "text": "Can hold more mana than the ruby pendant, made with attaching manairon onto a ruby pendant"
+      "text": "Can hold more mana than the Ruby Pendant. Made by attaching Mana Iron to a ruby pendant"
     },
     {
       "type": "crafting",

@@ -1,12 +1,12 @@
 {
-  "name": "Portable Mana Storage 2",
+  "name": "Portable Mana Storage Mk2",
   "icon": "azuma:ruby_pendant",
   "category": "thaumaturgy",
-  "advancement": "azuma:find_mana_crystal",
+  "advancement": "azuma:craft_mana_pendant",
   "pages": [
     {
       "type": "text",
-      "text": "Can hold more mana than the regular mana pendant, made with the magical ruby"
+      "text": "Can hold more Mana than the regular Mana Pendant; made with the Magical Ruby."
     },
     {
       "type": "crafting",

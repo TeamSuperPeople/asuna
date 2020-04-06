@@ -24,15 +24,15 @@
   "item.azuma.thoron_effect": "Thoron Effect",
 
   "item.azuma.ruby": "Ruby",
-  "item.azuma.manadiamond": "Manadiamond",
-  "item.azuma.manairon": "Manairon",
+  "item.azuma.manadiamond": "Mana Diamond",
+  "item.azuma.manairon": "Mana Iron",
   "item.azuma.mana_shard": "Mana Shard",
 
-  "item.azuma.manairon_pickaxe": "Manairon Pickaxe",
-  "item.azuma.manairon_axe": "Manairon Axe",
-  "item.azuma.manairon_shovel": "Manairon Shovel",
-  "item.azuma.manairon_sword": "Manairon Sword",
-  "item.azuma.manairon_hoe": "Manairon Hoe",
+  "item.azuma.manairon_pickaxe": "Mana Iron Pickaxe",
+  "item.azuma.manairon_axe": "Mana Iron Axe",
+  "item.azuma.manairon_shovel": "Mana Iron Shovel",
+  "item.azuma.manairon_sword": "Mana Iron Sword",
+  "item.azuma.manairon_hoe": "Mana Iron Hoe",
 
   "item.azuma.ruby_pickaxe": "Ruby Pickaxe",
   "item.azuma.ruby_axe": "Ruby Axe",
@@ -40,11 +40,11 @@
   "item.azuma.ruby_sword": "Ruby Sword",
   "item.azuma.ruby_hoe": "Ruby Hoe",
 
-  "item.azuma.manadiamond_pickaxe": "Manadiamond Pickaxe",
-  "item.azuma.manadiamond_axe": "Manadiamond Axe",
-  "item.azuma.manadiamond_shovel": "Manadiamond Shovel",
-  "item.azuma.manadiamond_sword": "Manadiamond Sword",
-  "item.azuma.manadiamond_hoe": "Manadiamond Hoe",
+  "item.azuma.manadiamond_pickaxe": "Mana Diamond Pickaxe",
+  "item.azuma.manadiamond_axe": "Mana Diamond Axe",
+  "item.azuma.manadiamond_shovel": "Mana Diamond Shovel",
+  "item.azuma.manadiamond_sword": "Mana Diamond Sword",
+  "item.azuma.manadiamond_hoe": "Mana Diamond Hoe",
 
   "item.azuma.blazing_core": "Blazing Core",
   "item.azuma.thundering_spirit": "Thundering Spirit",
@@ -62,5 +62,7 @@
   "block.azuma.burning_mana_generator": "Burning Mana Generator",
 
   "advancements.azuma.find_mana_crystal.title": "Find Mana Crystal",
-  "advancements.azuma.find_mana_crystal.description": "Find a Mana Crystal and break it, which rewards you with several Mana Shards."
+  "advancements.azuma.find_mana_crystal.description": "Find a Mana Crystal and break it, which rewards you with several Mana Shards.",
+  "advancements.azuma.craft_mana_pendant.title": "Craft Mana Pendant",
+  "advancements.azuma.craft_mana_pendant.description": "Craft a Mana Pendant, which can be used to store and transfer mana used by tools, utilities, and weapons."
 }
