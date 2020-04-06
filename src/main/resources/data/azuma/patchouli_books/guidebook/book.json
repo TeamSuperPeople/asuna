@@ -1,6 +1,6 @@
 {
   "name": "Azuma Guidebook",
-  "creative_tab": "azuma.spells",
+  "creative_tab": "azuma.group",
   "landing_text": "Welcome to the official Azuma guidebook!",
   "version": 1,
   "advancement_namespaces": [
