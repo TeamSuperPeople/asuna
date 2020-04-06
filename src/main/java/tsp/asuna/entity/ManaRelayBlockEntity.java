@@ -126,6 +126,9 @@ public class ManaRelayBlockEntity extends BlockEntity implements BlockEntityClie
 
     @Override
     public void fromTag(CompoundTag tag) {
+        tempTargetPositions.clear();
+        manaTargets.clear();
+
         // retrieve connections
         ListTag relays = tag.getList("Connections", NbtType.LONG);
         if(relays != null) {
