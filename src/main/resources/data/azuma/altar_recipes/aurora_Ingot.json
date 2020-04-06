@@ -1,0 +1,27 @@
+{
+  "center": "minecraft:iron_ingot",
+  "mana_requirement": 1024,
+  "first_tier_ingredients": [
+    "azuma:mana_shard",
+    "azuma:mana_shard",
+    "azuma:mana_shard",
+    "azuma:mana_shard"
+  ],
+  "second_tier_ingredients": [
+    "azuma:manairon",
+    "azuma:manairon",
+    "azuma:manairon",
+    "azuma:manairon"
+  ],
+  "third_tier_ingredients": [
+    "azuma:manadiamond",
+    "azuma:manadiamond",
+    "azuma:manadiamond",
+    "azuma:manadiamond",
+    "azuma:manadiamond",
+    "azuma:manadiamond",
+    "azuma:manadiamond",
+    "azuma:manadiamond"
+  ],
+  "output": "azuma:aurora_ingot"
+}

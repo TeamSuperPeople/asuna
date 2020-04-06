@@ -1,0 +1,42 @@
+{
+  "name": "Aurora Ingot",
+  "icon": "azuma:aurora_ingot",
+  "category": "getting_started",
+  "advancement": "azuma:find_mana_crystal",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "text",
+      "text": "I wonder what would happen if I pushed the limit of mana that an iron ingot could withstand..."
+    },
+    {
+      "type": "altar_recipe",
+      "required_mana": 1024,
+      "center": "minecraft:iron_ingot",
+      "item_groups": {
+        "First Ring": [
+          "azuma:mana_shard",
+          "azuma:mana_shard",
+          "azuma:mana_shard",
+          "azuma:mana_shard"
+        ],
+        "Second Ring": [
+          "azuma:manairon",
+          "azuma:manairon",
+          "azuma:manairon",
+          "azuma:manairon"
+        ],
+        "Third Ring": [
+          "azuma:manadiamond",
+          "azuma:manadiamond",
+          "azuma:manadiamond",
+          "azuma:manadiamond",
+          "azuma:manadiamond",
+          "azuma:manadiamond",
+          "azuma:manadiamond",
+          "azuma:manadiamond"
+        ]
+      }
+    }
+  ]
+}
