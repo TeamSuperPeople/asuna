@@ -31,19 +31,25 @@ public class InfusionAltarPedestalBlockEntity extends BlockEntity implements Blo
 
         // insert item into pedestal
         if(heldStack.isEmpty() && !playerStack.isEmpty()) {
-            ItemStack taken = playerStack.copy();
-            taken.setCount(1);
-            heldStack = taken;
-            playerStack.decrement(1);
-            sync();
+            if(!world.isClient) {
+                ItemStack taken = playerStack.copy();
+                taken.setCount(1);
+                heldStack = taken;
+                playerStack.decrement(1);
+                sync();
+            }
+
             return ActionResult.SUCCESS;
         }
 
         // take item from pedestal
         else if (!heldStack.isEmpty()) {
-            player.inventory.offerOrDrop(world, heldStack);
-            heldStack = ItemStack.EMPTY;
-            sync();
+            if(!world.isClient) {
+                player.inventory.offerOrDrop(world, heldStack);
+                heldStack = ItemStack.EMPTY;
+                sync();
+            }
+
             return ActionResult.SUCCESS;
         }
 

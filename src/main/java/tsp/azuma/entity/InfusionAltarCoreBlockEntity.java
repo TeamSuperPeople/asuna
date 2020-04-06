@@ -186,6 +186,7 @@ public class InfusionAltarCoreBlockEntity extends ManaBlockEntity implements Tic
                 playerStack.decrement(1);
                 sync();
             }
+
             return ActionResult.SUCCESS;
         }
 
