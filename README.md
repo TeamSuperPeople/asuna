@@ -8,4 +8,8 @@ Asuna is a magical mod designed by Team Super People.
 ### Utility Items!
 ![](resources/utility_items.png)
 
-### Special Tools!
+### Special Materials!
+![](resources/materials.png)
+
+### Spells!
+![](resources/spells.png)
