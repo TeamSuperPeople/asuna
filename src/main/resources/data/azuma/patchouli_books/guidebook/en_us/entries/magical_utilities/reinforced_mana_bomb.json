@@ -1,0 +1,26 @@
+{
+  "name": "Reinforced Mana Bomb",
+  "icon": "azuma:reinforced_mana_bomb",
+  "category": "magical_utilities",
+  "advancement": "azuma:find_mana_crystal",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "text",
+      "text": "By further infusing the Mana Bomb with more explosives and reinforcements, the blast radius becomes even larger."
+    },
+    {
+      "type": "altar_recipe",
+      "required_mana": 16,
+      "center": "azuma:mana_bomb",
+      "item_groups": {
+        "First Ring": [
+          "minecraft:tnt",
+          "minecraft:tnt",
+          "minecraft:tnt",
+          "minecraft:tnt"
+        ]
+      }
+    }
+  ]
+}

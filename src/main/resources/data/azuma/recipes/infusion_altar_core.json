@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XYX",
+    "Y2Y",
+    "XYX"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:lapis_block"
+    },
+    "2": {
+      "item": "azuma:infusion_altar_pedestal"
+    },
+    "Y": {
+      "item": "minecraft:quartz_block"
+    }
+  },
+  "result": {
+    "item": "azuma:infusion_altar_core"
+  }
+}

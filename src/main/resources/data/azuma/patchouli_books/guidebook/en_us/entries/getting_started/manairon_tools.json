@@ -1,0 +1,27 @@
+{
+  "name": "Manairon Tools",
+  "icon": "azuma:manairon_pickaxe",
+  "category": "getting_started",
+  "advancement": "azuma:find_mana_crystal",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Manairon is an enhanced form of Iron that pulls durability and strength from mana.$(br2)These tools can be re-charged with mana once their energy is depleted, and they won't disappear when hitting 0 durability (although they will become non-functional)."
+    },
+    {
+      "type": "crafting",
+      "recipe": "azuma:manairon_sword",
+      "recipe2": "azuma:manairon_pickaxe"
+    },
+    {
+      "type": "crafting",
+      "recipe": "azuma:manairon_axe",
+      "recipe2": "azuma:manairon_hoe"
+    },
+    {
+      "type": "crafting",
+      "recipe": "azuma:manairon_shovel"
+    }
+  ]
+}

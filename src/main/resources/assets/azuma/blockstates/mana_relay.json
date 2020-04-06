@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": [
+      { "model": "azuma:block/mana_relay" }
+    ]
+  }
+}

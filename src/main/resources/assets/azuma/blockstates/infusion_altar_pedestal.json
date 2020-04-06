@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": [
+      { "model": "azuma:block/infusion_altar_pedestal" }
+    ]
+  }
+}

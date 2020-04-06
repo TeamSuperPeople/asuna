@@ -1,8 +1,0 @@
-{
-  "parent": "block/orientable",
-  "textures": {
-    "top": "asuna:block/burning_mana_generator_top",
-    "front": "asuna:block/burning_mana_generator_front_on",
-    "side": "asuna:block/burning_mana_generator_side"
-  }
-}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X X",
+    "Y2Y",
+    "X X"
+  ],
+  "key": {
+    "X": {
+      "item": "azuma:mana_shard"
+    },
+    "2": {
+      "item": "minecraft:iron_ingot"
+    },
+    "Y": {
+      "item": "minecraft:glass"
+    }
+  },
+  "result": {
+    "item": "azuma:all_seeing_glasses"
+  }
+}

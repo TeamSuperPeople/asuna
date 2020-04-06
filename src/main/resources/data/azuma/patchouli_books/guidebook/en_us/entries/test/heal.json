@@ -1,0 +1,27 @@
+{
+  "name": "Heal",
+  "icon": "azuma:heal",
+  "category": "thaumaturgy",
+  "advancement": "azuma:find_mana_crystal",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Heals the user on use."
+    },
+    {
+      "type": "altar_recipe",
+      "required_mana": 64,
+      "center": "minecraft:book",
+      "item_groups": {
+        "First Ring": [
+          "minecraft:glistering_melon_slice",
+          "minecraft:glistering_melon_slice",
+          "minecraft:glistering_melon_slice",
+          "minecraft:glistering_melon_slice"
+
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Regrowth",
+  "icon": "azuma:regrowth",
+  "category": "thaumaturgy",
+  "advancement": "azuma:find_mana_crystal",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Regrowth applies a bonemeal effect to the target block when used."
+    },
+    {
+      "type": "altar_recipe",
+      "required_mana": 64,
+      "center": "minecraft:book",
+      "item_groups": {
+        "First Ring": [
+          "azuma:terra_orb",
+          "azuma:terra_orb",
+          "azuma:terra_orb",
+          "azuma:terra_orb"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "111",
+    "XXX"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:gold_ingot"
+    },
+    "X": {
+      "item": "azuma:mana_shard"
+    }
+  },
+  "result": {
+    "item": "azuma:mana_pylon"
+  }
+}

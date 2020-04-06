@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "tsp.azuma.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "CarverMixin",
+    "MinecraftServerMixin",
+    "PlayerManagerMixin"
+  ],
+  "client": [
+    "ItemRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

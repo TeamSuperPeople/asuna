@@ -1,0 +1,17 @@
+{
+  "center": "minecraft:ender_pearl",
+  "mana_requirement": 32,
+  "first_tier_ingredients": [
+    "azuma:mana_shard",
+    "azuma:mana_shard",
+    "azuma:mana_shard",
+    "azuma:mana_shard"
+  ],
+  "second_tier_ingredients": [
+    "minecraft:lava_bucket",
+    "minecraft:magma_cream",
+    "minecraft:blaze_powder",
+    "minecraft:nether_bricks"
+  ],
+  "output": "azuma:blazing_core"
+}

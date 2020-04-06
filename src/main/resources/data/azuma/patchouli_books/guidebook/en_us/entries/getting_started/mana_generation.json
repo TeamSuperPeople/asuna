@@ -1,0 +1,17 @@
+{
+  "name": "Mana Generation",
+  "icon": "azuma:burning_mana_generator",
+  "category": "getting_started",
+  "advancement": "azuma:find_mana_crystal",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "text",
+      "text": "The crystal I found has a little bit of energy leftover, but most of it has seeped into the surrounding mobs and blocks. I'll need something to power it back up. It might be smart to start with a basic resource like coal... I've already got a small sketchup ready for how it should look."
+    },
+    {
+      "type": "crafting",
+      "recipe": "azuma:burning_mana_generator"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Mana Infusion",
+  "icon": "azuma:infusion_altar_core",
+  "category": "getting_started",
+  "advancement": "azuma:find_mana_crystal",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Mana seems to act like a glue that binds objects together to create new things. If I set up a ring of pedestals, I should be able to infuse items in the center given enough mana."
+    },
+    {
+      "type": "multiblock",
+      "multiblock": {
+        "mapping": {
+          "0": "azuma:infusion_altar_core",
+          "P": "azuma:infusion_altar_pedestal"
+        },
+        "symmetrical": true,
+        "pattern": [
+          [
+            "    P    ",
+            "         ",
+            "         ",
+            "         ",
+            "P   0   P",
+            "         ",
+            "         ",
+            "         ",
+            "    P    "
+          ]
+        ]
+      }
+    }
+  ]
+}

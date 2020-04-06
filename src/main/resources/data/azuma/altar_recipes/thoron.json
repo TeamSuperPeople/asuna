@@ -1,0 +1,15 @@
+{
+  "center": "minecraft:book",
+  "mana_requirement": 64,
+  "first_tier_ingredients": [
+    "azuma:thundering_spirit",
+    "azuma:thundering_spirit"
+  ],
+  "second_tier_ingredients": [
+    "minecraft:prismarine_crystals",
+    "minecraft:prismarine_crystals",
+    "minecraft:prismarine_crystals",
+    "minecraft:prismarine_crystals"
+  ],
+  "output": "azuma:thoron"
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "X1X",
+    "X2X"
+  ],
+  "key": {
+    "1": {
+      "item": "azuma:mana_shard"
+    },
+    "X": {
+      "item": "minecraft:cobblestone"
+    },
+    "2": {
+      "item": "minecraft:flint_and_steel"
+    }
+  },
+  "result": {
+    "item": "azuma:infernal_yeeter"
+  }
+}

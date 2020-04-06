@@ -1,0 +1,16 @@
+{
+  "name": "Portable Mana Storage",
+  "icon": "azuma:mana_pendant",
+  "category": "thaumaturgy",
+  "advancement": "azuma:find_mana_crystal",
+  "pages": [
+    {
+      "type": "text",
+      "text": "While books, wands, and spells are cool, they still require mana like everything else. Attaching a few Mana Shards to accessories should allow you to carry mana with you.$(br2)You can charge a Mana Pendant, or anything else similar, by placing it in an Altar Core supplied by mana."
+    },
+    {
+      "type": "crafting",
+      "recipe": "azuma:mana_pendant"
+    }
+  ]
+}

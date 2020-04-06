@@ -1,0 +1,11 @@
+{
+  "center": "minecraft:golden_sword",
+  "mana_requirement": 64,
+  "first_tier_ingredients": [
+    "azuma:thundering_spirit",
+    "azuma:thundering_spirit",
+    "azuma:thundering_spirit",
+    "azuma:thundering_spirit"
+  ],
+  "output": "azuma:thunderband"
+}

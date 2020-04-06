@@ -1,0 +1,16 @@
+{
+  "name": "Portable Mana Storage 2",
+  "icon": "azuma:ruby_pendant",
+  "category": "thaumaturgy",
+  "advancement": "azuma:find_mana_crystal",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Can hold more mana than the regular mana pendant, made with the magical ruby"
+    },
+    {
+      "type": "crafting",
+      "recipe": "azuma:ruby_pendant"
+    }
+  ]
+}

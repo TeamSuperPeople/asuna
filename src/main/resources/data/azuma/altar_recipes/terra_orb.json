@@ -1,0 +1,17 @@
+{
+  "center": "minecraft:ender_pearl",
+  "mana_requirement": 32,
+  "first_tier_ingredients": [
+    "azuma:mana_shard",
+    "azuma:mana_shard",
+    "azuma:mana_shard",
+    "azuma:mana_shard"
+  ],
+  "second_tier_ingredients": [
+    "minecraft:grass",
+    "minecraft:oak_sapling",
+    "minecraft:wheat_seeds",
+    "minecraft:dirt"
+  ],
+  "output": "azuma:terra_orb"
+}

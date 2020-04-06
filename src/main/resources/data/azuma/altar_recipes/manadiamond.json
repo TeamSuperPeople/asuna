@@ -1,0 +1,8 @@
+{
+  "center": "minecraft:diamond",
+  "mana_requirement": 16,
+  "first_tier_ingredients": [
+    "azuma:mana_shard"
+  ],
+  "output": "azuma:manadiamond"
+}

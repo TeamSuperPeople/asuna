@@ -1,0 +1,23 @@
+{
+  "name": "Ruby Tools",
+  "icon": "azuma:ruby_pickaxe",
+  "category": "getting_started",
+  "advancement": "azuma:find_mana_crystal",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "text",
+      "text": "You can give yourself fire resistance after doing an action with ruby tools"
+    },
+    {
+      "type": "crafting",
+      "recipe": "azuma:ruby_sword",
+      "recipe2": "azuma:ruby_pickaxe"
+    },
+    {
+      "type": "crafting",
+      "recipe": "azuma:ruby_axe",
+      "recipe2": "azuma:ruby_shovel"
+    }
+  ]
+}

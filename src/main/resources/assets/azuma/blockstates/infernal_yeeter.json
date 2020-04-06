@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=down":  { "model": "azuma:block/infernal_yeeter_vertical", "x": 180 },
+    "facing=up":    { "model": "azuma:block/infernal_yeeter_vertical" },
+    "facing=north": { "model": "azuma:block/infernal_yeeter" },
+    "facing=south": { "model": "azuma:block/infernal_yeeter", "y": 180 },
+    "facing=west":  { "model": "azuma:block/infernal_yeeter", "y": 270 },
+    "facing=east":  { "model": "azuma:block/infernal_yeeter", "y": 90 }
+  }
+}

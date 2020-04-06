@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-    "asuna:ruby_shovel",
-    "asuna:manairon_shovel",
-    "asuna:manadiamond_shovel"
+    "azuma:ruby_shovel",
+    "azuma:manairon_shovel",
+    "azuma:manadiamond_shovel"
   ]
 }

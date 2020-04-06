@@ -1,0 +1,9 @@
+{
+  "name": "Azuma Guidebook",
+  "creative_tab": "azuma.spells",
+  "landing_text": "Welcome to the official Azuma guidebook!",
+  "version": 1,
+  "advancement_namespaces": [
+    "azuma"
+  ]
+}

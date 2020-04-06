@@ -1,0 +1,23 @@
+{
+  "name": "Mana Grenade",
+  "icon": "azuma:mana_bomb",
+  "category": "magical_utilities",
+  "advancement": "azuma:find_mana_crystal",
+  "pages": [
+    {
+      "type": "text",
+      "text": "By infusing TNT with mana, condensing it down in size, and wrapping it in a protective coating, you can create a throwable bomb that packs quite a punch."
+    },
+    {
+      "type": "altar_recipe",
+      "required_mana": 8,
+      "center": "minecraft:tnt",
+      "item_groups": {
+        "First Ring": [
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "BXB",
+    "BBB"
+  ],
+  "key": {
+    "X": {
+      "item": "azuma:ruby_pendant"
+    },
+    "B": {
+      "item": "azuma:manairon"
+    }
+  },
+  "result": {
+    "item": "azuma:manaruby_pendant"
+  }
+}

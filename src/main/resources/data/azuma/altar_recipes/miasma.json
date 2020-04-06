@@ -1,0 +1,14 @@
+{
+  "center": "minecraft:book",
+  "mana_requirement": 64,
+  "first_tier_ingredients": [
+    "minecraft:fermented_spider_eye",
+    "minecraft:fermented_spider_eye",
+    "minecraft:fermented_spider_eye",
+    "minecraft:fermented_spider_eye"
+  ],
+  "second_tier_ingredients": [
+    "minecraft:poisonous_potato"
+  ],
+  "output": "azuma:miasma"
+}

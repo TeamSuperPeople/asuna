@@ -1,0 +1,66 @@
+{
+  "itemGroup.azuma.group": "Azuma",
+
+  "item.azuma.miasma": "Miasma",
+  "item.azuma.nosferatu": "Nosferatu",
+  "item.azuma.heal": "Heal",
+  "item.azuma.regrowth": "Regrowth",
+  "item.azuma.thoron": "Thoron",
+  "item.azuma.thunder": "Thunder",
+  "item.azuma.bolganone": "Bolganone",
+
+  "item.azuma.thunderband": "Thunderband",
+  "item.azuma.crystal_linker": "Crystal Linker",
+  "item.azuma.all_seeing_glasses": "All Seeing Glasses",
+  "item.azuma.mana_bomb": "Mana Bomb",
+  "item.azuma.reinforced_mana_bomb": "Reinforced Mana Bomb",
+  "item.azuma.ultimate_mana_bomb": "Ultimate Mana Bomb",
+  "item.azuma.overflowing_goblet": "Overflowing Goblet",
+  "item.azuma.mana_pearl": "Mana Pearl",
+  "item.azuma.mana_pendant": "Mana Pendant",
+  "item.azuma.ruby_pendant": "Ruby Pendant",
+  "item.azuma.manaruby_pendant": "Infused Mana Ruby Pendant",
+  "item.azuma.manadiamondruby_pendant": "Glimmering Mana Ruby Pendant",
+  "item.azuma.thoron_effect": "Thoron Effect",
+
+  "item.azuma.ruby": "Ruby",
+  "item.azuma.manadiamond": "Manadiamond",
+  "item.azuma.manairon": "Manairon",
+  "item.azuma.mana_shard": "Mana Shard",
+
+  "item.azuma.manairon_pickaxe": "Manairon Pickaxe",
+  "item.azuma.manairon_axe": "Manairon Axe",
+  "item.azuma.manairon_shovel": "Manairon Shovel",
+  "item.azuma.manairon_sword": "Manairon Sword",
+  "item.azuma.manairon_hoe": "Manairon Hoe",
+
+  "item.azuma.ruby_pickaxe": "Ruby Pickaxe",
+  "item.azuma.ruby_axe": "Ruby Axe",
+  "item.azuma.ruby_shovel": "Ruby Shovel",
+  "item.azuma.ruby_sword": "Ruby Sword",
+  "item.azuma.ruby_hoe": "Ruby Hoe",
+
+  "item.azuma.manadiamond_pickaxe": "Manadiamond Pickaxe",
+  "item.azuma.manadiamond_axe": "Manadiamond Axe",
+  "item.azuma.manadiamond_shovel": "Manadiamond Shovel",
+  "item.azuma.manadiamond_sword": "Manadiamond Sword",
+  "item.azuma.manadiamond_hoe": "Manadiamond Hoe",
+
+  "item.azuma.blazing_core": "Blazing Core",
+  "item.azuma.thundering_spirit": "Thundering Spirit",
+  "item.azuma.oceanic_pearl": "Oceanic Pearl",
+  "item.azuma.terra_orb": "Terra Orb",
+
+  "block.azuma.mana_relay": "Mana Relay",
+  "block.azuma.mana_pylon": "Mana Pylon",
+  "block.azuma.infernal_absorber": "Infernal Absorber",
+  "block.azuma.infernal_yeeter": "Infernal Yeeter",
+  "block.azuma.ruby_ore": "Ruby Ore",
+  "block.azuma.infusion_altar_core": "Infusion Altar Core",
+  "block.azuma.infusion_altar_pedestal": "Infusion Altar Pedestal",
+  "block.azuma.mana_crystal": "Mana Crystal",
+  "block.azuma.burning_mana_generator": "Burning Mana Generator",
+
+  "advancements.azuma.find_mana_crystal.title": "Find Mana Crystal",
+  "advancements.azuma.find_mana_crystal.description": "Find a Mana Crystal and break it, which rewards you with several Mana Shards."
+}

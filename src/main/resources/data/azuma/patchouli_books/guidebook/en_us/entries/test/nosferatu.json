@@ -1,0 +1,27 @@
+{
+  "name": "Nosferatu",
+  "icon": "azuma:nosferatu",
+  "category": "thaumaturgy",
+  "advancement": "azuma:find_mana_crystal",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Nosferatu deals damage on hit and gives the caster a portion of the damage dealt back as health."
+    },
+    {
+    "type": "altar_recipe",
+    "required_mana": 64,
+    "center": "minecraft:book",
+    "item_groups": {
+      "First Ring": [
+        "minecraft:glistering_melon_slice",
+        "minecraft:glistering_melon_slice",
+        "minecraft:iron_sword",
+        "minecraft:iron_sword"
+
+      ]
+    }
+    }
+  ]
+}

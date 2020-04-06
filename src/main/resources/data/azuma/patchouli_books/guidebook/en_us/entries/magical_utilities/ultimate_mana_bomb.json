@@ -1,0 +1,32 @@
+{
+  "name": "Ultimate Mana Grenade",
+  "icon": "azuma:ultimate_mana_bomb",
+  "category": "magical_utilities",
+  "advancement": "azuma:find_mana_crystal",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "text",
+      "text": "The Ultimate Mana Bomb is the pinnacle of mana explosion technology. Stand back while throwing it."
+    },
+    {
+      "type": "altar_recipe",
+      "required_mana": 16,
+      "center": "azuma:reinforced_mana_bomb",
+      "item_groups": {
+        "First Ring": [
+          "azuma:reinforced_mana_bomb",
+          "azuma:reinforced_mana_bomb",
+          "minecraft:iron_ingot",
+          "minecraft:iron_ingot"
+        ],
+        "Second Ring": [
+          "minecraft:tnt",
+          "minecraft:tnt",
+          "minecraft:tnt",
+          "minecraft:tnt"
+        ]
+      }
+    }
+  ]
+}
