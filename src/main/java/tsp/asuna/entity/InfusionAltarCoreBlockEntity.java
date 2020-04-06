@@ -133,7 +133,17 @@ public class InfusionAltarCoreBlockEntity extends ManaBlockEntity implements Tic
 
         for(Direction direction : Direction.values()) {
             if(direction.getAxis() != Direction.Axis.Y) {
-                BlockPos checkPos = this.pos.offset(direction, 7);
+                // add straight out
+                BlockPos checkPos = this.pos.offset(direction, 7).up();
+
+                if(world.getBlockEntity(checkPos) instanceof InfusionAltarPedestalBlockEntity) {
+                    found.add((InfusionAltarPedestalBlockEntity) world.getBlockEntity((checkPos)));
+                } else {
+                    return null;
+                }
+
+                // add corner
+                checkPos = this.pos.offset(direction, 5).offset(direction.rotateYClockwise(), 5).up();
 
                 if(world.getBlockEntity(checkPos) instanceof InfusionAltarPedestalBlockEntity) {
                     found.add((InfusionAltarPedestalBlockEntity) world.getBlockEntity((checkPos)));

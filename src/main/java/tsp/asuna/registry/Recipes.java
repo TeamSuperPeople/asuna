@@ -145,14 +145,25 @@ public class Recipes {
                         .build()
         );
 
-
-
-
-
-
-
-
-
+        AltarRecipeRegistry.registerRecipe(
+                new AltarRecipeBuilder(Asuna.id("overflowing_goblet"), AltarRecipeTier.ADVANCED)
+                        .centerStack(net.minecraft.item.Items.BUCKET)
+                        .withFirstRingOf(new Item[]{Items.OCEANIC_PEARL,Items.OCEANIC_PEARL,Items.OCEANIC_PEARL,Items.OCEANIC_PEARL})
+                        .withSecondRingOf(new Item[]{net.minecraft.item.Items.GOLD_INGOT,net.minecraft.item.Items.GOLD_INGOT,net.minecraft.item.Items.GOLD_BLOCK,net.minecraft.item.Items.GOLD_BLOCK})
+                        .withThirdRingOf(new Item[] {
+                                net.minecraft.item.Items.WATER_BUCKET,
+                                net.minecraft.item.Items.WATER_BUCKET,
+                                net.minecraft.item.Items.WATER_BUCKET,
+                                net.minecraft.item.Items.WATER_BUCKET,
+                                net.minecraft.item.Items.WATER_BUCKET,
+                                net.minecraft.item.Items.WATER_BUCKET,
+                                net.minecraft.item.Items.WATER_BUCKET,
+                                net.minecraft.item.Items.WATER_BUCKET
+                        })
+                        .withOutput(new ItemStack(Items.OVERFLOWING_GOBLET))
+                        .withManaRequirement(128)
+                        .build()
+        );
     }
 
 
