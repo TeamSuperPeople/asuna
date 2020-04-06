@@ -2,14 +2,16 @@
 
 Asuna is a magical mod designed by Team Super People.
 
+To get started, craft an Asuna Guidebook by putting 1 book and quill into a crafting table. The first quest will give you a hint on where to go first.
+
 ### Magical Crafting!
-![](resources/altar.png)
+<img src="resources/altar.png" width="400">
 
 ### Utility Items!
-![](resources/utility_items.png)
+<img src="resources/utility_items.png" width="400">
 
 ### Special Materials!
-![](resources/materials.png)
+<img src="resources/materials.png" width="400">
 
 ### Spells!
-![](resources/spells.png)
+<img src="resources/spells.png" width="400">
