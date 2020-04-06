@@ -1,9 +1,13 @@
 package tsp.asuna.entity;
 
 import net.fabricmc.fabric.api.block.entity.BlockEntityClientSerializable;
+import net.fabricmc.fabric.api.util.NbtType;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.LongTag;
 import net.minecraft.util.Tickable;
+import net.minecraft.util.math.BlockPos;
 import tsp.asuna.api.ManaConnectable;
 import tsp.asuna.api.ManaStorage;
 import tsp.asuna.registry.Entities;
@@ -18,6 +22,7 @@ public class ManaRelayBlockEntity extends BlockEntity implements BlockEntityClie
     private final static int MAX_INPUT = 100;
 
     private int heldMana = 0;
+    private final List<BlockPos> tempTargetPositions = new ArrayList<>();
     private final List<ManaConnectable> manaTargets = new ArrayList<>();
 
     public ManaRelayBlockEntity() {
@@ -26,7 +31,22 @@ public class ManaRelayBlockEntity extends BlockEntity implements BlockEntityClie
 
     @Override
     public void tick() {
-        if(world == null || world.isClient) {
+        if(world == null) {
+            return;
+        }
+
+        // get mana targets from positions
+        if(!tempTargetPositions.isEmpty()) {
+            tempTargetPositions.forEach(pos -> {
+                if(world.getBlockEntity(pos) instanceof ManaConnectable) {
+                    manaTargets.add((ManaConnectable) world.getBlockEntity(pos));
+                }
+            });
+
+            tempTargetPositions.clear();
+        }
+
+        if(world.isClient) {
             return;
         }
 
@@ -35,15 +55,17 @@ public class ManaRelayBlockEntity extends BlockEntity implements BlockEntityClie
             ManaStorage manaStorage = (ManaStorage) world.getBlockEntity(pos.down());
 
             // power block we're connected to (fuel machines)
-            if(manaStorage.canInsert()) {
+            if(manaStorage.canInsert() && this.heldMana > 0) {
                 int amountTaken = Math.min(this.getMaxManaOutput(), this.getMana());
                 this.heldMana -= amountTaken;
                 int returnedMana = manaStorage.insertMana(amountTaken);
                 this.heldMana += returnedMana;
+                sync();
+                markDirty();
             }
 
             // extract from block if needed (take from generators)
-            else if (manaStorage.canExtract()) {
+            else if (manaStorage.canExtract() && manaStorage.getMana() > 0) {
                 int extractionAmount = Math.min(this.getMaxManaInput(), manaStorage.getMaxManaOutput());
                 if(extractionAmount + heldMana > MAX_MANA) {
                     extractionAmount = MAX_MANA - heldMana;
@@ -51,40 +73,70 @@ public class ManaRelayBlockEntity extends BlockEntity implements BlockEntityClie
 
                 manaStorage.insertMana(this.insertMana(manaStorage.extract(extractionAmount)));
                 sync();
+                markDirty();
             }
         }
 
 
 
         // deliver energy to relays
-        int amountPerConnection = (int) Math.floor(Math.min(MAX_OUTPUT, getMana()) / (float) manaTargets.size());
-        int amountActuallyTaken = 0;
+        if(this.heldMana > 0) {
+            int amountPerConnection = (int) Math.floor(Math.min(MAX_OUTPUT, getMana()) / (float) manaTargets.size());
+            int amountActuallyTaken = 0;
 
-        for (ManaConnectable connection : manaTargets) {
-            if (connection instanceof ManaStorage) {
-                ManaStorage storage = (ManaStorage) connection;
-                int denied = storage.insertMana(amountPerConnection);
-                amountActuallyTaken += amountPerConnection - denied;
+            for (ManaConnectable connection : manaTargets) {
+                if (connection instanceof ManaStorage) {
+                    ManaStorage storage = (ManaStorage) connection;
+                    int denied = storage.insertMana(amountPerConnection);
+                    amountActuallyTaken += amountPerConnection - denied;
 
-                if(storage instanceof BlockEntityClientSerializable) {
-                    ((BlockEntityClientSerializable) storage).sync();
+                    if (storage instanceof BlockEntityClientSerializable) {
+                        ((BlockEntityClientSerializable) storage).sync();
+                    }
                 }
             }
-        }
 
-        this.heldMana -= amountActuallyTaken;
-        sync();
+            if (amountActuallyTaken > 0) {
+                this.heldMana -= amountActuallyTaken;
+                sync();
+                markDirty();
+            }
+        }
+    }
+
+    public List<ManaConnectable> getManaTargets() {
+        return manaTargets;
     }
 
     @Override
     public CompoundTag toTag(CompoundTag tag) {
+        // store connections
+        ListTag connectionsTag = new ListTag();
+        manaTargets.forEach(relay -> {
+            if(relay instanceof BlockEntity) {
+                connectionsTag.add(LongTag.of(((BlockEntity) relay).getPos().asLong()));
+            }
+        });
+
+        tag.put("Connections", connectionsTag);
         tag.putInt("HeldMana", heldMana);
+
         return super.toTag(tag);
     }
 
     @Override
     public void fromTag(CompoundTag tag) {
+        // retrieve connections
+        ListTag relays = tag.getList("Connections", NbtType.LONG);
+        if(relays != null) {
+            relays.forEach(longTag -> {
+                tempTargetPositions.add(BlockPos.fromLong(((LongTag) longTag).getLong()));
+            });
+        }
+
+        // update mana
         this.heldMana = tag.getInt("HeldMana");
+
         super.fromTag(tag);
     }
 
@@ -165,5 +217,9 @@ public class ManaRelayBlockEntity extends BlockEntity implements BlockEntityClie
     @Override
     public void addTarget(ManaConnectable target) {
         this.manaTargets.add(target);
+
+        if(!world.isClient) {
+            sync();
+        }
     }
 }

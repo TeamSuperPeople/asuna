@@ -3,9 +3,13 @@ package tsp.asuna.entity;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.block.entity.BlockEntityClientSerializable;
+import net.fabricmc.fabric.api.util.NbtType;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.LongTag;
 import net.minecraft.util.Tickable;
+import net.minecraft.util.math.BlockPos;
 import tsp.asuna.api.ManaConnectable;
 import tsp.asuna.api.ManaStorage;
 import tsp.asuna.registry.Entities;
@@ -31,9 +35,14 @@ public class ManaPylonBlockEntity extends BlockEntity implements BlockEntityClie
 
     @Override
     public void tick() {
+        // todo: implement pylon sending energy
         manaTargets.forEach(relay -> {
 
         });
+    }
+
+    public List<ManaConnectable> getManaTargets() {
+        return manaTargets;
     }
 
     @Environment(EnvType.CLIENT)
@@ -48,43 +57,46 @@ public class ManaPylonBlockEntity extends BlockEntity implements BlockEntityClie
 
     @Override
     public CompoundTag toTag(CompoundTag tag) {
-//        // store relays
-//        ListTag linkedRelaysTag = new ListTag();
-//        linkedRelays.forEach((relay, action) -> linkedRelaysTag.add(NbtType.LONG, LongTag.of(relay.getPos().asLong())));
-//        tag.put("Relays", linkedRelaysTag);
-//
-//        // store mana information
-//        tag.putInt("HeldMana", heldMana);
+        // store connections
+        ListTag connectionsTag = new ListTag();
+        manaTargets.forEach(relay -> {
+            if(relay instanceof BlockEntity) {
+                connectionsTag.add(NbtType.LONG, LongTag.of(((BlockEntity) relay).getPos().asLong()));
+            }
+        });
+
+        tag.put("Connections", connectionsTag);
+        tag.putInt("HeldMana", heldMana);
 
         return super.toTag(tag);
     }
 
     @Override
     public void fromTag(CompoundTag tag) {
-//        // retrieve relays
-//        ListTag relays = tag.getList("Relays", NbtType.LONG);
-//        relays.forEach(longTag -> {
-//            BlockEntity potentialPylon = world.getBlockEntity(BlockPos.fromLong(((LongTag) longTag).getLong()));
-//
-//            if (potentialPylon instanceof ManaRelayBlockEntity) {
-//                linkedRelays.add((ManaRelayBlockEntity) potentialPylon);
-//            }
-//        });
-//
-//        // update mana
-//        this.heldMana = tag.getInt("HeldMana");
+        // retrieve connections
+        ListTag relays = tag.getList("Connections", NbtType.LONG);
+        relays.forEach(longTag -> {
+            BlockEntity potentialPylon = world.getBlockEntity(BlockPos.fromLong(((LongTag) longTag).getLong()));
+
+            if (potentialPylon instanceof ManaConnectable) {
+                manaTargets.add((ManaConnectable) potentialPylon);
+            }
+        });
+
+        // update mana
+        this.heldMana = tag.getInt("HeldMana");
 
         super.fromTag(tag);
     }
 
     @Override
     public void fromClientTag(CompoundTag tag) {
-
+        fromTag(tag);
     }
 
     @Override
     public CompoundTag toClientTag(CompoundTag tag) {
-        return tag;
+        return toTag(tag);
     }
 
     @Override

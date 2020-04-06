@@ -51,6 +51,11 @@ public class CrystalLinkerItem extends Item {
         if(thisStack.getOrCreateSubTag(SUBTAG_KEY).contains(ORIGIN_KEY)) {
             BlockPos originPos = BlockPos.fromLong(((LongTag) thisStack.getOrCreateSubTag(SUBTAG_KEY).get(ORIGIN_KEY)).getLong());
 
+            // verify we're not going to the same spot
+            if(originPos.equals(thisPos)) {
+                return ActionResult.FAIL;
+            }
+
             // verify original BE stil lexists
             BlockEntity originBlockEntity = world.getBlockEntity(originPos);
             if (originBlockEntity instanceof ManaConnectable) {
