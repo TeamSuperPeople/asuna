@@ -7,7 +7,10 @@ import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import net.minecraft.client.render.model.json.ModelTransformation;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.client.util.math.Vector3f;
+import net.minecraft.entity.EquipmentSlot;
+import tsp.asuna.cilent.LabelRenderer;
 import tsp.asuna.entity.InfusionAltarCoreBlockEntity;
+import tsp.asuna.registry.Items;
 
 public class InfusionAltarCoreBlockEntityRenderer extends BlockEntityRenderer<InfusionAltarCoreBlockEntity> {
 
@@ -17,6 +20,10 @@ public class InfusionAltarCoreBlockEntityRenderer extends BlockEntityRenderer<In
 
     @Override
     public void render(InfusionAltarCoreBlockEntity blockEntity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
+        if (MinecraftClient.getInstance().player.getEquippedStack(EquipmentSlot.HEAD).getItem().equals(Items.ALL_SEEING_GLASSES)) {
+            LabelRenderer.renderLabelIfPresent(blockEntity, "Mana: " + blockEntity.getMana(), 0, matrices, vertexConsumers, light);
+        }
+
         matrices.push();
 
         matrices.translate(.5f, 1.5f, .5f);
