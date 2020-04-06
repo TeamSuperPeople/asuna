@@ -23,6 +23,7 @@ public class Blocks {
     public static final Block INFUSION_ALTAR_CORE = register("infusion_altar_core", new InfusionAltarCoreBlock(), new Item.Settings().group(Azuma.GROUP));
     public static final Block INFUSION_ALTAR_PEDESTAL = register("infusion_altar_pedestal", new InfusionAltarPedestalBlock(), new Item.Settings().group(Azuma.GROUP));
     public static final Block BURNING_MANA_GENERATOR = register("burning_mana_generator", new BurningManaGeneratorBlock(), new Item.Settings().group(Azuma.GROUP));
+    public static final Block AERIAL_ACCELERATOR = register("aerial_accelerator", new AerialAcceleratorBlock(), new Item.Settings().group(Azuma.GROUP));
 
 
     public static Block register(String name, Block block, Item.Settings settings) {

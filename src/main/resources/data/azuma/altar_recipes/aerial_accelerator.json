@@ -1,0 +1,9 @@
+{
+  "center": "minecraft:wool",
+  "mana_requirement": 64,
+  "first_tier_ingredients": [
+    "azuma:thundering_spirit",
+    "azuma:thundering_spirit"
+  ],
+  "output": "azuma:aerial_accelerator"
+}

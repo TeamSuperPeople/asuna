@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=down":  { "model": "azuma:block/aerial_accelerator_vertical", "x": 180 },
+    "facing=up":    { "model": "azuma:block/aerial_accelerator_vertical" },
+    "facing=north": { "model": "azuma:block/aerial_accelerator" },
+    "facing=south": { "model": "azuma:block/aerial_accelerator", "y": 180 },
+    "facing=west":  { "model": "azuma:block/aerial_accelerator", "y": 270 },
+    "facing=east":  { "model": "azuma:block/aerial_accelerator", "y": 90 }
+  }
+}

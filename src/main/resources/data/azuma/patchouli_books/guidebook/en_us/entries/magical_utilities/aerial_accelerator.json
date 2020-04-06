@@ -1,0 +1,23 @@
+{
+  "name": "Aerial Accelerator",
+  "icon": "azuma:aerial_accelerator",
+  "category": "magical_utilities",
+  "advancement": "azuma:find_mana_crystal",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Whoosh! Propels mobs in a certain direction."
+    },
+    {
+      "type": "altar_recipe",
+      "required_mana": 64,
+      "center": "minecraft:white_wool",
+      "item_groups": {
+        "First Ring": [
+          "azuma:thundering_spirit",
+          "azuma:thundering_spirit"
+        ]
+      }
+    }
+  ]
+}

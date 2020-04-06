@@ -1,0 +1,8 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "azuma:block/aerial_accelerator",
+    "front": "azuma:block/aerial_accelerator_front",
+    "side": "azuma:block/aerial_accelerator"
+  }
+}

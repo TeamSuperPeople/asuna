@@ -64,6 +64,11 @@ public class Entities {
             BlockEntityType.Builder.create(BurningManaGeneratorBlockEntity::new, Blocks.BURNING_MANA_GENERATOR).build(null)
     );
 
+    public static final BlockEntityType<AerialAcceleratorBlockEntity> AERIAL_ACCELERATOR = register(
+            "aerial_accelerator",
+            BlockEntityType.Builder.create(AerialAcceleratorBlockEntity::new, Blocks.AERIAL_ACCELERATOR).build(null)
+    );
+
 
     /**
      * Registers and returns the provided {@link BlockEntityType} with the given name.
