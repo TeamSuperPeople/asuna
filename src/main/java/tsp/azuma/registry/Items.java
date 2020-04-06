@@ -9,8 +9,10 @@ import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 import tsp.azuma.Azuma;
 import tsp.azuma.item.*;
+import tsp.azuma.material.AzumaArmorMaterials;
 import tsp.azuma.material.ManaDiamondToolMaterial;
 import tsp.azuma.material.ManaIronToolMaterial;
+import tsp.azuma.material.ToolMaterials;
 
 import static tsp.azuma.Azuma.GROUP;
 
@@ -54,6 +56,12 @@ public class Items {
     public static final Item RUBY_AXE = register("ruby_axe", new RubyAxeItem(ToolMaterials.RUBY, 5,-3F,new Item.Settings().group(GROUP)));
     public static final Item RUBY_SHOVEL = register("ruby_shovel", new RubyShovelItem(ToolMaterials.RUBY, -2,-2F,new Item.Settings().group(GROUP)));
     public static final Item RUBY_SWORD = register("ruby_sword", new RubySwordItem(ToolMaterials.RUBY, 3,-2.4F,new Item.Settings().group(GROUP)));
+
+    // armor
+    public static final Item AURORA_HELMET = register("aurora_helmet", new ManaArmorItem(AzumaArmorMaterials.AURORA, EquipmentSlot.HEAD));
+    public static final Item AURORA_CHESTPLATE = register("aurora_chestplate", new ManaArmorItem(AzumaArmorMaterials.AURORA, EquipmentSlot.CHEST));
+    public static final Item AURORA_LEGGINGS = register("aurora_leggings", new ManaArmorItem(AzumaArmorMaterials.AURORA, EquipmentSlot.LEGS));
+    public static final Item AURORA_BOOTS = register("aurora_boots", new ManaArmorItem(AzumaArmorMaterials.AURORA, EquipmentSlot.FEET));
 
     // materials
     public static final Item MANA_IRON = register("manairon", new ColoredNameItem(new Item.Settings().group(GROUP), Formatting.AQUA));

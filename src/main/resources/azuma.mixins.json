@@ -5,6 +5,7 @@
   "mixins": [
     "CarverMixin",
     "MinecraftServerMixin",
+    "PlayerInventoryMixin",
     "PlayerManagerMixin"
   ],
   "client": [

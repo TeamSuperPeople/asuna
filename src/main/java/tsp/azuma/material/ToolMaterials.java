@@ -1,4 +1,4 @@
-package tsp.azuma.item;
+package tsp.azuma.material;
 
 import net.minecraft.item.ToolMaterial;
 import tsp.azuma.material.RubyToolMaterial;
