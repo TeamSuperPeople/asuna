@@ -29,7 +29,8 @@ public class PlayerManaUtils {
 
                 // component has mana
                 if(foundMana >= 0) {
-                    manaComponent.decrement(Math.min(foundMana, requiredMana));
+
+
 
                     // ItemStack has enough mana to fit requirements. Deplete stack mana and return.
                     if(foundMana >= requiredMana) {

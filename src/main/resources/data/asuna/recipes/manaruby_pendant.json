@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "BXB",
+    "BBB"
+  ],
+  "key": {
+    "X": {
+      "item": "asuna:ruby_pendant"
+    },
+    "B": {
+      "item": "asuna:manairon"
+    }
+  },
+  "result": {
+    "item": "asuna:manaruby_pendant"
+  }
+}

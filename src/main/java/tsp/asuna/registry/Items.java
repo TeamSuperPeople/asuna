@@ -76,7 +76,9 @@ public class Items {
 
     // pendants and accessories
     public static final Item MANA_PENDANT = register("mana_pendant", new ManaPendantItem());
-
+    public static final Item RUBY_PENDANT = register("ruby_pendant", new RubyManaPendantItem());
+    public static final Item MANARUBY_PENDANT = register("manaruby_pendant", new ManaRubyManaPendantItem());
+    public static final Item MANADIAMONDRUBY_PENDANT = register("manadiamondruby_pendant", new ManaDiamondRubyManaPendantItem());
 
     public static Item register(String name, Item instance) {
         return Registry.register(Registry.ITEM, Asuna.id(name), instance);

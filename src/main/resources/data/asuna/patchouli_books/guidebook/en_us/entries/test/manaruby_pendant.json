@@ -1,0 +1,16 @@
+{
+  "name": "Portable Mana Storage 3",
+  "icon": "asuna:manaruby_pendant",
+  "category": "thaumaturgy",
+  "advancement": "asuna:find_mana_crystal",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Can hold more mana than the ruby pendant, made with attaching manairon onto a ruby pendant"
+    },
+    {
+      "type": "crafting",
+      "recipe": "asuna:manaruby_pendant"
+    }
+  ]
+}
