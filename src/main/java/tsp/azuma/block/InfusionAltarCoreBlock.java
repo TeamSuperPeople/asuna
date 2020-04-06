@@ -49,7 +49,7 @@ public class InfusionAltarCoreBlock extends Block implements BlockEntityProvider
             }
         }
 
-        return super.onUse(state, world, pos, player, hand, hit);
+        return ActionResult.FAIL;
     }
 
     @Override

@@ -36,7 +36,7 @@ public class InfusionAltarPedestalBlock extends Block implements BlockEntityProv
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         assert world != null;
 
-        if(!world.isClient && hand == Hand.MAIN_HAND) {
+        if(hand == Hand.MAIN_HAND) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
 
             if (blockEntity instanceof InfusionAltarPedestalBlockEntity) {
@@ -49,7 +49,7 @@ public class InfusionAltarPedestalBlock extends Block implements BlockEntityProv
             }
         }
 
-        return super.onUse(state, world, pos, player, hand, hit);
+        return ActionResult.FAIL;
     }
 
     @Override
