@@ -2,7 +2,7 @@
   "name": "Mana Pearl",
   "icon": "azuma:mana_pearl",
   "category": "magical_utilities",
-  "advancement": "azuma:find_mana_crystal",
+  "advancement": "azuma:craft_infusion_altar_core",
   "pages": [
     {
       "type": "text",

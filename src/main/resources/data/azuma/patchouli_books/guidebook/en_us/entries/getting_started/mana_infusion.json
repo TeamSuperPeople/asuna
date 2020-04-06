@@ -2,7 +2,7 @@
   "name": "Mana Infusion",
   "icon": "azuma:infusion_altar_core",
   "category": "getting_started",
-  "advancement": "azuma:find_mana_crystal",
+  "advancement": "azuma:craft_infusion_altar_core",
   "sortnum": 2,
   "pages": [
     {

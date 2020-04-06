@@ -2,7 +2,7 @@
   "name": "Oceanic Pearl",
   "icon": "azuma:oceanic_pearl",
   "category": "getting_started",
-  "advancement": "azuma:find_mana_crystal",
+  "advancement": "azuma:craft_infusion_altar_core",
   "sortnum": 7,
   "pages": [
     {

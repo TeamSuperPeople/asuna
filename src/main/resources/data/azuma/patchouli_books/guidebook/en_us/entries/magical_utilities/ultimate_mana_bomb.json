@@ -2,7 +2,7 @@
   "name": "Ultimate Mana Grenade",
   "icon": "azuma:ultimate_mana_bomb",
   "category": "magical_utilities",
-  "advancement": "azuma:find_mana_crystal",
+  "advancement": "azuma:craft_infusion_altar_core",
   "sortnum": 2,
   "pages": [
     {

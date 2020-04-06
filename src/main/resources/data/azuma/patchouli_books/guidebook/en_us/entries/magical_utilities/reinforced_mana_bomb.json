@@ -2,7 +2,7 @@
   "name": "Reinforced Mana Bomb",
   "icon": "azuma:reinforced_mana_bomb",
   "category": "magical_utilities",
-  "advancement": "azuma:find_mana_crystal",
+  "advancement": "azuma:craft_infusion_altar_core",
   "sortnum": 1,
   "pages": [
     {

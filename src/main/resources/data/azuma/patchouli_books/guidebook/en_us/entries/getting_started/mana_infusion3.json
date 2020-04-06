@@ -2,7 +2,7 @@
   "name": "Mana Infusion: Finalized",
   "icon": "azuma:infusion_altar_pedestal",
   "category": "getting_started",
-  "advancement": "azuma:find_mana_crystal",
+  "advancement": "azuma:craft_infusion_altar_core",
   "sortnum": 6,
   "pages": [
     {

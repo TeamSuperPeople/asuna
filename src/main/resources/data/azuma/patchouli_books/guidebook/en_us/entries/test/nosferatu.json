@@ -2,7 +2,7 @@
   "name": "Nosferatu",
   "icon": "azuma:nosferatu",
   "category": "thaumaturgy",
-  "advancement": "azuma:find_mana_crystal",
+  "advancement": "azuma:craft_infusion_altar_core",
   "sortnum": 1,
   "pages": [
     {

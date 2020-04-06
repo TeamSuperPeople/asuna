@@ -1,0 +1,23 @@
+{
+  "name": "Aurora Armor",
+  "icon": "azuma:aurora_chestplate",
+  "category": "getting_started",
+  "advancement": "azuma:craft_aurora_ingot",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Aurora armor can be made just like any other type of armor, except that you need multiple aurora ingots."
+    },
+    {
+      "type": "crafting",
+      "recipe": "azuma:aurora_helmet",
+      "recipe2": "azuma:aurora_chestplate"
+    },
+    {
+      "type": "crafting",
+      "recipe": "azuma:aurora_leggings",
+      "recipe2": "azuma:aurora_boots"
+    }
+  ]
+}

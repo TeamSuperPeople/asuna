@@ -2,7 +2,7 @@
   "name": "Overflowing Goblet",
   "icon": "azuma:overflowing_goblet",
   "category": "magical_utilities",
-  "advancement": "azuma:find_mana_crystal",
+  "advancement": "azuma:craft_infusion_altar_core",
   "sortnum": 4,
   "pages": [
     {

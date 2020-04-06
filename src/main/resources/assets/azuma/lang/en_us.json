@@ -70,5 +70,10 @@
   "advancements.azuma.find_mana_crystal.title": "Find Mana Crystal",
   "advancements.azuma.find_mana_crystal.description": "Find a Mana Crystal and break it, which rewards you with several Mana Shards.",
   "advancements.azuma.craft_mana_pendant.title": "Craft Mana Pendant",
-  "advancements.azuma.craft_mana_pendant.description": "Craft a Mana Pendant, which can be used to store and transfer mana used by tools, utilities, and weapons."
+  "advancements.azuma.craft_mana_pendant.description": "Craft a Mana Pendant, which can be used to store and transfer mana used by tools, utilities, and weapons.",
+  "advancements.azuma.craft_aurora_ingot.title": "Craft Aurora Ingot",
+  "advancements.azuma.craft_aurora_ingot.description": "Craft an Aurora Ingot, one of the most hardest material to acquire.",
+  "advancements.azuma.craft_infusion_altar_core.title": "Craft Infusion Altar Core",
+  "advancements.azuma.craft_infusion_altar_core.description": "Craft an Infusion Altar Core, which can be used to craft mana items."
+
 }
