@@ -27,11 +27,14 @@ public class ManaCrystalFeature extends Feature<DefaultFeatureConfig> {
             if(cavePositions.size() > 0) {
                 BlockPos randomPos = cavePositions.get(world.getRandom().nextInt(cavePositions.size()));
 
-                while(world.getBlockState(randomPos.down()).isAir()) {
+                while(world.getBlockState(randomPos.down()).isAir() && cavePositions.size() > 0) {
                     randomPos = cavePositions.get(world.getRandom().nextInt(cavePositions.size()));
+                    cavePositions.remove(randomPos);
                 }
 
-                world.setBlockState(randomPos, Blocks.MANA_CRYSTAL.getDefaultState(), 3);
+                if(cavePositions.size() > 0) {
+                    world.setBlockState(randomPos, Blocks.MANA_CRYSTAL.getDefaultState(), 3);
+                }
             }
 
             Azuma.caveAirList.remove(new ChunkPos(pos));
