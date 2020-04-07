@@ -82,7 +82,7 @@ public class GuideBookRecipe extends ShapelessRecipe {
 
         @Override
         public void write(PacketByteBuf packetByteBuf, GuideBookRecipe shapelessRecipe) {
-            packetByteBuf.writeString(shapelessRecipe.getGroup());
+//            packetByteBuf.writeString(shapelessRecipe.getGroup());
             packetByteBuf.writeVarInt(shapelessRecipe.getPreviewInputs().size());
 
             for (Ingredient ingredient : shapelessRecipe.getPreviewInputs()) {
