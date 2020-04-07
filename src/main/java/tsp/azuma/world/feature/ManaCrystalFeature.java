@@ -1,6 +1,7 @@
 package tsp.azuma.world.feature;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
 import net.minecraft.world.gen.chunk.ChunkGeneratorConfig;
@@ -20,8 +21,8 @@ public class ManaCrystalFeature extends Feature<DefaultFeatureConfig> {
 
     @Override
     public boolean generate(IWorld world, ChunkGenerator<? extends ChunkGeneratorConfig> generator, Random random, BlockPos pos, DefaultFeatureConfig config) {
-        if(Azuma.caveAirList.containsKey(world.getChunk(pos).getPos())) {
-            ArrayList<BlockPos> cavePositions = Azuma.caveAirList.get(world.getChunk(pos).getPos());
+        if(Azuma.caveAirList.containsKey(new ChunkPos(pos))) {
+            ArrayList<BlockPos> cavePositions = Azuma.caveAirList.get(new ChunkPos(pos));
 
             if(cavePositions.size() > 0) {
                 BlockPos randomPos = cavePositions.get(world.getRandom().nextInt(cavePositions.size()));
@@ -33,7 +34,7 @@ public class ManaCrystalFeature extends Feature<DefaultFeatureConfig> {
                 world.setBlockState(randomPos, Blocks.MANA_CRYSTAL.getDefaultState(), 3);
             }
 
-            Azuma.caveAirList.remove(world.getChunk(pos).getPos());
+            Azuma.caveAirList.remove(new ChunkPos(pos));
         }
 
         return false;
