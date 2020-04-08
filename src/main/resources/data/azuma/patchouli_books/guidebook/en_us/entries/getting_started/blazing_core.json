@@ -21,8 +21,8 @@
           "azuma:mana_shard"
         ],
         "Second Ring": [
-          "minecraft:blaze_rod",
-          "minecraft:nether_brick",
+          "minecraft:blaze_powder",
+          "minecraft:nether_bricks",
           "minecraft:lava_bucket",
           "minecraft:magma_cream"
         ]

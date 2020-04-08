@@ -1,6 +1,6 @@
 {
   "center": "minecraft:ender_pearl",
-  "mana_requirement": 32,
+  "mana_requirement": 64,
   "first_tier_ingredients": [
     "azuma:mana_shard",
     "azuma:mana_shard",
