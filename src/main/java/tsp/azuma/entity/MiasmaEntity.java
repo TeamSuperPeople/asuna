@@ -23,7 +23,7 @@ import net.minecraft.world.World;
 import tsp.azuma.Azuma;
 import tsp.azuma.registry.Entities;
 
-public class MiasmaEntity extends ThrownItemEntity implements FlyingItemEntity {
+public class MiasmaEntity extends ThrownItemEntity {
 
     public static final Identifier ENTITY_ID = Azuma.id("miasma");
     private double gravity = 0.03;

@@ -84,6 +84,7 @@ public class Azuma implements ModInitializer {
         Blocks.init();
         WorldSetup.setup();
         World.init();
+        Entities.init();
         AltarRecipeCommand.init();
     }
 
